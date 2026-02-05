@@ -1,0 +1,101 @@
+body {
+  margin: 0;
+  font-family: 'Helvetica Neue', sans-serif;
+  background: #0b0b0b;
+  color: #fff;
+  scroll-behavior: smooth;
+}
+
+.hero {
+  height: 100vh;
+  background: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.9)),
+              url("images/hero.jpg") center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.hero-content {
+  text-align: center;
+}
+
+h1 {
+  letter-spacing: 6px;
+}
+
+.tagline {
+  font-size: 1.3rem;
+  margin: 20px 0;
+}
+
+.btn-primary {
+  border: 1px solid gold;
+  color: gold;
+  padding: 12px 30px;
+  text-decoration: none;
+  margin-right: 10px;
+}
+
+.btn-secondary {
+  border: 1px solid #555;
+  color: #aaa;
+  padding: 12px 30px;
+  text-decoration: none;
+}
+
+.social-fixed {
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+  display: flex;
+  gap: 15px;
+}
+
+.social-fixed a {
+  color: gold;
+  text-decoration: none;
+  font-size: .9rem;
+}
+
+section {
+  padding: 100px 10%;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+  gap: 30px;
+}
+
+.card {
+  border: 1px solid #222;
+  padding: 50px;
+  text-align: center;
+  transition: transform .4s;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+}
+
+/* Animations */
+.fade-in {
+  animation: fadeIn 1.5s ease forwards;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: 1s ease;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
