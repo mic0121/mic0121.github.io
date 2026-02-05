@@ -119,3 +119,4 @@ section {
   from {opacity: 0;}
   to {opacity: 1;}
 }
+.simple-header { display: flex; justify-content: space-between; align-items: center; } .social-links a { color: white; margin-left: 15px; text-decoration: none; }
