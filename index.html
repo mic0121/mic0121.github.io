@@ -51,12 +51,35 @@
   </div>
 </section>
 
-<section id="contact" class="contact reveal"> 
-<h2>Demande de soumission</h2> 
-  <div class="form-container"> 
-    <form action="" method="POST" class="vertical-form">
-      <input type="hidden" name="_captcha" value="false"> 
+<section id="contact" class="contact reveal">
+  <h2>Demande de soumission</h2>
+
+  <div class="form-container">
+    <form 
+      action="https://formspree.io/f/XXXXXXXX"
+      method="POST"
+      class="vertical-form"
+    >
       <input type="hidden" name="_subject" value="Nouvelle soumission – micdemers.com">
+
+      <input 
+        type="text" 
+        name="name" 
+        placeholder="Nom complet" 
+        required
+      >
+
+      <input 
+        type="email" 
+        name="email" 
+        placeholder="Adresse courriel" 
+        required
+      >
+
+      <input 
+        type="text" 
+        name="event" 
+        placeholder="Type d'événement (corporatif, privé, festival
 
 </div> </section>
 <footer>
