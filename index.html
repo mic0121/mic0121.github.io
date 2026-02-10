@@ -59,31 +59,32 @@
 </section>
 
 <section id="contact" class="contact reveal">
-  <h2>Soumission</h2>
+  <h2 class="section-title">Soumission</h2>
 
   <div class="form-container">
-    <form 
-      action="https://formspree.io/f/mwvnpaal"
-      method="POST"
-      class="vertical-form"
-    >
+    <form action="https://formspree.io/f/mwvnpaal" method="POST" class="vertical-form">
       <input type="hidden" name="_subject" value="Nouvelle soumission – micdemers.com">
 
- <label>Nom complet</label>
-   <input type="text" name="nom" placeholder="Prénom et nom" required>
-    
- <label>Adresse courriel</label>
-   <input type="email" name="email" placeholder="Pour vous rejoindre" required>
-      
-  <label>Parlez-nous de votre événement</label>
-   <textarea name="evenement" placeholder="Date, nombre de personnes, détails importants..." rows="5" style="width: 100%;"></textarea>
+      <div class="form-group">
+        <label>Nom complet</label>
+        <input type="text" name="nom" placeholder="Prénom et nom" required>
+      </div>
 
-    <button type="submit">Envoyer</button>
-    
-</form>
-    
+      <div class="form-group">
+        <label>Adresse courriel</label>
+        <input type="email" name="email" placeholder="votre@courriel.com" required>
+      </div>
+
+      <div class="form-group">
+        <label>Parlez-nous de votre événement</label>
+        <textarea name="evenement" placeholder="Date, lieu, nombre d'invités..." rows="5"></textarea>
+      </div>
+
+      <button type="submit" class="btn-submit">Envoyer la demande</button>
+    </form>
   </div>
 </section>
+  
 <footer>
   © 2026 Michael Demers · Tous droits réservés
 </footer>
