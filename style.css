@@ -112,6 +112,8 @@ h1 {
   height: 450px; /* Cartes plus hautes pour le style cinématographique */
   background-size: cover;
   background-position: center;
+  background-color: #1a1a1a; /* Couleur de secours en attendant l'image */
+  background-blend-mode: multiply; /* Fusionne l'image avec le noir pour un look sombre */
   border-radius: 4px; /* Kevin Hamdan utilise des coins très peu arrondis */
   overflow: hidden;
   display: flex;
