@@ -99,24 +99,76 @@ h1 {
   padding: 100px 10%;
 }
 
-.cards {
+.services .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
-  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .card {
-  border: 1px solid #222;
-  padding: 50px;
-  text-align: center;
-  transition: transform .4s;
-  background: #111;
+  position: relative;
+  height: 450px; /* Cartes plus hautes pour le style cinématographique */
+  background-size: cover;
+  background-position: center;
+  border-radius: 4px; /* Kevin Hamdan utilise des coins très peu arrondis */
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end; /* Texte en bas de la carte */
+  padding: 30px;
+  border: none;
+  transition: transform 0.5s ease;
 }
 
+/* Le voile noir sur l'image */
+.card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(0,0,0,0.9) 10%, rgba(0,0,0,0.2) 100%);
+  transition: background 0.4s ease;
+  z-index: 1;
+}
+
+/* Le contenu par-dessus le voile */
+.card-content {
+  position: relative;
+  z-index: 2;
+  transition: transform 0.4s ease;
+}
+
+.card h3 {
+  color: #fff;
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.card p {
+  color: #d4af37; /* Or pour le petit texte descriptif */
+  font-size: 0.9rem;
+  opacity: 0; /* Caché au début */
+  transform: translateY(20px);
+  transition: all 0.4s ease;
+}
+
+/* Effets de survol (Hover) */
 .card:hover {
-  transform: translateY(-8px);
+  transform: scale(1.02);
 }
 
+.card:hover .card-overlay {
+  background: linear-gradient(to top, rgba(212, 175, 55, 0.4) 0%, rgba(0,0,0,0.7) 100%);
+}
+
+.card:hover p {
+  opacity: 1;
+  transform: translateY(0);
+}
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
