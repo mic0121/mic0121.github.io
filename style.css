@@ -99,6 +99,7 @@ h1 {
   padding: 100px 10%;
 }
 
+/* --- SECTION SERVICES (STYLE KEVIN HAMDAN) --- */
 .services .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -109,35 +110,31 @@ h1 {
 
 .card {
   position: relative;
-  height: 450px; /* Cartes plus hautes pour le style cinématographique */
+  height: 450px;
   background-size: cover;
   background-position: center;
-  background-color: #1a1a1a; /* Couleur de secours en attendant l'image */
-  background-blend-mode: multiply; /* Fusionne l'image avec le noir pour un look sombre */
-  border-radius: 4px; /* Kevin Hamdan utilise des coins très peu arrondis */
+  background-color: #000; /* Fond de secours */
+  border-radius: 4px;
   overflow: hidden;
   display: flex;
-  align-items: flex-end; /* Texte en bas de la carte */
+  align-items: flex-end;
   padding: 30px;
   border: none;
   transition: transform 0.5s ease;
 }
 
-/* Le voile noir sur l'image */
 .card-overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  /* On passe de 0.9 à 0.5 pour voir plus l'image en bas */
-  /* On passe de 0.2 à 0.1 en haut pour que l'image soit plus claire */
-  background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.1) 100%);
+  /* Dégradé léger : noir uniquement en bas pour le texte, transparent en haut */
+  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 50%);
   transition: all 0.4s ease;
   z-index: 1;
 }
 
-/* Le contenu par-dessus le voile */
 .card-content {
   position: relative;
   z-index: 2;
@@ -153,20 +150,21 @@ h1 {
 }
 
 .card p {
-  color: #d4af37; /* Or pour le petit texte descriptif */
+  color: #d4af37;
   font-size: 0.9rem;
-  opacity: 0; /* Caché au début */
+  opacity: 0;
   transform: translateY(20px);
   transition: all 0.4s ease;
 }
 
-/* Effets de survol (Hover) */
+/* Effets de survol */
 .card:hover {
   transform: scale(1.02);
 }
 
 .card:hover .card-overlay {
-  background: linear-gradient(to top, rgba(212, 175, 55, 0.4) 0%, rgba(0,0,0,0.7) 100%);
+  /* Teinte dorée subtile au survol */
+  background: linear-gradient(to top, rgba(212, 175, 55, 0.3) 0%, rgba(0,0,0,0.2) 100%);
 }
 
 .card:hover p {
