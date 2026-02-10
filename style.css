@@ -240,4 +240,14 @@ footer {
   display: block;
   margin: 0 auto 12px;
 }
+.logo-wrapper {
+  width: 40px;
+  margin: 0 auto 12px;
+}
 
+.logo-wrapper img {
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+  display: block;
+}
