@@ -364,21 +364,24 @@ footer {
   color: #1a1a1a;
 }
 /* --- LOGO CENTRAL --- */
-/* --- LOGO MICHAEL DEMERS --- */
 .main-logo {
-  position: absolute;
-  top: 25px;         /* Distance du haut */
-  left: 30px;        /* Distance de la GAUCHE */
-  width: 80px;       /* Taille discrète et élégante */
+  position: absolute; /* Détache le logo du reste du texte */
+  top: 20px;          /* Espace avec le haut de l'écran */
+  left: 20px;         /* Espace avec le bord gauche */
+  width: 65px;        /* Taille réduite pour plus d'élégance */
   height: auto;
-  z-index: 100;      /* Assure que le logo passe devant l'image de fond */
-  transition: all 0.3s ease;
+  z-index: 1000;      /* S'assure qu'il passe devant l'image de fond */
+  transition: opacity 0.3s ease;
 }
 
-/* Sur mobile, on réduit pour ne pas encombrer l'écran */
+.main-logo:hover {
+  opacity: 0.8;       /* Petit effet visuel au survol */
+}
+
+/* Ajustement pour mobile */
 @media (max-width: 600px) {
   .main-logo {
-    width: 65px;
+    width: 50px;      /* Encore plus petit sur téléphone */
     top: 15px;
     left: 15px;
   }
