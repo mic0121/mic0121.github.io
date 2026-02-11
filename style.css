@@ -366,21 +366,25 @@ footer {
 /* --- LOGO CENTRAL --- */
 /* --- LOGO MICHAEL DEMERS --- */
 .main-logo {
-  display: block;
-  margin: 0 auto 20px auto; /* Centre et crée un espace propre sous le logo */
-  width: 130px;             /* Largeur élégante (ajuste entre 100 et 150) */
-  height: auto;             /* Garde les proportions */
-  transition: transform 0.3s ease;
+  position: absolute;
+  top: 25px;         /* Distance du haut */
+  right: 30px;       /* Distance de la droite (change "right" par "left" pour mettre à gauche) */
+  width: 80px;       /* Plus petit comme tu l'as demandé */
+  height: auto;
+  z-index: 100;      /* Passe par-dessus tout */
+  transition: all 0.3s ease;
 }
 
-.main-logo:hover {
-  transform: scale(1.05);   /* Petit effet interactif au survol */
+/* On s'assure que le header est la référence pour le logo */
+.hero {
+  position: relative;
 }
 
-/* --- AJUSTEMENT MOBILE --- */
+/* Sur mobile, on le réduit encore un peu et on le centre si nécessaire */
 @media (max-width: 600px) {
   .main-logo {
-    width: 100px;           /* Plus discret sur petit écran */
-    margin-bottom: 15px;
+    width: 60px;
+    top: 15px;
+    right: 20px;
   }
 }
