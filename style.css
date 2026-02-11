@@ -365,15 +365,15 @@ footer {
 }
 /* --- LOGO CENTRAL --- */
 .main-logo {
-  position: absolute; /* Détache le logo du reste du texte */
-  top: 20px;          /* Espace avec le haut de l'écran */
-  left: 20px;         /* Espace avec le bord gauche */
-  width: 65px;        /* Taille réduite pour plus d'élégance */
-  height: auto;
-  z-index: 1000;      /* S'assure qu'il passe devant l'image de fond */
-  transition: opacity 0.3s ease;
+  position: absolute !important; /* Force la sortie du flux central */
+  top: 20px !important;          /* Force la distance du haut */
+  left: 20px !important;         /* Force la distance de la gauche */
+  width: 60px !important;        /* Taille que tu voulais */
+  height: auto !important;
+  z-index: 9999 !important;      /* S'assure qu'il est au-dessus de tout */
+  margin: 0 !important;          /* Supprime les marges de centrage auto */
+  transform: none !important;    /* Annule tout centrage par transformation */
 }
-
 .main-logo:hover {
   opacity: 0.8;       /* Petit effet visuel au survol */
 }
