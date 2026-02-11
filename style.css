@@ -386,6 +386,3 @@ footer {
     left: 15px;
   }
 }
-.hero {
-  position: relative; /* Indispensable pour que le logo 'absolute' sache où se placer */
-}
