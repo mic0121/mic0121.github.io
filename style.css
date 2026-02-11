@@ -367,25 +367,31 @@ footer {
 .main-logo {
   display: block;
   margin: 0 auto 10px auto;
-  width: 140px;            /* On le force à être plus petit */
-  height: auto;
-  aspect-ratio: 1/1;       /* Force un carré si ton image est carrée */
-  object-fit: contain;     /* Empêche la déformation */
+  width: 150px;             /* Largeur fixe */
+  max-height: 120px;        /* FORCE le logo à ne pas dépasser cette hauteur */
+  object-fit: contain;      /* Garde les proportions sans déformer */
   
-  /* L'astuce pour les logos sur fond noir : */
-  mix-blend-mode: screen;  /* Rend le noir du logo invisible sur le fond du site */
-  filter: brightness(1.1); /* Donne un petit coup de pep's au blanc/or */
+  /* Supprime le fond noir pour le style Hamdan */
+  mix-blend-mode: screen;   
+  
+  /* Pour éviter que le logo ne pousse trop le texte */
+  position: relative;
+  z-index: 10;
 }
 
-/* On s'assure que le contenu autour ne s'éparpille pas */
+/* On s'assure que le titre ne commence pas trop bas */
 .hero-content {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding-top: 20px;
+  min-height: 80vh; /* Garde le contenu centré verticalement dans l'écran */
+  padding-top: 0;
 }
 
+.hero-content h1 {
+  margin-top: 5px; /* Rapproche le nom du logo */
+}
 /* --- AJUSTEMENT MOBILE --- */
 @media (max-width: 600px) {
   .main-logo {
