@@ -372,3 +372,36 @@ footer {
     order: -1;
   }
 }
+/* --- BANNIÈRE DE HAUT DE PAGE --- */
+.top-announcement {
+    background-color: #d4af37; /* Ton doré signature */
+    color: #000;               /* Texte noir pour un contraste maximal */
+    text-align: center;
+    padding: 8px 0;
+    font-size: 0.85rem;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 1001;            /* Au-dessus du logo */
+}
+
+/* Ajustement du logo pour qu'il ne colle pas à la bannière */
+.main-logo {
+    top: 45px !important;    /* On descend le logo car la bannière prend de la place (25px + hauteur bannière) */
+}
+
+/* Ajustement des réseaux sociaux */
+.social-fixed {
+    top: 40px !important;
+}
+
+@media (max-width: 600px) {
+    .top-announcement {
+        font-size: 0.7rem;    /* Plus petit sur mobile */
+        padding: 5px 10px;
+    }
+    .main-logo {
+        top: 35px !important;
+    }
+}
