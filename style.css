@@ -513,3 +513,44 @@ footer {
 .social-icons-row a:hover {
     transform: scale(1.2);
 }
+/* --- VERSION ORDINATEUR --- */
+.desktop-socials {
+    display: flex;
+    gap: 15px;
+    margin-left: 20px;
+}
+
+.desktop-socials a {
+    color: #d4af37; /* Ton doré prestige */
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+.desktop-socials a:hover {
+    transform: scale(1.2);
+    color: #fff;
+}
+
+.mobile-socials {
+    display: none; /* CACHÉ SUR ORDI */
+}
+
+/* --- VERSION MOBILE --- */
+@media (max-width: 768px) {
+    .desktop-socials {
+        display: none; /* CACHÉ SUR MOBILE */
+    }
+
+    .mobile-socials {
+        display: flex; /* MONTRE SUR MOBILE */
+        gap: 25px;
+        margin-bottom: 30px; /* Espace avant les liens du menu */
+        border-bottom: 1px solid rgba(212, 175, 55, 0.3); /* Petite ligne dorée subtile */
+        padding-bottom: 20px;
+    }
+
+    .mobile-socials a {
+        color: #d4af37;
+        font-size: 1.8rem; /* Plus gros pour les pouces sur mobile */
+    }
+}
