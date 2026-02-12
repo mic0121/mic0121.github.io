@@ -21,7 +21,7 @@ body {
     width: 100%;
     /* C'est ici que ton image est appelée */
     background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), 
-                url('images/IMG_6112_pp.JPG') no-repeat center center;
+                url('https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4') no-repeat center center;
     background-size: cover; /* L'image remplit l'espace sans se déformer */
     display: flex;
     align-items: center;
