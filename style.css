@@ -58,30 +58,6 @@ h1 {
   opacity: 0.9;
 }
 
-/* --- LOGO (Coin gauche) --- */
-
-/* --- LOGO : Gestion Ordi vs Mobile --- */
-.main-logo {
-  position: absolute !important;
-  top: 45px !important;  /* Ajusté pour ta bannière dorée */
-  left: 25px !important;
-  width: 120px !important;
-  height: auto !important;
-  z-index: 1000 !important;
-  display: block !important; /* Visible sur ordinateur */
-}
-
-/* LA BARRIÈRE MOBILE */
-@media (max-width: 768px) {
-  .main-logo {
-    display: none !important; /* Disparaît UNIQUEMENT sur mobile */
-    visibility: hidden !important;
-  }
-}
-.main-logo:hover {
-  opacity: 0.8;
-}
-
 /* --- RÉSEAUX SOCIAUX (Coin droit) --- */
 .social-fixed {
   position: absolute;
