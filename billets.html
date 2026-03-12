@@ -1,1 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Billetterie | Michael Demers</title>
+    <link rel="stylesheet" href="style.css?v=99">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .ticket-container {
+            padding: 150px 20px 100px; /* Espace pour ne pas être sous la navbar */
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .ticket-box {
+            background: #1a1a1a;
+            padding: 30px;
+            border-radius: 8px;
+            border: 1px solid #d4af37;
+            min-height: 400px;
+        }
+    </style>
+</head>
+<body>
 
+<header>
+    <div class="top-announcement">
+        <p>RÉSERVEZ VOS PLACES DÈS MAINTENANT.</p>
+    </div>
+    <nav class="navbar">
+        <a href="index.html" class="nav-item">Retour à l'accueil</a>
+        <div class="hamburger" id="hamburger">
+            <span></span><span></span><span></span>
+        </div>
+    </nav>
+</header>
+
+<section class="ticket-container">
+    <h1 class="section-title">Billetterie</h1>
+    <div class="ticket-box">
+        <p style="color: #777;">Chargement de la billetterie...</p>
+      
+      <script src="https://lepointdevente.com/plugins/widget.js?event=504338&lang=fr"></script>        
+        </div>
+</section>
+
+<footer>
+    <p>© 2026 Michael Demers · Tous droits réservés</p>
+</footer>
+
+<script>
+    // Script pour le menu mobile (copié de ton index)
+    const hamburger = document.getElementById('hamburger');
+    hamburger.addEventListener('click', () => {
+        // Optionnel : tu peux rajouter la logique de redirection ou d'ouverture ici
+        window.location.href = 'index.html'; 
+    });
+</script>
+
+</body>
+</html>
