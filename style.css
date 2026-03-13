@@ -680,3 +680,22 @@ footer {
   color: #D4AF37 !important; /* Or pur */
   text-shadow: 0 2px 4px rgba(0,0,0,0.5); /* Ajoute une ombre portée pour encore plus de lisibilité */
 } 
+/* --- Style du titre Mentaliste --- */
+.subtitle, h2.site-subtitle { 
+  font-size: 2.5rem !important; /* Augmente la taille (ajuste à ton goût) */
+  font-weight: 800 !important;   /* Met le texte bien en gras */
+  color: #D4AF37 !important;     /* Ton doré signature */
+  text-transform: uppercase;     /* Optionnel : pour un look plus imposant */
+  letter-spacing: 2px;           /* Espace légèrement les lettres pour le prestige */
+  margin-top: -10px !important;  /* Rapproche le mot de ton nom en haut */
+  display: block;
+  text-align: center;
+}
+
+/* Ajustement pour mobile pour ne pas que ce soit TROP gros */
+@media screen and (max-width: 768px) {
+  .subtitle, h2.site-subtitle {
+    font-size: 1.8rem !important;
+    margin-top: -5px !important;
+  }
+}
