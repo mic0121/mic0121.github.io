@@ -626,34 +626,43 @@ footer {
   margin-left: auto;
  margin-right: auto;
 }
-@media screen and (max-width: 768px) {
-  /* 1. Centre le titre et le sous-titre */
-  h1, h2, .subtitle {
+/* 1. RESET : On s'assure que sur ordi tout reste normal */
+.subtitle, label, input, textarea {
+  width: auto;
+}
+
+/* 2. UNIQUEMENT MOBILE (max 767px) */
+@media screen and (max-width: 767px) {
+  
+  /* Centrer le sous-titre sans affecter le reste */
+  .subtitle {
     text-align: center !important;
     display: block !important;
     width: 100% !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
+    margin: 0 auto 10px auto !important; /* Le 10px réduit l'espace en bas */
+    padding: 0 15px !important;
+    box-sizing: border-box !important;
   }
 
-  /* 2. Réduit l'espace sous le sous-titre pour rapprocher le formulaire */
-  .subtitle {
-    margin-bottom: 10px !important; /* Ajustez ce chiffre si c'est encore trop grand */
+  /* Descendre le menu hamburger (on tente plusieurs sélecteurs courants) */
+  .burger, .hamburger, [data-testid="mobile-menu-button"], .mobile-nav-toggle {
+    padding-top: 20px !important;
+    margin-top: 10px !important;
   }
 
-  /* 3. Descend le menu hamburger (ajustez le sélecteur si nécessaire) */
-  /* J'utilise les classes les plus communes (.burger, .hamburger, .mobile-nav-toggle) */
-  .burger, .hamburger, .mobile-nav-toggle, .header-menu-button {
-    margin-top: 15px !important; 
-    position: relative !important;
-    top: 10px !important; /* Pousse le bouton vers le bas */
+  /* Forcer les champs du formulaire à reprendre toute la largeur sur mobile */
+  input[type="text"], 
+  input[type="email"], 
+  textarea,
+  .form-item input {
+    width: 100% !important;
+    box-sizing: border-box !important;
   }
 
-  /* 4. Garde les étiquettes du formulaire à gauche */
-  label, .form-label, .field-list .title {
+  /* Garder les labels à gauche */
+  label, .form-label {
     text-align: left !important;
     display: block !important;
-    margin-left: 0 !important;
-    width: 100% !important;
+    margin-bottom: 5px !important;
   }
 }
