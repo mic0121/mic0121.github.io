@@ -699,53 +699,60 @@ footer {
         letter-spacing: 2px !important;
     }
 }
-/* --- ANIMATION DE RÉVÉLATION (SANS COUPURE) --- */
+/* --- LE VRAI EFFET TYPEWRITER (Lettre par lettre) --- */
+
 .hero-content h1, 
 .hero .hero-content .subtitle {
-    position: relative;
-    display: inline-block; /* Pour bien entourer le texte */
+    display: block;
     margin: 0 auto 10px auto !important;
     white-space: nowrap;
-    color: #fff; /* Couleur de base */
+    overflow: hidden;
+    border-right: 3px solid #D4AF37; /* Curseur doré */
+    width: 0; /* Commence à zéro */
+    text-align: center;
 }
 
+/* Ton Nom (14 caractères avec l'espace) */
+.hero-content h1 {
+    font-size: 2.5rem;
+    /* On utilise 15ch pour donner un peu de "mou" et éviter les coupures */
+    animation: typing-name 2s steps(14) forwards, blink 0.7s step-end infinite, hide-caret 0s forwards 2.5s;
+}
+
+/* Mentaliste (10 caractères) */
 .hero .hero-content .subtitle {
-    color: #D4AF37 !important;
-}
-
-/* On crée un volet noir qui cache le texte et glisse */
-.hero-content h1::after, 
-.hero .hero-content .subtitle::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #000; /* Doit être la même couleur que ton fond */
-    animation: slideReveal 1.5s ease-out forwards;
-}
-
-/* Le nom se révèle tout de suite */
-.hero-content h1::after {
-    animation-delay: 0.5s;
-}
-
-/* Le titre se révèle après le nom */
-.hero .hero-content .subtitle::after {
-    animation-delay: 2s;
-}
-
-/* L'animation qui fait glisser le volet vers la droite */
-@keyframes slideReveal {
-    from { transform: translateX(0); }
-    to { transform: translateX(101%); } /* Pousse le volet hors du texte */
+    font-size: 1.8rem !important;
+    animation: typing-sub 1.5s steps(10) forwards, blink 0.7s step-end infinite, hide-caret 0s forwards 4.5s;
+    animation-delay: 2.5s; /* Attend que le nom finisse */
 }
 
 /* --- ADAPTATION MOBILE --- */
 @media screen and (max-width: 768px) {
     .hero-content h1 { font-size: 1.6rem !important; }
     .hero .hero-content .subtitle { font-size: 1.2rem !important; }
+}
+
+/* --- MÉCANIQUE DES ANIMATIONS --- */
+
+/* Animation pour le nom (On définit la largeur finale ici) */
+@keyframes typing-name {
+    from { width: 0; }
+    to { width: 14.5ch; } /* Largeur calculée pour "MICHAEL DEMERS" */
+}
+
+/* Animation pour Mentaliste */
+@keyframes typing-sub {
+    from { width: 0; }
+    to { width: 10.5ch; } /* Largeur calculée pour "MENTALISTE" */
+}
+
+@keyframes blink {
+    from, to { border-color: transparent; }
+    50% { border-color: #D4AF37; }
+}
+
+@keyframes hide-caret {
+    to { border-right: none; }
 }
 /* --- Pulsation discrète du bouton CTA --- */
 .btn-primary, .cta a {
