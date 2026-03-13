@@ -699,20 +699,41 @@ footer {
         letter-spacing: 2px !important;
     }
 }
-/* --- Option 2 : Écriture Télépathique (Typewriter) --- */
+/* --- OPTION 2 : ÉCRITURE TÉLÉPATHIQUE (VERSION MOBILE-FRIENDLY) --- */
+
 .hero-content h1, 
 .hero .hero-content .subtitle {
-    overflow: hidden; /* Cache le texte qui n'est pas encore tapé */
-    border-right: .15em solid #D4AF37; /* Curseur doré */
-    white-space: nowrap; /* Empêche le texte de revenir à la ligne */
-    margin: 0 auto; /* Centre le texte */
-    letter-spacing: .15em;
+    display: table; /* Plus stable que inline-block pour le centrage */
+    overflow: hidden; 
+    white-space: nowrap; 
+    border-right: 3px solid #D4AF37; 
+    margin: 0 auto;
+    letter-spacing: 0.10em;
+    width: 0; 
     animation: 
-      typing 2.5s steps(30, end), /* Vitesse de frappe */
-      blink-caret .75s step-end infinite; /* Clignotement du curseur */
+      typing 2s steps(25, end) forwards, 
+      blink-caret 0.75s step-end infinite;
+    animation-delay: 0.5s;
 }
 
-/* Définition des animations */
+.hero .hero-content .subtitle {
+    animation-delay: 2.2s; 
+}
+
+/* --- AJUSTEMENTS POUR MOBILE (Éviter le débordement) --- */
+@media screen and (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 1.6rem !important; /* On réduit la taille pour que ça tienne */
+        letter-spacing: 0.05em;
+    }
+
+    .hero .hero-content .subtitle {
+        font-size: 1.3rem !important; /* On réduit aussi le sous-titre */
+        letter-spacing: 0.10em;
+    }
+}
+
+/* --- Définitions des mouvements --- */
 @keyframes typing {
     from { width: 0 }
     to { width: 100% }
