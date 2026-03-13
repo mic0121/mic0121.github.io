@@ -616,16 +616,21 @@ footer {
     .desktop-socials a:hover {
         transform: scale(1.1); 
     }
-/* Ciblage spécifique pour le texte de rappel de réservation sur mobile */
-@media screen and (max-width: 767px) {
-  #block-yui_3_17_2_1_1714150530467_4761 p, 
-  .fe-662bd8928509c16823c3176a p {
+@media screen and (max-width: 768px) {
+  .subtitle {
+    display: block !important;       /* S'assure que le bloc prend sa propre ligne */
+    text-align: center !important;   /* Centre le texte à l'intérieur du bloc */
+    width: 100% !important;          /* Force le bloc à prendre toute la largeur */
+    margin-left: auto !important;    /* Centre le bloc lui-même */
+    margin-right: auto !important;   /* Centre le bloc lui-même */
+    padding-left: 10px !important;   /* Évite que le texte touche les bords */
+    padding-right: 10px !important;  /* Évite que le texte touche les bords */
+    box-sizing: border-box !important; /* Pour que le padding ne dépasse pas la largeur */
+  }
+
+  /* Pour aligner aussi le titre "PARLEZ-NOUS..." s'il n'est pas déjà centré */
+  h2, .title { 
     text-align: center !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    padding-left: 20px !important;
-    padding-right: 20px !important;
-    width: 100% !important;
   }
 }
 .subtitle {
