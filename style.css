@@ -699,60 +699,56 @@ footer {
         letter-spacing: 2px !important;
     }
 }
-/* --- LE VRAI EFFET TYPEWRITER (Lettre par lettre) --- */
-
+/* --- ANIMATION RÉVÉLATION LUMINEUSE --- */
 .hero-content h1, 
 .hero .hero-content .subtitle {
+    opacity: 0;
+    filter: blur(10px); /* Départ flou */
+    transform: scale(0.9); /* Un peu plus petit au début */
+    animation: glowAppearance 1.2s ease-out forwards;
+    text-align: center;
     display: block;
     margin: 0 auto 10px auto !important;
-    white-space: nowrap;
-    overflow: hidden;
-    border-right: 3px solid #D4AF37; /* Curseur doré */
-    width: 0; /* Commence à zéro */
-    text-align: center;
 }
 
-/* Ton Nom (14 caractères avec l'espace) */
+/* Le nom apparaît en premier */
 .hero-content h1 {
-    font-size: 2.5rem;
-    /* On utilise 15ch pour donner un peu de "mou" et éviter les coupures */
-    animation: typing-name 2s steps(14) forwards, blink 0.7s step-end infinite, hide-caret 0s forwards 2.5s;
+    animation-delay: 0.5s;
+    color: #ffffff;
+    text-shadow: 0 0 0px rgba(212, 175, 55, 0);
 }
 
-/* Mentaliste (10 caractères) */
+/* Le mot Mentaliste apparaît avec un éclat doré */
 .hero .hero-content .subtitle {
-    font-size: 1.8rem !important;
-    animation: typing-sub 1.5s steps(10) forwards, blink 0.7s step-end infinite, hide-caret 0s forwards 4.5s;
-    animation-delay: 2.5s; /* Attend que le nom finisse */
+    animation-delay: 1.5s; /* Petit décalage pour l'élégance */
+    color: #D4AF37 !important;
 }
 
-/* --- ADAPTATION MOBILE --- */
+/* L'animation de matérialisation */
+@keyframes glowAppearance {
+    0% {
+        opacity: 0;
+        filter: blur(10px);
+        transform: scale(0.9);
+        text-shadow: 0 0 20px rgba(212, 175, 55, 1); /* Éclat intense au début */
+    }
+    50% {
+        opacity: 0.5;
+        filter: blur(5px);
+        text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+    }
+    100% {
+        opacity: 1;
+        filter: blur(0);
+        transform: scale(1);
+        text-shadow: 0 0 0px rgba(212, 175, 55, 0); /* Net à la fin */
+    }
+}
+
+/* Ajustement Mobile */
 @media screen and (max-width: 768px) {
-    .hero-content h1 { font-size: 1.6rem !important; }
-    .hero .hero-content .subtitle { font-size: 1.2rem !important; }
-}
-
-/* --- MÉCANIQUE DES ANIMATIONS --- */
-
-/* Animation pour le nom (On définit la largeur finale ici) */
-@keyframes typing-name {
-    from { width: 0; }
-    to { width: 14.5ch; } /* Largeur calculée pour "MICHAEL DEMERS" */
-}
-
-/* Animation pour Mentaliste */
-@keyframes typing-sub {
-    from { width: 0; }
-    to { width: 10.5ch; } /* Largeur calculée pour "MENTALISTE" */
-}
-
-@keyframes blink {
-    from, to { border-color: transparent; }
-    50% { border-color: #D4AF37; }
-}
-
-@keyframes hide-caret {
-    to { border-right: none; }
+    .hero-content h1 { font-size: 1.8rem !important; }
+    .hero .hero-content .subtitle { font-size: 1.4rem !important; }
 }
 /* --- Pulsation discrète du bouton CTA --- */
 .btn-primary, .cta a {
