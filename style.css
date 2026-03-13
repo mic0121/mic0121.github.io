@@ -648,3 +648,6 @@ footer {
     margin-left: 0 !important;
   }
 }
+.form-wrapper, form {
+    align-items: flex-start !important; /* Aligne le contenu du formulaire à gauche */
+  }
