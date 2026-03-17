@@ -875,32 +875,26 @@ footer {
 /* ==========================================
    CORRECTION MOBILE - PAGE À PROPOS UNIQUEMENT
    ========================================== */
-
 @media (max-width: 768px) {
-    /* 1. On cible uniquement la page à propos via sa classe body */
-    .page-about-only .navbar {
-        position: relative !important; /* Sort du flux "fixe" pour être au-dessus de l'image */
-        top: 0 !important;
-        background-color: #0b0b0b !important; /* Fond noir pour rester pro */
-        padding: 15px 20px !important;
-        display: flex !important;
-        justify-content: flex-start !important; /* Aligne le retour à gauche */
-    }
-
-    /* 2. On fait disparaître le hamburger UNIQUEMENT ici */
-    .page-about-only .hamburger {
+    /* On force la disparition du hamburger sur cette page */
+    body.page-about-only .hamburger, 
+    body.page-about-only #hamburger {
         display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
     }
 
-    /* 3. On s'assure que l'image ne remonte pas sous le menu */
-    .page-about-only .about-page {
-        padding-top: 20px !important;
-        margin-top: 0 !important;
+    /* On force le repositionnement du header */
+    body.page-about-only header, 
+    body.page-about-only .navbar {
+        position: static !important; /* Annule le "fixed" ou "absolute" */
+        background: #0b0b0b !important;
+        display: block !important;
+        padding: 20px !important;
     }
 
-    .page-about-only .about-page img {
-        margin-top: 10px !important;
-        width: 100% !important;
+    body.page-about-only .nav-item {
+        display: inline-block !important;
+        margin-bottom: 20px !important;
     }
 }
-.page-about-only { border: 5px solid red !important; }
