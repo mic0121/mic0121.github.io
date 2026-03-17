@@ -876,25 +876,43 @@ footer {
    CORRECTION MOBILE - PAGE À PROPOS UNIQUEMENT
    ========================================== */
 @media (max-width: 768px) {
-    /* On force la disparition du hamburger sur cette page */
-    body.page-about-only .hamburger, 
-    body.page-about-only #hamburger {
+    /* 1. On supprime le cadre rouge de test */
+    .page-about-only { border: none !important; }
+
+    /* 2. ON FAIT DISPARAÎTRE TOUTE LA STRUCTURE DU MENU MOBILE */
+    .page-about-only .hamburger, 
+    .page-about-only #hamburger,
+    .page-about-only .nav-links,
+    .page-about-only .mobile-socials {
         display: none !important;
         visibility: hidden !important;
-        opacity: 0 !important;
+        pointer-events: none !important;
     }
 
-    /* On force le repositionnement du header */
-    body.page-about-only header, 
-    body.page-about-only .navbar {
-        position: static !important; /* Annule le "fixed" ou "absolute" */
-        background: #0b0b0b !important;
-        display: block !important;
+    /* 3. ON REPOSITIONNE LE HEADER POUR QU'IL SOIT AU-DESSUS DE L'IMAGE */
+    .page-about-only .navbar {
+        position: relative !important; /* Annule le flottement au-dessus de l'image */
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        background-color: #0b0b0b !important; /* Fond noir */
         padding: 20px !important;
+        display: block !important; /* On repasse en bloc simple */
+        box-sizing: border-box !important;
     }
 
-    body.page-about-only .nav-item {
+    /* 4. ON STYLE LE LIEN "RETOUR" */
+    .page-about-only .nav-item {
         display: inline-block !important;
-        margin-bottom: 20px !important;
+        color: #d4af37 !important; /* Or */
+        text-decoration: none !important;
+        font-size: 1.1rem !important;
+        z-index: 9999 !important;
+    }
+
+    /* 5. ON COMMENCE LA PAGE SOUS LE MENU */
+    .page-about-only .about-page {
+        margin-top: 0 !important;
+        padding-top: 10px !important;
     }
 }
