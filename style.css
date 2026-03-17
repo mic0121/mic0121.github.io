@@ -872,3 +872,46 @@ footer {
         transform: none;
     }
 }
+/* La barre de navigation */
+.navbar {
+    display: flex;
+    align-items: center;
+    padding: 20px 5%;
+    background-color: #fff; /* Assure un fond opaque */
+    border-bottom: 1px solid #eee;
+    position: relative; /* Pour qu'elle reste dans le flux normal */
+    z-index: 10; /* Pour passer DEVANT l'image si elles se croisent */
+}
+
+.nav-back {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+/* La section À propos */
+.about-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* On s'assure que l'image ne dépasse pas et s'espace du menu */
+.about-page img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 30px; /* Espace crucial entre l'image et le texte */
+    display: block;
+}
+
+.about-page p {
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #444;
+}
