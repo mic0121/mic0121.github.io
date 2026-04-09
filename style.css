@@ -916,43 +916,14 @@ footer {
         padding-top: 10px !important;
     }
 }
-<style>
-.btn-outline-animate {
-    display: inline-block;
-    background-color: transparent; /* Fond transparent pour l'effet contour */
-    color: #D4AF37 !important; /* Texte doré comme sur l'image */
-    padding: 15px 35px; /* Ajuste le rembourrage pour la taille de ton image */
-    font-size: 1.1rem; /* Ajuste la taille de la police */
-    font-weight: normal; /* Plus fin que le style précédent */
-    text-transform: uppercase;
-    text-decoration: none;
-    border: 1px solid #D4AF37; /* Bordure dorée fine de 1px */
-    border-radius: 2px; /* Coins à peine arrondis */
-    letter-spacing: 1px;
-    transition: all 0.3s ease;
-    
-    /* Animation flagrante : pulsation de lueur dorée */
-    animation: outline-sparkle 2s infinite;
+/* Réduit l'espace sous la section qui précède le contact */
+#newsletter, .newsletter-section { 
+    padding-bottom: 20px !important; 
+    margin-bottom: 0 !important;
 }
 
-/* Effet au survol (hover) */
-.btn-outline-animate:hover {
-    background-color: #D4AF37; /* Fond plein au survol */
-    color: #000 !important; /* Texte noir au survol pour le contraste */
-    box-shadow: 0 0 15px rgba(212, 175, 55, 0.7); /* Lueur plus douce au survol */
-    transform: translateY(-2px); /* Léger mouvement vers le haut */
+/* On s'assure que la section contact ne s'éloigne pas */
+#contact {
+    margin-top: 0 !important;
+    padding-top: 20px !important;
 }
-
-/* L'animation qui rend le bouton flagrant */
-@keyframes outline-sparkle {
-    0% {
-        box-shadow: 0 0 0px rgba(212, 175, 55, 0); /* Pas de lueur */
-    }
-    50% {
-        box-shadow: 0 0 20px rgba(212, 175, 55, 1); /* Lueur intense autour du contour */
-    }
-    100% {
-        box-shadow: 0 0 0px rgba(212, 175, 55, 0); /* Lueur disparaît */
-    }
-}
-</style>
