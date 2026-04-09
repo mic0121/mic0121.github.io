@@ -917,40 +917,42 @@ footer {
     }
 }
 <style>
-.btn-animate-glow {
+.btn-outline-animate {
     display: inline-block;
-    background-color: #D4AF37;
-    color: #000 !important;
-    padding: 20px 40px;
-    font-size: 1.2rem;
-    font-weight: bold;
+    background-color: transparent; /* Fond transparent pour l'effet contour */
+    color: #D4AF37 !important; /* Texte doré comme sur l'image */
+    padding: 15px 35px; /* Ajuste le rembourrage pour la taille de ton image */
+    font-size: 1.1rem; /* Ajuste la taille de la police */
+    font-weight: normal; /* Plus fin que le style précédent */
     text-transform: uppercase;
     text-decoration: none;
-    border-radius: 5px;
+    border: 1px solid #D4AF37; /* Bordure dorée fine de 1px */
+    border-radius: 2px; /* Coins à peine arrondis */
     letter-spacing: 1px;
     transition: all 0.3s ease;
-    box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7);
-    animation: pulse-gold 2s infinite; /* L'animation démarre ici */
+    
+    /* Animation flagrante : pulsation de lueur dorée */
+    animation: outline-sparkle 2s infinite;
 }
 
-.btn-animate-glow:hover {
-    transform: scale(1.05);
-    background-color: #f1c40f;
-    box-shadow: 0 0 20px rgba(212, 175, 55, 1);
+/* Effet au survol (hover) */
+.btn-outline-animate:hover {
+    background-color: #D4AF37; /* Fond plein au survol */
+    color: #000 !important; /* Texte noir au survol pour le contraste */
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.7); /* Lueur plus douce au survol */
+    transform: translateY(-2px); /* Léger mouvement vers le haut */
 }
 
-@keyframes pulse-gold {
+/* L'animation qui rend le bouton flagrant */
+@keyframes outline-sparkle {
     0% {
-        transform: scale(0.95);
-        box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7);
+        box-shadow: 0 0 0px rgba(212, 175, 55, 0); /* Pas de lueur */
     }
-    70% {
-        transform: scale(1);
-        box-shadow: 0 0 0 20px rgba(212, 175, 55, 0);
+    50% {
+        box-shadow: 0 0 20px rgba(212, 175, 55, 1); /* Lueur intense autour du contour */
     }
     100% {
-        transform: scale(0.95);
-        box-shadow: 0 0 0 0 rgba(212, 175, 55, 0);
+        box-shadow: 0 0 0px rgba(212, 175, 55, 0); /* Lueur disparaît */
     }
 }
 </style>
