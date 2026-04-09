@@ -130,19 +130,54 @@
         <a href="https://www.youtube.com/@MichaelDemers52" target="_blank"><i class="fab fa-youtube"></i></a>
     </div>
 </div>
-    <section id="contact" class="contact reveal" style="padding: 40px 20px 100px; text-align: center; background-color: #0b0b0b !important; margin-top: 0 !important;">
-    <h2 style="color: #D4AF37 !important; font-family: sans-serif; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px;">
+<section id="contact" style="padding: 20px 20px 80px; text-align: center; background-color: #0b0b0b !important; margin-top: -30px !important;">
+    
+    <h2 style="color: #D4AF37 !important; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 5px; font-family: sans-serif;">
         Prêt à transformer votre événement ?
     </h2>
-    <p style="color: #ffffff !important; font-weight: 300; font-style: italic; margin-bottom: 40px; opacity: 0.8;">
+    <p style="color: #ffffff !important; font-weight: 300; font-style: italic; margin-bottom: 30px; opacity: 0.8; font-family: sans-serif;">
         Les dates se réservent souvent plusieurs semaines à l'avance.
     </p>
     
-    <div style="margin-top: 20px;">
-        <a href="soumission.html" class="bouton-contour-unique">
+    <div>
+        <a href="soumission.html" class="bouton-rect-final">
             Vérifier la disponibilité
         </a>
     </div>
+
+    <style>
+        /* Style précis : Rectangulaire, vide, contour doré */
+        .bouton-rect-final {
+            display: inline-block !important;
+            background-color: transparent !important; /* Vide au centre */
+            color: #D4AF37 !important; /* Texte doré */
+            border: 1px solid #D4AF37 !important; /* Contour fin */
+            padding: 15px 40px !important;
+            text-transform: uppercase !important;
+            text-decoration: none !important;
+            font-weight: 400 !important;
+            letter-spacing: 2px !important;
+            border-radius: 0px !important; /* Rectangle parfait (coins carrés) */
+            transition: all 0.3s ease !important;
+            font-family: sans-serif !important;
+            /* Animation de lueur "flagrante" */
+            animation: lueur-contour 2s infinite !important;
+        }
+
+        /* Effet au survol */
+        .bouton-rect-final:hover {
+            background-color: #D4AF37 !important;
+            color: #000000 !important;
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.8) !important;
+        }
+
+        /* Animation de la lueur */
+        @keyframes lueur-contour {
+            0% { box-shadow: 0 0 0px rgba(212, 175, 55, 0); }
+            50% { box-shadow: 0 0 15px rgba(212, 175, 55, 0.7); }
+            100% { box-shadow: 0 0 0px rgba(212, 175, 55, 0); }
+        }
+    </style>
 </section>
 <footer>
     <div class="ml-embedded" data-form="m0Ba1D"></div>
