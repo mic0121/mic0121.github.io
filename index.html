@@ -2,12 +2,12 @@
 <html lang="fr">
 <head>
     <script>
-        (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
-        .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
-        n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
-        (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
-        ml('account', '2136547');
-    </script>
+    (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+    .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+    n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+    (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+    ml('account', '2136547'); 
+</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Michael Demers | Mentaliste #1 à Québec</title>
@@ -128,20 +128,29 @@
         </div>
 
     <div class="footer-right">
-    <div class="ml-embedded" data-form="2136547"></div>
+<div class="footer-column footer-newsletter">
+    <div class="ml-embedded" data-form="m0Ba1D"></div>
 </div>
     </div>
 </footer>
 <script>
-    // Menu Mobile
-    const hamburger = document.getElementById('hamburger');
-    const navLinks = document.getElementById('nav-links');
-    hamburger.onclick = () => {
-        navLinks.classList.toggle('active');
-        hamburger.classList.toggle('toggle');
-    };
+    // 1. GESTION DU MENU MOBILE
+    document.addEventListener('DOMContentLoaded', () => {
+        const hamburger = document.getElementById('hamburger');
+        const navMiddle = document.getElementById('nav-middle');
+        const navRight = document.getElementById('nav-right');
 
-    // Animation au défilement (Scroll Reveal)
+        if (hamburger) {
+            hamburger.onclick = () => {
+                hamburger.classList.toggle('toggle');
+                // On bascule la classe 'active' sur les deux parties du menu
+                if(navMiddle) navMiddle.classList.toggle('active');
+                if(navRight) navRight.classList.toggle('active');
+            };
+        }
+    });
+
+    // 2. ANIMATION REVEAL
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) entry.target.classList.add('visible');
