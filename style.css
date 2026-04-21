@@ -1,84 +1,11 @@
 /* ==========================================
-   CONFIGURATION PRESTIGE 
+   1. VARIABLES & BASES (LOOK PRESTIGE)
    ========================================== */
-/* --- BANNIÈRE TOP --- */
-.top-announcement {
-    background: var(--gold-gradient);
-    color: #000;
-    text-align: center;
-    padding: 10px 0;
-    font-weight: 800;
-    font-size: 0.75rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    position: relative;
-    z-index: 1100;
-}
-
-/* --- NAVIGATION OPTIMISÉE --- */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 5%;
-    position: absolute;
-    width: 100%;
-    z-index: 1000;
-}
-
-.brand-container {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-
-.logo-placeholder {
-    width: 60px; /* À ajuster quand tu me donneras le logo */
-    height: auto;
-    margin-bottom: 5px;
-}
-
-/* --- MENU MOBILE (HAMBURGER) --- */
-.hamburger {
-    display: none;
-    cursor: pointer;
-    flex-direction: column;
-    gap: 5px;
-    z-index: 1100;
-}
-
-.hamburger span {
-    width: 30px;
-    height: 3px;
-    background: var(--gold);
-    transition: 0.3s;
-}
-
-@media (max-width: 768px) {
-    .hamburger { display: flex; }
-    
-    .nav-links {
-        display: none; /* Caché par défaut sur mobile */
-        flex-direction: column;
-        position: fixed;
-        top: 0;
-        right: 0;
-        height: 100vh;
-        width: 70%;
-        background: rgba(5, 5, 5, 0.98);
-        padding: 100px 40px;
-        gap: 30px;
-        border-left: 1px solid var(--gold);
-    }
-
-    .nav-links.active {
-        display: flex; /* Apparaît quand on clique */
-    }
-}
 :root {
     --gold: #D4AF37;
     --dark: #050505;
     --light: #ffffff;
+    --gold-gradient: linear-gradient(135deg, #D4AF37 0%, #F2D472 50%, #D4AF37 100%);
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -87,47 +14,79 @@ body {
     background-color: var(--dark);
     color: var(--light) !important;
     font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
     overflow-x: hidden;
 }
 
-/* Élimine les reflets violets sur les liens */
-a { text-decoration: none; color: inherit !important; }
-
-/* --- ANIMATION D'ENTRÉE CINÉMATOGRAPHIQUE --- */
-@keyframes heroReveal {
-    0% { opacity: 0; transform: scale(1.05); filter: blur(5px); }
-    100% { opacity: 1; transform: scale(1); filter: blur(0); }
+/* Tue le violet/bleu des liens une fois pour toutes */
+a, a:visited, a:hover, a:active {
+    text-decoration: none;
+    color: inherit !important;
 }
 
-/* --- NAVIGATION INVISIBLE (OVERLAY) --- */
+/* ==========================================
+   2. HEADER & NAVIGATION (FIX CHEVAUCHEMENT)
+   ========================================== */
+.top-announcement {
+    background: var(--gold-gradient);
+    color: #000 !important;
+    text-align: center;
+    padding: 10px 0;
+    font-weight: 800;
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 30px 5%;
-    position: absolute; /* Flotte sur l'image */
+    padding: 20px 5%;
+    background: var(--dark); /* Fond solide pour éviter la transparence buggée */
     width: 100%;
+    position: relative;
     z-index: 1000;
 }
 
-.logo-text { font-weight: 900; letter-spacing: 4px; font-size: 1.4rem; }
-
-.nav-links { display: flex; list-style: none; gap: 30px; align-items: center; }
-
-.nav-item { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; opacity: 0.8; transition: 0.3s; }
-.nav-item:hover { opacity: 1; color: var(--gold) !important; }
-
-.btn-gold-nav {
-    border: 1px solid var(--gold);
-    padding: 10px 20px;
-    color: var(--gold) !important;
-    font-weight: 700;
+.logo-text { 
+    font-weight: 900; 
+    letter-spacing: 3px; 
+    font-size: 1.2rem; 
+    white-space: nowrap;
 }
 
-/* --- HERO SECTION --- */
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+    align-items: center;
+}
+
+.nav-item {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    white-space: nowrap;
+    transition: 0.3s;
+}
+
+.nav-item:hover { color: var(--gold) !important; }
+
+.btn-gold-nav {
+    background: var(--gold-gradient);
+    color: #000 !important;
+    padding: 8px 18px;
+    font-weight: 800;
+    border-radius: 2px;
+}
+
+/* ==========================================
+   3. HERO SECTION (CENTRE & PROPRE)
+   ========================================== */
 .hero {
-    height: 100vh;
-    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.8)), 
+    min-height: 80vh;
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.8)), 
                 url('images/IMG_6112_pp.JPG') no-repeat center center;
     background-size: cover;
     display: flex;
@@ -135,137 +94,102 @@ a { text-decoration: none; color: inherit !important; }
     align-items: center;
     justify-content: center;
     text-align: center;
-    animation: heroReveal 2s ease-out;
+    padding: 40px 20px;
 }
 
 .main-title { 
-    font-size: clamp(3rem, 12vw, 6rem); 
-    letter-spacing: 15px; 
+    font-size: clamp(2.5rem, 8vw, 5.5rem); 
+    letter-spacing: 12px; 
     font-weight: 900; 
     text-transform: uppercase;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
 }
 
-.hero-subtitle { letter-spacing: 8px; color: var(--gold); font-weight: 300; margin-bottom: 25px; }
-
-.btn-premium {
-    background: var(--gold);
-    color: #000 !important;
-    padding: 18px 45px;
-    font-weight: 900;
-    letter-spacing: 3px;
+.hero-subtitle { 
+    letter-spacing: 5px; 
+    color: var(--gold); 
+    font-weight: 400; 
     text-transform: uppercase;
-    transition: 0.4s;
 }
-.btn-premium:hover { background: #fff; transform: translateY(-3px); }
 
-/* --- SERVICES & CARDS --- */
-.services-section { padding: 100px 5%; text-align: center; }
+/* ==========================================
+   4. SOCIAL PROOF & SERVICES (GRID)
+   ========================================== */
+.social-proof {
+    padding: 80px 5%;
+    text-align: center;
+    background: #000;
+}
 
-.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; }
+.services-section { padding: 80px 5%; text-align: center; }
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 50px auto;
+}
 
 .card {
-    height: 500px; position: relative; overflow: hidden;
-    background-size: cover; background-position: center;
-    display: flex; align-items: flex-end; transition: 0.5s;
-}
-.card:hover { transform: scale(1.02); }
-
-.card-overlay { 
-    position: absolute; inset: 0; 
-    background: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.2) 60%); 
-}
-
-.card-content { position: relative; z-index: 2; padding: 40px; text-align: left; }
-.card-content h3 { color: var(--gold); font-size: 2rem; margin-bottom: 10px; }
-/* --- SECTION SOCIAL PROOF --- */
-.social-proof {
-    background-color: #000000;
-    padding: 100px 5%;
-    text-align: center;
-}
-
-.proof-title {
-    font-size: clamp(1.5rem, 5vw, 2.5rem);
-    letter-spacing: 8px;
-    font-weight: 900;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-}
-
-.gold-divider {
-    width: 60px;
-    height: 3px;
-    background: var(--gold);
-    margin: 0 auto 20px;
-}
-
-.proof-subtitle {
-    font-size: 1rem;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    opacity: 0.7;
-    font-weight: 300;
-}
-/* --- SECTION CTA FINAL --- */
-.final-cta {
-    margin-top: 80px;
-    text-align: center;
-    padding-bottom: 40px;
-}
-
-.cta-title {
-    font-size: 2rem;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    margin-bottom: 15px;
-    font-weight: 900;
-}
-
-.cta-text {
-    font-size: 1rem;
-    letter-spacing: 2px;
-    opacity: 0.7;
-    margin-bottom: 35px;
-    text-transform: uppercase;
-}
-
-/* On s'assure que le bouton dans cette section a le bon look */
-.final-cta .btn-premium {
-    display: inline-block;
-    background: var(--gold);
-    color: #000 !important;
-    padding: 20px 50px;
-    font-weight: 900;
-    letter-spacing: 3px;
-    transition: 0.4s;
-    border: none;
-}
-
-.final-cta .btn-premium:hover {
-    background: #fff;
-    transform: translateY(-5px);
-}
-/* --- CORRECTION IMAGE À PROPOS --- */
-body.page-about-only .hero {
-    height: 60vh; /* Réduit la photo à 60% de l'écran au lieu de 100% */
-    background-position: top center; /* Garde le focus sur ton visage */
-}
-
-.about-content {
-    max-width: 800px;
-    margin: -50px auto 100px; /* Remonte un peu le texte sur la photo pour le style */
-    padding: 40px;
-    background: var(--dark);
+    height: 450px;
+    background-size: cover;
+    background-position: center;
     position: relative;
-    z-index: 10;
-    text-align: center;
-    border-top: 2px solid var(--gold);
+    display: flex;
+    align-items: flex-end;
+    padding: 30px;
+    overflow: hidden;
 }
 
-.about-content p {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    margin-bottom: 20px;
-    color: #fff;
+.card-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.95), transparent);
 }
+
+.card-content { position: relative; z-index: 2; text-align: left; }
+.card-content h3 { color: var(--gold); font-size: 1.8rem; margin-bottom: 5px; }
+
+/* ==========================================
+   5. BOUTONS ET CTA FINAL
+   ========================================== */
+.btn-premium {
+    background: var(--gold-gradient);
+    color: #000 !important;
+    padding: 18px 40px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-premium:hover { transform: translateY(-3px); filter: brightness(1.1); }
+
+.final-cta { margin-top: 60px; padding: 40px 20px; }
+
+/* ==========================================
+   6. MOBILE & HAMBURGER
+   ========================================== */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+}
+
+.hamburger span { width: 30px; height: 3px; background: var(--gold); }
+
+@media (max-width: 900px) {
+    .nav-links {
+        display: none; /* Cache pour laisser place au menu mobile */
+    }
+    .hamburger { display: flex; }
+    
+    .main-title { letter-spacing: 5px; }
+}
+
+/* --- FIX PAGE À PROPOS --- */
+body.page-about-only .hero { height: 50vh; }
