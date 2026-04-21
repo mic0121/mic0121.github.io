@@ -380,3 +380,26 @@ a { text-decoration: none; color: inherit !important; }
     .footer-container { flex-direction: column; gap: 40px; }
     .footer-left, .footer-center, .footer-right { text-align: center; justify-content: center; }
 }
+@media (max-width: 900px) {
+    /* Cache les menus par défaut */
+    .nav-middle, .nav-right {
+        display: none !important; 
+        flex-direction: column;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background: rgba(5, 5, 5, 0.98);
+        padding: 20px;
+        z-index: 999;
+    }
+
+    .nav-right { top: 250px; } /* Décale la partie droite sous la partie milieu */
+
+    /* Affiche quand la classe 'active' est ajoutée par le JS */
+    .nav-middle.active, .nav-right.active {
+        display: flex !important;
+    }
+
+    .hamburger { display: flex !important; }
+}
