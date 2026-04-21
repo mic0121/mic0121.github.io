@@ -8,174 +8,130 @@
     --gold-gradient: linear-gradient(135deg, #D4AF37 0%, #F2D472 50%, #D4AF37 100%);
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
     background-color: var(--dark);
     color: var(--light);
     font-family: 'Montserrat', sans-serif;
-    line-height: 1.6;
     overflow-x: hidden;
 }
 
-/* Élimine le violet des liens visités */
-a {
-    text-decoration: none;
-    color: inherit;
+/* ==========================================
+   2. ANIMATIONS D'ENTRÉE
+   ========================================== */
+@keyframes revealHero {
+    0% { opacity: 0; transform: scale(1.1); filter: blur(10px); }
+    100% { opacity: 1; transform: scale(1); filter: blur(0); }
 }
+
+@keyframes slideUp {
+    0% { opacity: 0; transform: translateY(40px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in { animation: slideUp 1s ease-out forwards; }
 
 /* ==========================================
-   2. HEADER & BANNIÈRE (CORRIGÉ)
+   3. MENU OVERLAY (GLASSMORPHISM)
    ========================================== */
-.top-announcement {
-    background: var(--gold-gradient);
-    color: #000;
-    text-align: center;
-    padding: 10px 0;
-    font-weight: 800;
-    font-size: 0.7rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-}
-
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 5%;
-    background: rgba(0,0,0,0.9);
-    position: relative;
+    padding: 25px 5%;
+    position: fixed; /* Fixé en haut pour flotter sur l'image */
+    width: 100%;
     z-index: 1000;
-}
-
-.logo-text {
-    font-weight: 900;
-    letter-spacing: 3px;
-    font-size: 1.2rem;
-    color: var(--light) !important;
-}
-
-.nav-links {
-    display: flex;
-    list-style: none;
-    gap: 25px;
+    background: rgba(0, 0, 0, 0.2); /* Très transparent */
+    backdrop-filter: blur(10px); /* Flou derrière le menu */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: 0.4s;
 }
 
 .nav-item {
-    font-size: 0.8rem;
+    color: var(--light);
+    text-decoration: none;
     text-transform: uppercase;
-    letter-spacing: 1.5px;
-    color: var(--light) !important;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    margin-left: 30px;
+    transition: 0.3s;
+    opacity: 0.8;
 }
 
-.btn-gold-nav {
-    background: var(--gold-gradient);
-    color: #000 !important;
-    padding: 8px 15px;
-    font-weight: 800;
-    border-radius: 2px;
-}
+.nav-item:hover { opacity: 1; color: var(--gold); }
 
 /* ==========================================
-   3. HERO & ACCUEIL
+   4. HERO AVEC EFFET FADE / ZOOM
    ========================================== */
 .hero {
-    height: 80vh;
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/IMG_6112_pp.JPG');
-    background-size: cover;
-    background-position: center;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     text-align: center;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.8)), 
+                url('images/IMG_6112_pp.JPG') no-repeat center center;
+    background-size: cover;
+    z-index: -1;
+    animation: revealHero 2.5s ease-out; /* Effet de zoom lent au chargement */
 }
 
 .main-title {
-    font-size: 4rem;
-    letter-spacing: 8px;
-    text-transform: uppercase;
-}
-
-.btn-premium {
-    margin-top: 30px;
-    background: var(--gold-gradient);
-    color: #000 !important;
-    padding: 15px 35px;
-    font-weight: 800;
-    letter-spacing: 2px;
-    display: inline-block;
+    font-size: clamp(2rem, 10vw, 5.5rem);
+    letter-spacing: 15px;
+    font-weight: 900;
+    text-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    animation: slideUp 1.5s ease-out;
 }
 
 /* ==========================================
-   4. SERVICES (LE VISUEL QUE TU AIMES)
+   5. CARTES DE SERVICES (OVERLAY PHOTO)
    ========================================== */
-.services-section {
-    padding: 80px 5%;
-    text-align: center;
-}
-
-.section-title {
-    color: var(--gold);
-    font-size: 2.5rem;
-    margin-bottom: 50px;
-    letter-spacing: 4px;
-}
-
 .cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+    padding: 60px 5%;
 }
 
 .card {
-    height: 450px;
+    height: 550px;
     position: relative;
     background-size: cover;
     background-position: center;
+    border-radius: 4px;
     overflow: hidden;
-    display: flex;
-    align-items: flex-end;
-    border: 1px solid rgba(212,175,55,0.2);
+    transition: 0.6s cubic-bezier(0.25, 1, 0.5, 1);
 }
+
+.card:hover { transform: scale(1.03); }
 
 .card-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to top, rgba(0,0,0,0.95), transparent);
-    z-index: 1;
+    background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, transparent 60%);
+    transition: 0.4s;
 }
+
+.card:hover .card-overlay { background: rgba(0,0,0,0.4); }
 
 .card-content {
-    position: relative;
-    z-index: 2;
-    padding: 30px;
-    text-align: left;
-}
-
-.card-content h3 {
-    color: var(--gold);
-    font-size: 1.8rem;
-    text-transform: uppercase;
+    position: absolute;
+    bottom: 0; padding: 40px; z-index: 2;
 }
 
 /* ==========================================
-   5. PAGE À PROPOS (SÉCURITÉ)
+   6. FIX À PROPOS
    ========================================== */
-body.page-about-only {
-    background: var(--dark) !important;
-}
-
-.about-page {
-    padding: 100px 10%;
-    text-align: center;
-}
-
-.about-page p {
-    margin-bottom: 20px;
-    color: var(--light) !important;
-}
+body.page-about-only .hero { display: none; }
+body.page-about-only .navbar { background: rgba(0,0,0,0.9); position: relative; }
