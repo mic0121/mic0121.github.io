@@ -1,6 +1,3 @@
-/* ==========================================
-   1. VARIABLES & BASES (LOOK PRESTIGE)
-   ========================================== */
 :root {
     --gold: #D4AF37;
     --dark: #050505;
@@ -14,19 +11,10 @@ body {
     background-color: var(--dark);
     color: var(--light) !important;
     font-family: 'Montserrat', sans-serif;
-    line-height: 1.6;
     overflow-x: hidden;
 }
 
-/* Tue le violet/bleu des liens une fois pour toutes */
-a, a:visited, a:hover, a:active {
-    text-decoration: none;
-    color: inherit !important;
-}
-
-/* ==========================================
-   2. HEADER & NAVIGATION (FIX CHEVAUCHEMENT)
-   ========================================== */
+/* --- NAVIGATION EN OVERLAY (RETOUR AU LOOK INITIAL) --- */
 .top-announcement {
     background: var(--gold-gradient);
     color: #000 !important;
@@ -35,58 +23,35 @@ a, a:visited, a:hover, a:active {
     font-weight: 800;
     font-size: 0.75rem;
     letter-spacing: 2px;
-    text-transform: uppercase;
+    position: relative;
+    z-index: 1100;
 }
 
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 5%;
-    background: var(--dark); /* Fond solide pour éviter la transparence buggée */
+    padding: 30px 5%;
+    position: absolute; /* Retour en overlay sur la photo */
     width: 100%;
-    position: relative;
     z-index: 1000;
+    background: transparent; /* Pas de fond noir ici */
 }
 
-.logo-text { 
-    font-weight: 900; 
-    letter-spacing: 3px; 
-    font-size: 1.2rem; 
-    white-space: nowrap;
-}
-
-.nav-links {
-    display: flex;
-    list-style: none;
-    gap: 25px;
-    align-items: center;
-}
-
-.nav-item {
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    white-space: nowrap;
-    transition: 0.3s;
-}
-
-.nav-item:hover { color: var(--gold) !important; }
+.nav-links { display: flex; list-style: none; gap: 25px; align-items: center; }
 
 .btn-gold-nav {
     background: var(--gold-gradient);
     color: #000 !important;
-    padding: 8px 18px;
+    padding: 10px 20px;
     font-weight: 800;
     border-radius: 2px;
 }
 
-/* ==========================================
-   3. HERO SECTION (CENTRE & PROPRE)
-   ========================================== */
+/* --- HERO & ESPACEMENT BOUTON --- */
 .hero {
-    min-height: 80vh;
-    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.8)), 
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), 
                 url('images/IMG_6112_pp.JPG') no-repeat center center;
     background-size: cover;
     display: flex;
@@ -94,102 +59,47 @@ a, a:visited, a:hover, a:active {
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 40px 20px;
-}
-
-.main-title { 
-    font-size: clamp(2.5rem, 8vw, 5.5rem); 
-    letter-spacing: 12px; 
-    font-weight: 900; 
-    text-transform: uppercase;
-    margin-bottom: 10px;
 }
 
 .hero-subtitle { 
     letter-spacing: 5px; 
     color: var(--gold); 
-    font-weight: 400; 
+    margin-bottom: 35px; /* Espace augmenté entre la phrase et le bouton */
     text-transform: uppercase;
 }
 
-/* ==========================================
-   4. SOCIAL PROOF & SERVICES (GRID)
-   ========================================== */
-.social-proof {
-    padding: 80px 5%;
-    text-align: center;
-    background: #000;
-}
-
-.services-section { padding: 80px 5%; text-align: center; }
-
-.cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    max-width: 1200px;
-    margin: 50px auto;
-}
-
-.card {
-    height: 450px;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    display: flex;
-    align-items: flex-end;
-    padding: 30px;
-    overflow: hidden;
-}
-
-.card-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to top, rgba(0,0,0,0.95), transparent);
-}
-
-.card-content { position: relative; z-index: 2; text-align: left; }
-.card-content h3 { color: var(--gold); font-size: 1.8rem; margin-bottom: 5px; }
-
-/* ==========================================
-   5. BOUTONS ET CTA FINAL
-   ========================================== */
 .btn-premium {
     background: var(--gold-gradient);
     color: #000 !important;
-    padding: 18px 40px;
-    font-weight: 800;
-    letter-spacing: 2px;
-    display: inline-block;
+    padding: 20px 45px;
+    font-weight: 900;
+    letter-spacing: 3px;
     border: none;
-    cursor: pointer;
     transition: 0.3s;
 }
 
-.btn-premium:hover { transform: translateY(-3px); filter: brightness(1.1); }
-
-.final-cta { margin-top: 60px; padding: 40px 20px; }
-
-/* ==========================================
-   6. MOBILE & HAMBURGER
-   ========================================== */
-.hamburger {
-    display: none;
-    flex-direction: column;
-    gap: 6px;
-    cursor: pointer;
+/* --- SECTION CTA FINAL (ESPACEMENT RÉDUIT) --- */
+.final-cta { 
+    padding: 60px 20px 20px 20px; /* Réduit l'espace en bas */
+    text-align: center;
 }
 
-.hamburger span { width: 30px; height: 3px; background: var(--gold); }
+.cta-text { 
+    margin-bottom: 40px; /* Plus d'espace avant le bouton "Vérifier" */
+    opacity: 0.8;
+}
 
+/* --- INFOLETTRE (COLLÉ AU BOUTON) --- */
+footer {
+    padding: 0 5% 60px 5%; /* Pas de padding top pour coller à la section précédente */
+    text-align: center;
+}
+
+.ml-embedded { margin-top: 0; } /* Supprime l'espace de l'infolettre */
+
+/* --- FIX DOUBLONS & BUG MOBILE --- */
+.hamburger { display: none; }
 @media (max-width: 900px) {
-    .nav-links {
-        display: none; /* Cache pour laisser place au menu mobile */
-    }
-    .hamburger { display: flex; }
-    
-    .main-title { letter-spacing: 5px; }
+    .navbar { position: relative; background: var(--dark); }
+    .nav-links { display: none; }
 }
-
-/* --- FIX PAGE À PROPOS --- */
-body.page-about-only .hero { height: 50vh; }
