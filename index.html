@@ -21,9 +21,7 @@
     <nav class="navbar">
         <div class="logo-text">MICHAEL DEMERS</div>
         <div class="hamburger" id="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
+            <span></span><span></span><span></span>
         </div>
         <ul class="nav-links" id="nav-links">
             <li><a href="about.html">L'Artiste</a></li>
@@ -35,7 +33,7 @@
 </header>
 
 <section class="hero">
-    <div class="hero-content">
+    <div class="hero-content reveal">
         <h1 class="main-title">MICHAEL DEMERS</h1>
         <p class="hero-subtitle">MENTALISTE HAUT DE GAMME</p>
         <a href="soumission.html" class="btn-premium">RÉSERVER L'EXPÉRIENCE</a>
@@ -51,23 +49,32 @@
 </section>
 
 <section id="services" class="services-section">
-    <h2 class="section-title">SERVICES EXCLUSIFS</h2>
-    <div class="cards">
+    <h2 class="section-title reveal">SERVICES EXCLUSIFS</h2>
+    <div class="cards reveal">
         <div class="card" style="background-image: url('images/prive.heic');">
             <div class="card-overlay"></div>
-            <div class="card-content"><h3>Corporatif</h3><p>L'excellence pour vos événements d'affaires.</p></div>
+            <div class="card-content">
+                <h3>Corporatif</h3>
+                <p>L'excellence pour vos événements d'affaires.</p>
+            </div>
         </div>
         <div class="card" style="background-image: url('images/oneil.HEIC');">
             <div class="card-overlay"></div>
-            <div class="card-content"><h3>Privé & VIP</h3><p>Une expérience intime et mystérieuse.</p></div>
+            <div class="card-content">
+                <h3>Privé & VIP</h3>
+                <p>Une expérience intime et mystérieuse.</p>
+            </div>
         </div>
         <div class="card" style="background-image: url('images/gala.JPG');">
             <div class="card-overlay"></div>
-            <div class="card-content"><h3>Galas & Scène</h3><p>Une performance d'impact mondial.</p></div>
+            <div class="card-content">
+                <h3>Galas & Scène</h3>
+                <p>Une performance d'impact mondial.</p>
+            </div>
         </div>
     </div>
 
-    <div class="final-cta">
+    <div class="final-cta reveal">
         <h2 class="cta-title">Prêt à transformer votre événement ?</h2>
         <p class="cta-text">Les dates pour 2026 s'envolent rapidement. Assurez la présence du mentaliste #1 à Québec.</p>
         <a href="soumission.html" class="btn-premium">VÉRIFIER LES DISPONIBILITÉS</a>
@@ -80,13 +87,22 @@
 </footer>
 
 <script>
+    // Menu Mobile
     const hamburger = document.getElementById('hamburger');
     const navLinks = document.getElementById('nav-links');
-
-    hamburger.addEventListener('click', () => {
+    hamburger.onclick = () => {
         navLinks.classList.toggle('active');
-        hamburger.classList.toggle('toggle'); 
-    });
+        hamburger.classList.toggle('toggle');
+    };
+
+    // Animation au défilement (Scroll Reveal)
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) entry.target.classList.add('visible');
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 </script>
 </body>
 </html>
