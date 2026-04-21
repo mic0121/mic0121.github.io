@@ -20,115 +20,129 @@ body {
 }
 
 /* ==========================================
-   2. NAVIGATION HAUT DE GAMME
+   2. ANNONCE & NAVIGATION (LA BANNIÈRE)
    ========================================== */
+.top-announcement {
+    background: var(--gold-gradient);
+    color: #000;
+    text-align: center;
+    padding: 10px 0;
+    font-weight: 800;
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 30px 5%;
-    position: absolute;
-    width: 100%;
+    padding: 20px 5%;
+    background: rgba(0,0,0,0.8);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
     z-index: 1000;
-    box-sizing: border-box;
 }
 
 .logo-text {
     color: var(--light);
     text-decoration: none;
     font-weight: 900;
-    letter-spacing: 4px;
-    font-size: 1.2rem;
+    letter-spacing: 3px;
+    font-size: 1.1rem;
 }
 
 .nav-links {
     display: flex;
     list-style: none;
-    gap: 30px;
+    gap: 25px;
+    align-items: center;
+    margin: 0;
 }
 
 .nav-item {
-    color: rgba(255,255,255,0.8);
+    color: var(--light);
     text-decoration: none;
     text-transform: uppercase;
     font-size: 0.8rem;
-    letter-spacing: 2px;
-    transition: 0.3s;
+    letter-spacing: 1.5px;
+    font-weight: 500;
 }
 
-.nav-item:hover { color: var(--gold); }
+.btn-gold-nav {
+    background: var(--gold-gradient);
+    color: #000 !important;
+    padding: 8px 18px;
+    border-radius: 2px;
+    font-weight: 800;
+}
 
 /* ==========================================
-   3. HERO SECTION (ACCUEIL)
+   3. SECTION SERVICES (LES CARTES PHOTO)
    ========================================== */
-.hero {
-    height: 100vh;
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), 
-                url('images/IMG_6112_pp.JPG') no-repeat center center;
-    background-size: cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.services-section {
+    padding: 100px 5%;
     text-align: center;
 }
 
-.main-title {
-    font-size: clamp(2.5rem, 8vw, 5rem);
-    letter-spacing: 10px;
+.section-title {
+    font-size: 2.5rem;
+    letter-spacing: 5px;
+    margin-bottom: 60px;
+    color: var(--gold);
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    height: 450px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    border-radius: 4px;
+    overflow: hidden;
+    transition: transform 0.4s ease;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.card:hover { transform: translateY(-10px); }
+
+.card-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.9) 10%, rgba(0,0,0,0.2) 60%);
+}
+
+.card-content {
+    position: relative;
+    padding: 40px;
+    width: 100%;
+    z-index: 2;
+}
+
+.card-content h3 {
+    color: var(--gold);
+    font-size: 1.8rem;
     margin-bottom: 10px;
-    text-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
-}
-
-.btn-premium {
-    display: inline-block;
-    padding: 18px 40px;
-    background: var(--gold-gradient);
-    color: #000;
-    text-decoration: none;
-    font-weight: bold;
-    letter-spacing: 2px;
-    border-radius: 2px;
-    transition: 0.4s;
-    margin-top: 30px;
-}
-
-.btn-premium:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 30px rgba(212, 175, 55, 0.4);
 }
 
 /* ==========================================
-   4. CORRECTIF SÉCURITÉ PAGE À PROPOS
+   4. FIX SÉCURITÉ PAGE À PROPOS
    ========================================== */
 body.page-about-only {
     background-color: var(--dark) !important;
-    background-image: none !important;
 }
 
 .about-page {
-    padding: 160px 20px 80px;
-    max-width: 850px;
+    padding: 100px 20px;
+    max-width: 800px;
     margin: 0 auto;
     text-align: center;
-}
-
-.about-page h1 {
-    color: var(--gold);
-    font-size: 2.5rem;
-    letter-spacing: 4px;
-    margin-bottom: 40px;
-}
-
-.about-page p {
-    font-size: 1.15rem;
-    color: rgba(255,255,255,0.9);
-    text-align: justify;
-    margin-bottom: 25px;
-}
-
-.about-page img {
-    width: 100%;
-    max-width: 450px;
-    border: 1px solid rgba(212, 175, 55, 0.4);
-    margin-bottom: 40px;
 }
