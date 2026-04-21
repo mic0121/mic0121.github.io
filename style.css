@@ -14,7 +14,10 @@ body {
     overflow-x: hidden;
 }
 
-/* --- NAVIGATION EN OVERLAY (RETOUR AU LOOK INITIAL) --- */
+/* Tue le violet des liens */
+a { text-decoration: none; color: inherit !important; }
+
+/* --- NAVIGATION EN OVERLAY --- */
 .top-announcement {
     background: var(--gold-gradient);
     color: #000 !important;
@@ -32,11 +35,13 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 30px 5%;
-    position: absolute; /* Retour en overlay sur la photo */
+    position: absolute; 
     width: 100%;
     z-index: 1000;
-    background: transparent; /* Pas de fond noir ici */
+    background: transparent;
 }
+
+.logo-text { font-weight: 900; letter-spacing: 3px; font-size: 1.2rem; }
 
 .nav-links { display: flex; list-style: none; gap: 25px; align-items: center; }
 
@@ -48,7 +53,7 @@ body {
     border-radius: 2px;
 }
 
-/* --- HERO & ESPACEMENT BOUTON --- */
+/* --- HERO & ESPACEMENTS --- */
 .hero {
     height: 100vh;
     background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), 
@@ -61,10 +66,12 @@ body {
     text-align: center;
 }
 
+.main-title { font-size: 4rem; font-weight: 900; letter-spacing: 8px; margin-bottom: 10px; }
+
 .hero-subtitle { 
     letter-spacing: 5px; 
     color: var(--gold); 
-    margin-bottom: 35px; /* Espace augmenté entre la phrase et le bouton */
+    margin-bottom: 50px; /* ESPACE ACCRU : Phrase <-> Bouton */
     text-transform: uppercase;
 }
 
@@ -75,31 +82,77 @@ body {
     font-weight: 900;
     letter-spacing: 3px;
     border: none;
+    cursor: pointer;
     transition: 0.3s;
 }
 
-/* --- SECTION CTA FINAL (ESPACEMENT RÉDUIT) --- */
+/* --- SERVICES & CARDS --- */
+.services-section { padding: 80px 5% 40px 5%; text-align: center; }
+.section-title { letter-spacing: 10px; margin-bottom: 60px; font-weight: 900; }
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.card {
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    padding: 20px;
+}
+
+.card-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+}
+
+.card-content { position: relative; z-index: 2; text-align: left; }
+
+/* --- CTA FINAL & FOOTER (COLLÉS) --- */
 .final-cta { 
-    padding: 60px 20px 20px 20px; /* Réduit l'espace en bas */
+    padding: 40px 20px; 
     text-align: center;
 }
 
 .cta-text { 
-    margin-bottom: 40px; /* Plus d'espace avant le bouton "Vérifier" */
+    margin-bottom: 50px; /* ESPACE ACCRU : Phrase <-> Bouton */
     opacity: 0.8;
 }
 
-/* --- INFOLETTRE (COLLÉ AU BOUTON) --- */
-footer {
-    padding: 0 5% 60px 5%; /* Pas de padding top pour coller à la section précédente */
+.main-footer {
+    padding: 20px 5% 60px 5%; /* Padding réduit pour coller au bouton */
     text-align: center;
 }
 
-.ml-embedded { margin-top: 0; } /* Supprime l'espace de l'infolettre */
+.copyright { margin-top: 40px; opacity: 0.3; letter-spacing: 2px; }
 
-/* --- FIX DOUBLONS & BUG MOBILE --- */
-.hamburger { display: none; }
+/* --- MOBILE --- */
+.hamburger { 
+    display: none; 
+    flex-direction: column; 
+    gap: 5px; 
+    cursor: pointer;
+}
+.hamburger span { width: 25px; height: 3px; background: white; }
+
 @media (max-width: 900px) {
-    .navbar { position: relative; background: var(--dark); }
-    .nav-links { display: none; }
+    .navbar { position: relative; background: var(--dark); padding: 15px 5%; }
+    .nav-links { 
+        display: none; 
+        flex-direction: column; 
+        position: absolute; 
+        top: 100%; left: 0; width: 100%; 
+        background: var(--dark); 
+        padding: 20px;
+    }
+    .nav-links.active { display: flex; }
+    .hamburger { display: flex; }
+    .main-title { font-size: 2.5rem; }
 }
