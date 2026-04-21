@@ -346,84 +346,56 @@ a { text-decoration: none; color: inherit !important; }
     
     .nav-links { display: none; } /* Cache tout pour laisser le hamburger gérer */
 }
-/* --- FOOTER VERTICAL --- */
+/* --- FOOTER CENTRALISÉ --- */
 .site-footer {
     background-color: #000;
-    padding: 80px 5% 40px;
-    border-top: 1px solid rgba(212, 175, 55, 0.2);
-    text-align: center; /* Centre tout le texte */
+    padding: 60px 5%;
+    text-align: center;
+    border-top: 1px solid rgba(212, 175, 55, 0.1);
 }
 
 .footer-content {
     display: flex;
-    flex-direction: column; /* Force l'empilement vertical */
-    align-items: center;    /* Centre les blocs horizontalement */
-    gap: 50px;             /* Espace entre le logo, les réseaux et l'infolettre */
-    max-width: 600px;
-    margin: 0 auto;
+    flex-direction: column; /* Empile les sections verticalement */
+    align-items: center;    /* Centre chaque section horizontalement */
+    gap: 40px;             /* Espace entre le nom et les réseaux */
 }
 
 .footer-section {
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;    /* Centre le contenu à l'intérieur de la section */
+}
+
+/* --- CENTRALISATION DES ICÔNES --- */
+.nav-socials {
+    display: flex;
+    justify-content: center; /* Centre les icônes sur la ligne */
+    align-items: center;
+    gap: 25px;              /* Espace entre chaque icône */
+}
+
+.nav-socials a {
+    color: #fff;
+    transition: transform 0.3s, color 0.3s;
+    display: flex;
+    align-items: center;
+}
+
+.nav-socials a:hover {
+    color: #d4af37; /* Ton doré */
+    transform: translateY(-3px);
 }
 
 .footer-logo {
     font-weight: 900;
     letter-spacing: 4px;
-    font-size: 1.5rem;
     margin-bottom: 10px;
 }
 
 .footer-copy {
     font-size: 0.7rem;
-    color: rgba(255,255,255,0.4);
+    opacity: 0.5;
     letter-spacing: 1px;
-}
-
-.footer-title {
-    font-size: 0.8rem;
-    letter-spacing: 3px;
-    margin-bottom: 20px;
-    color: var(--gold);
-}
-
-.footer-socials {
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-}
-
-.footer-socials a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    transition: 0.3s;
-}
-
-.footer-socials a:hover {
-    color: var(--gold);
-}
-
-/* --- FIX MENU HAMBURGER MOBILE --- */
-@media (max-width: 900px) {
-    .nav-links {
-        display: none; /* Caché par défaut */
-        flex-direction: column;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background: rgba(5, 5, 5, 0.98);
-        padding: 30px;
-    }
-
-    .nav-links.active {
-        display: flex; /* S'affiche quand on clique */
-    }
-
-    .hamburger {
-        display: flex !important;
-        cursor: pointer;
-    }
 }
