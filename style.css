@@ -17,7 +17,18 @@ body {
 /* --- ANIMATIONS --- */
 .reveal { opacity: 0; transform: translateY(30px); transition: 1s ease-out; }
 .reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal {
+    opacity: 0;
+    filter: blur(10px); /* Ajoute un flou mystérieux */
+    transform: translateY(30px);
+    transition: all 1.2s cubic-bezier(0.17, 0.67, 0.83, 0.67);
+}
 
+.reveal.active {
+    opacity: 1;
+    filter: blur(0px); /* Le texte devient net */
+    transform: translateY(0px);
+}
 /* --- HEADER --- */
 .top-announcement {
     background: var(--gold-gradient);
@@ -57,7 +68,12 @@ body {
 .btn-premium {
     background: var(--gold-gradient); color: #000 !important;
     padding: 20px 45px; font-weight: 900; text-decoration: none; display: inline-block;
-}
+.parallax-section {
+    background-attachment: fixed !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+}}
 
 /* --- SOCIAL PROOF --- */
 .social-proof-elite { padding: 100px 5%; text-align: center; }
