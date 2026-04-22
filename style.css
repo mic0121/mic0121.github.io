@@ -128,3 +128,61 @@ a { text-decoration: none; color: inherit !important; }
     .nav-links a { font-size: 1.8rem; }
     .main-title { font-size: 3rem; letter-spacing: 5px; }
 }
+/* --- SECTION PREUVE SOCIALE --- */
+.social-proof {
+    padding: 120px 5%;
+    background-color: var(--dark);
+    text-align: center; /* Centre tout le contenu */
+}
+
+.container-proof {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.stars {
+    color: var(--gold);
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+    letter-spacing: 5px; /* Espace les étoiles comme sur ton image */
+}
+
+.proof-title {
+    font-size: 2.5rem; /* Plus grand pour l'impact */
+    font-weight: 900;
+    letter-spacing: 5px;
+    margin-bottom: 20px;
+    color: var(--light);
+}
+
+.gold-divider {
+    width: 80px;
+    height: 2px;
+    background: var(--gold-gradient);
+    margin: 30px auto; /* Centre la ligne dorée */
+}
+
+.proof-subtitle {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.proof-subtitle strong {
+    color: var(--light);
+    font-weight: 700;
+}
+
+/* --- OPTIMISATION MOBILE --- */
+@media (max-width: 768px) {
+    .proof-title {
+        font-size: 1.8rem;
+        letter-spacing: 2px;
+    }
+    
+    .social-proof {
+        padding: 80px 5%;
+    }
+}
