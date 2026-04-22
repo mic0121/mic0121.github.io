@@ -72,12 +72,17 @@
 </footer>
 
 <script>
-    // Réactivation de l'effet reveal pour cette page
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-            if (entry.isIntersecting) entry.target.classList.add('visible');
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
         });
-    }, { threshold: 0.1 });
+    }, { 
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px" // Déclenche l'effet un peu avant que l'élément soit au centre
+    });
+    
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 </script>
 </body>
