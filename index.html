@@ -11,7 +11,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Michael Demers | Mentaliste #1 à Québec</title>
-    <link rel="stylesheet" href="style.css?v=2026.2">
+    <link rel="stylesheet" href="style.css?v=2026.3">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -39,11 +39,11 @@
 
         <div class="nav-right-actions hide-on-mobile">
             <div class="nav-socials-top">
-    <a href="https://instagram.com/michaeldemers_" target="_blank"><i class="fab fa-instagram"></i></a>
-    <a href="https://tiktok.com/@Michael.demers52" target="_blank"><i class="fab fa-tiktok"></i></a>
-    <a href="https://facebook.com/michaelmagicien" target="_blank"><i class="fab fa-facebook"></i></a>
-    <a href="https://youtube.com/@MichaelDemers52" target="_blank"><i class="fab fa-youtube"></i></a>
-           </div>
+                <a href="https://instagram.com/michaeldemers_" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://tiktok.com/@Michael.demers52" target="_blank"><i class="fab fa-tiktok"></i></a>
+                <a href="https://facebook.com/michaelmagicien" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://youtube.com/@MichaelDemers52" target="_blank"><i class="fab fa-youtube"></i></a>
+            </div>
         </div>
     </nav>
 </header>
@@ -83,20 +83,18 @@
             <div class="card-content"><h3>Galas & Scène</h3><p>Une performance d'impact maximale.</p></div>
         </div>
     </div>
-
-    <section id="services" class="services-section">
-    </section>
-
-<section class="cta-section-gold">
-    <h2>Prêt à transformer votre événement ?</h2>
-    <p>Les dates pour 2026 s'envolent rapidement.</p>
-    <a href="#" class="btn-gold-large">VÉRIFIER LES DISPONIBILITÉS</a>
 </section>
 
-<section id="infolettre">
-    <div id="billetterie" class="footer-mailerlite reveal">
-        <div class="ml-embedded" data-form="m0Ba1D"></div>
+<section id="contact" class="cta-section-gold reveal">
+    <h2>Prêt à transformer votre événement ?</h2>
+    <p>Les dates pour 2026 s'envolent rapidement.</p>
+    <div class="btn-wrapper-final">
+        <a href="soumission.html" class="btn-premium btn-final-adjust hover-lift">VÉRIFIER LES DISPONIBILITÉS</a>
     </div>
+</section>
+
+<section id="infolettre" class="footer-mailerlite reveal">
+    <div class="ml-embedded" data-form="m0Ba1D"></div>
 </section>
 
 <footer class="site-footer">
@@ -122,13 +120,11 @@
         hamburger.onclick = function() {
             navMenu.classList.toggle('active');
         };
-        // Ferme le menu au clic sur un lien mobile
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.onclick = () => navMenu.classList.remove('active');
         });
     }
 
-    // Animation au défilement
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) entry.target.classList.add('visible');
