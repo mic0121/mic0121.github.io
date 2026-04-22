@@ -6,69 +6,165 @@
     <title>L'Artiste | Michael Demers</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Playfair+Display:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        body { background-color: #050505; color: white; margin: 0; }
+        /* Styles spécifiques pour corriger le fond noir et l'affichage */
+        body { 
+            background-color: #050505 !important; 
+            color: white !important; 
+            margin: 0; 
+            font-family: 'Montserrat', sans-serif;
+            overflow-x: hidden;
+        }
         
-        .about-section {
-            padding: 180px 20px 100px;
-            max-width: 900px;
+        .about-hero {
+            height: 60vh; /* Hauteur de la photo */
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6)), 
+                        url('images/about_portrait.JPG') center/cover no-repeat; /* CHANGE ICI LE NOM DE TA PHOTO */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .about-title {
+            font-size: clamp(2.5rem, 8vw, 4rem);
+            font-weight: 900;
+            letter-spacing: 12px;
+            color: #D4AF37;
+            text-transform: uppercase;
+            position: absolute;
+            bottom: -20px; /* Chevauchement élégant sur le texte */
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 5;
+        }
+
+        .about-content {
+            padding: 80px 20px 100px;
+            max-width: 800px;
             margin: 0 auto;
             text-align: center;
         }
 
-        .about-title {
-            font-size: clamp(2rem, 6vw, 3.5rem);
-            font-weight: 900;
-            letter-spacing: 8px;
-            color: #D4AF37;
-            text-transform: uppercase;
-            margin-bottom: 40px;
-        }
-
-        .about-content {
+        .about-text {
             font-size: 1.15rem;
-            line-height: 1.8;
-            color: #eee;
+            line-height: 1.9;
+            color: #ffffff;
             text-align: justify;
-            font-family: 'Montserrat', sans-serif;
+            margin-bottom: 25px;
         }
 
-        .highlight-text {
+        .quote-gold {
             font-family: 'Playfair Display', serif;
             font-style: italic;
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             color: #D4AF37;
-            margin: 40px 0;
+            margin: 50px 0;
             display: block;
+            text-align: center;
         }
 
-        /* Rappel du fix pour le logo sur About aussi */
+        /* --- LE FIX LOGO MOBILE --- */
         @media (max-width: 768px) {
-            .logo { display: none !important; }
-            .about-section { padding-top: 120px; }
+            header .logo, 
+            header .nav-left img, 
+            .logo a img {
+                display: none !important;
+                visibility: hidden !important;
+            }
+            .about-hero {
+                height: 40vh;
+            }
+            .about-title {
+                letter-spacing: 5px;
+                font-size: 2rem;
+                bottom: -10px;
+            }
+            .about-content {
+                padding-top: 60px;
+            }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        </header>
-
-    <section class="about-section">
-        <h1 class="about-title">L'Artiste</h1>
-        
-        <div class="about-content">
-            <p>
-                Basé à Québec, Michael Demers redéfinit l'art de l'impossible. Spécialisé dans le mentalisme haut de gamme, il transforme chaque événement en une expérience psychologique immersive où la réalité semble se plier à sa volonté.
-            </p>
-            
-            <span class="highlight-text">"L'élégance du mystère, la précision de l'esprit."</span>
-            
-            <p>
-                Que ce soit pour des galas corporatifs ou des événements privés exclusifs, son approche allie charisme, psychologie et une maîtrise technique qui laisse les spectateurs les plus sceptiques sans voix. Plus qu'une performance, c'est un voyage aux frontières de la perception humaine.
-            </p>
+<header>
+    <div class="top-announcement">L'EXPÉRIENCE QUI TRANSFORMERA VOTRE ÉVÉNEMENT</div>
+    <nav class="navbar">
+        <div class="nav-left">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo.PNG" alt="Michael Demers Logo" style="height: 70px; width: auto;">
+                </a>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span><span></span><span></span>
+            </div>
         </div>
-    </section>
 
-    </body>
+        <div class="nav-center-links" id="nav-menu">
+            <ul class="nav-links">
+                <li><a href="index.html">ACCUEIL</a></li>
+                <li><a href="about.html" style="color: #D4AF37;">L'ARTISTE</a></li>
+                <li><a href="index.html#services">SERVICES</a></li>
+                <li><a href="soumission.html" class="btn-gold-nav">RÉSERVER</a></li>
+            </ul>
+        </div>
+
+        <div class="nav-right-actions hide-on-mobile">
+            <div class="nav-socials-top">
+                <a href="https://instagram.com/michaeldemers_" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://tiktok.com/@Michael.demers52" target="_blank"><i class="fab fa-tiktok"></i></a>
+                <a href="https://facebook.com/michaelmagicien" target="_blank"><i class="fab fa-facebook"></i></a>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<section class="about-hero">
+    <h1 class="about-title">L'Artiste</h1>
+</section>
+
+<main class="about-content">
+    <div class="about-text">
+        <p>
+            Basé à Québec, Michael Demers redéfinit l'art de l'impossible. Spécialisé dans le mentalisme haut de gamme, il transforme chaque événement en une expérience psychologique immersive où la réalité semble se plier à sa volonté.
+        </p>
+        
+        <span class="quote-gold">"L'élégance du mystère, la précision de l'esprit."</span>
+        
+        <p>
+            Que ce soit pour des galas corporatifs ou des événements privés exclusifs, son approche allie charisme, psychologie et une maîtrise technique qui laisse les spectateurs les plus sceptiques sans voix. Plus qu'une performance, c'est un voyage aux frontières de la perception humaine.
+        </p>
+    </div>
+
+    <div style="margin-top: 60px;">
+        <a href="soumission.html" class="btn-premium" style="text-decoration: none; padding: 15px 40px; border: 1px solid #D4AF37; color: #D4AF37; letter-spacing: 2px; font-weight: bold; text-transform: uppercase;">Me contacter</a>
+    </div>
+</main>
+
+<footer style="text-align: center; padding: 60px 20px; border-top: 1px solid #222;">
+    <p style="color: #666; font-size: 0.9rem; letter-spacing: 2px;">© 2026 MICHAEL DEMERS | QUÉBEC</p>
+</footer>
+
+<script>
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('nav-menu');
+
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+    });
+
+    // Fermer le menu quand on clique sur un lien
+    document.querySelectorAll('.nav-links li a').forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+        });
+    });
+</script>
+
+</body>
 </html>
