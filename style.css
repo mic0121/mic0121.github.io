@@ -208,15 +208,65 @@ h2 {
     70% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(212, 175, 55, 0); }
     100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
 }
-/* Nettoyage de la section Services */
+/* Nettoyage du conteneur parent */
 .services-section {
     display: block !important;
-    position: relative !important;
-    padding: 80px 5% !important;
-    margin-bottom: 50px !important;
-    clear: both;
+    width: 100% !important;
+    padding: 60px 0 !important;
+    background: #000 !important;
 }
 
+/* Force l'alignement horizontal des 3 cartes */
+.cards {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important; /* Permet de passer à la ligne sur mobile */
+    justify-content: center !important;
+    gap: 30px !important;
+    width: 90% !important;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+}
+
+/* Force la taille et l'affichage de chaque carte */
+.card.reveal {
+    flex: 1 1 300px !important; /* 3 colonnes, mais min 300px */
+    height: 500px !important;   /* Hauteur fixe pour que l'image respire */
+    min-height: 400px !important;
+    position: relative !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-end !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    border-radius: 15px !important;
+    overflow: hidden !important;
+    opacity: 1 !important; /* Force la visibilité si le JS bug */
+    transform: none !important; 
+}
+
+/* Style du texte à l'intérieur */
+.card-content {
+    position: relative !important;
+    z-index: 5 !important;
+    padding: 30px !important;
+    background: linear-gradient(to top, rgba(0,0,0,0.9), transparent) !important;
+    width: 100% !important;
+}
+
+/* Ajustement Mobile (un par-dessus l'autre) */
+@media (max-width: 768px) {
+    .cards {
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+    .card.reveal {
+        width: 100% !important;
+        max-width: 400px !important;
+        height: 350px !important;
+    }
+}
 /* Force les cartes à s'empiler correctement (ou à être en ligne) */
 .cards-container {
     display: flex;
