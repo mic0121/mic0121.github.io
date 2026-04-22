@@ -268,3 +268,35 @@ h2 {
 hr {
     margin: 20px 0 !important;
 }
+/* Force l'alignement des services */
+.cards {
+    display: flex !important;
+    flex-direction: row !important; /* Aligne les 3 services côte à côte */
+    justify-content: space-between !important;
+    gap: 20px !important;
+    padding: 40px 20px !important;
+    flex-wrap: wrap !important; /* Important pour le mobile */
+}
+
+.card {
+    flex: 1 !important; /* Donne une largeur égale aux 3 blocs */
+    min-width: 300px !important;
+    height: 450px !important; /* Définit une hauteur fixe pour éviter l'écrasement */
+    background-size: cover !important; /* L'image remplit le bloc sans se déformer */
+    background-position: center !important;
+    position: relative !important;
+    display: flex !important;
+    align-items: flex-end !important;
+    border-radius: 10px !important;
+    overflow: hidden !important;
+}
+/* Supprime les marges fantômes */
+.services-section {
+    margin-bottom: 0 !important;
+    padding-bottom: 20px !important;
+}
+
+.cta-section-gold {
+    margin-top: 0 !important;
+    padding-top: 50px !important;
+}
