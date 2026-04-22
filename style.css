@@ -109,9 +109,10 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 20px 5%;
-    position: relative; /* Change 'absolute' pour 'relative' ici */
-    z-index: 1000;
+    position: absolute; /* Laisse-le en absolute pour qu'il flotte sur l'image */
+    top: 45px; /* Aligné sous la barre dorée */
     width: 100%;
+    z-index: 1000;
 }
 /* Style propre pour le bouton billetterie */
 .btn-gold-nav {
@@ -130,13 +131,27 @@ body {
     }
 /* --- FOOTER GLOBAL --- */
 .site-footer {
-    padding: 60px 5%;
-    background-color: #000;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 40px 5%;
+    background: #000;
     text-align: center;
 }
 
-/* Alignement horizontal sur ordinateur */
+.nav-socials a {
+    color: white !important; /* Force le blanc */
+    font-size: 1.5rem;
+    margin: 0 15px;
+    text-decoration: none;
+}
+
+@media (min-width: 1025px) {
+    .footer-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+}/* Alignement horizontal sur ordinateur */
 .footer-content {
     display: flex;
     flex-direction: column; /* Par défaut pour mobile */
@@ -180,23 +195,33 @@ body {
     letter-spacing: 1px;
 }
 @media (max-width: 1024px) {
+    /* --- SUR ORDINATEUR --- */
+.nav-center-links {
+    display: flex; /* Toujours visible sur ordi */
+}
+
+/* --- SUR MOBILE (On cache et on prépare le menu plein écran) --- */
+@media (max-width: 1024px) {
+    /* 1. Version Ordinateur (Normal) */
+.nav-center-links {
+    display: flex;
+}
+
+/* 2. Version Mobile (Seulement si l'écran est petit) */
+@media (max-width: 1024px) {
     .nav-center-links {
-        display: none; /* Caché par défaut */
+        display: none; /* Cache le menu par défaut sur mobile */
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
         height: 100vh;
-        background: rgba(0, 0, 0, 0.95); /* Fond noir opaque */
-        z-index: 2000;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        background: black;
         z-index: 2000;
     }
-
-    /* Cette classe est ajoutée par le JavaScript */
+    
+    /* Le JS va ajouter cette classe au clic */
     .nav-center-links.active {
-        display: flex;
+        display: flex !important;
     }
 }
