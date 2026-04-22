@@ -22,7 +22,7 @@
     
     <nav class="navbar overlay">
         <div class="nav-left">
-            <div class="logo">MICHAEL DEMERS</div>
+            <div class="logo hide-on-mobile">MICHAEL DEMERS</div>
         </div>
 
         <div class="hamburger" id="hamburger">
@@ -31,9 +31,9 @@
 
         <div class="nav-center-links" id="nav-menu">
             <ul class="nav-links">
-                <li><a href="#artiste">L'ARTISTE</a></li>
-                <li><a href="#services">SERVICES</a></li>
-                <li><a href="#contact">CONTACT</a></li>
+                <li><a href="#artiste" class="hover-underline">L'ARTISTE</a></li>
+                <li><a href="#services" class="hover-underline">SERVICES</a></li>
+                <li><a href="#contact" class="hover-underline">CONTACT</a></li>
             </ul>
         </div>
 
@@ -44,7 +44,7 @@
                 <a href="https://facebook.com/michaelmagicien" target="_blank"><i class="fab fa-facebook"></i></a>
                 <a href="https://youtube.com/@MichaelDemers52" target="_blank"><i class="fab fa-youtube"></i></a>
             </div>
-            <a href="#billetterie" class="btn-gold-nav">BILLETTERIE</a>
+            <a href="#billetterie" class="btn-gold-nav hover-glow">BILLETTERIE</a>
         </div>
     </nav>
 </header>
@@ -53,7 +53,7 @@
     <div class="hero-content reveal">
         <h1 class="main-title">MICHAEL DEMERS</h1>
         <p class="hero-subtitle">MENTALISTE HAUT DE GAMME</p>
-        <a href="soumission.html" class="btn-premium">RÉSERVER L'EXPÉRIENCE</a>
+        <a href="soumission.html" class="btn-premium hover-lift">RÉSERVER L'EXPÉRIENCE</a>
     </div>
 </section>
 
@@ -78,14 +78,14 @@
                 <p>L'excellence pour vos événements d'affaires.</p>
             </div>
         </div>
-        <div class="card reveal" style="background-image: url('images/oneil.HEIC');" style="transition-delay: 0.2s;">
+        <div class="card reveal" style="background-image: url('images/oneil.HEIC');">
             <div class="card-overlay"></div>
             <div class="card-content">
                 <h3>Privé & VIP</h3>
                 <p>Une expérience intime et mystérieuse.</p>
             </div>
         </div>
-        <div class="card reveal" style="background-image: url('images/gala.JPG');" style="transition-delay: 0.4s;">
+        <div class="card reveal" style="background-image: url('images/gala.JPG');">
             <div class="card-overlay"></div>
             <div class="card-content">
                 <h3>Galas & Scène</h3>
@@ -97,7 +97,9 @@
     <div id="contact" class="final-cta reveal">
         <h2 class="cta-title">Prêt à transformer votre événement ?</h2>
         <p class="cta-text">Les dates pour 2026 s'envolent rapidement. Assurez la présence du mentaliste #1 à Québec.</p>
-        <a href="soumission.html" class="btn-premium spacing-top">VÉRIFIER LES DISPONIBILITÉS</a>
+        <div class="btn-container">
+            <a href="soumission.html" class="btn-premium hover-lift">VÉRIFIER LES DISPONIBILITÉS</a>
+        </div>
     </div>
 
     <div id="billetterie" class="footer-mailerlite reveal">
@@ -121,7 +123,6 @@
 </footer>
 
 <script>
-    // MENU MOBILE
     const hamburger = document.getElementById('hamburger');
     const navMenu = document.getElementById('nav-menu');
 
@@ -138,15 +139,11 @@
         });
     }
 
-    // ANIMATION REVEAL (Apparaît au scroll)
-    const observerOptions = { threshold: 0.15 };
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-            }
+            if (entry.isIntersecting) entry.target.classList.add('visible');
         });
-    }, observerOptions);
+    }, { threshold: 0.15 });
 
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 </script>
