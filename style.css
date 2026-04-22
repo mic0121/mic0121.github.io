@@ -69,14 +69,12 @@ header {
 .nav-left {
     display: flex !important;
     align-items: center !important;
-    flex: 1 !important; /* Prend l'espace de gauche sans écraser le reste */
-    width: auto !important; /* Empêche de prendre 100% */
+    padding-top: 10px !important; /* Ajuste ce chiffre (10px, 15px...) pour descendre le logo */
 }
 
 .logo img {
-    height: 85px !important; /* Ta taille cible */
+    height: 85px !important; 
     width: auto !important;
-    display: block !important;
 }
 /* CENTRE : Menu */
 .nav-center-links {
@@ -107,16 +105,16 @@ header {
 /* DROITE : Réseaux */
 .nav-right-actions {
     display: flex !important;
-    justify-content: flex-end !important; /* Colle les icônes à droite */
-    align-items: center !important;
-    flex: 1 !important;
+    align-items: center !important; /* Force l'alignement central */
+    justify-content: flex-end !important;
+    height: 100% !important; /* Utilise toute la hauteur de la navbar pour bien centrer */
 }
 
 .nav-socials-top {
     display: flex !important;
-    flex-direction: row !important; /* INDISPENSABLE : force les icônes côte à côte */
     gap: 15px !important;
-    width: auto !important;
+    align-items: center !important;
+    margin-bottom: 5px !important; /* Ajuste ce chiffre pour les remonter subtilement si besoin */
 }
 .nav-socials-top a {
     color: #fff !important;
