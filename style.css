@@ -69,7 +69,7 @@ header {
 .nav-left {
     display: flex !important;
     align-items: center !important;
-    padding-top: 25px !important; /* Ajuste ce chiffre (10px, 15px...) pour descendre le logo */
+    padding-top: 40px !important; /* Ajuste ce chiffre (10px, 15px...) pour descendre le logo */
 }
 
 .logo img {
@@ -114,7 +114,7 @@ header {
     display: flex !important;
     gap: 15px !important;
     align-items: center !important;
-    margin-bottom: 20px !important; /* Ajuste ce chiffre pour les remonter subtilement si besoin */
+    margin-bottom: 30px !important; /* Ajuste ce chiffre pour les remonter subtilement si besoin */
 }
 .nav-socials-top a {
     color: #fff !important;
@@ -702,4 +702,30 @@ hr {
     font-weight: 700;
     text-transform: uppercase;
     font-style: italic;
+}
+/* Animation des barres en X */
+.hamburger.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0; /* Cache la barre du milieu */
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* On s'assure que le menu est visible quand actif */
+@media (max-width: 900px) {
+    .nav-center-links.active {
+        display: flex !important;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.95);
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+    }
 }
