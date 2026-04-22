@@ -582,3 +582,19 @@ hr {
         height: 300px;
     }
 }
+/* Style du logo image */
+.logo img {
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+    transform: scale(1.05); /* Petit effet de zoom au survol */
+}
+
+/* Cache le logo sur mobile */
+@media (max-width: 768px) {
+    .hide-on-mobile {
+        display: none !important;
+    }
+}
