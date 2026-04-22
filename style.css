@@ -49,6 +49,7 @@ body {
     top: 45px;
     width: 100%;
     z-index: 1000;
+    height: 90px; /* Ajuste la hauteur totale du header selon la taille du logo */
 }
 
 .logo { font-weight: 900; letter-spacing: 3px; font-size: 1.1rem; text-transform: uppercase; }
