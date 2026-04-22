@@ -268,27 +268,39 @@ h2 {
 hr {
     margin: 20px 0 !important;
 }
-/* Force l'alignement des services */
+/* Le conteneur qui tient les 3 services */
 .cards {
     display: flex !important;
-    flex-direction: row !important; /* Aligne les 3 services côte à côte */
-    justify-content: space-between !important;
-    gap: 20px !important;
-    padding: 40px 20px !important;
-    flex-wrap: wrap !important; /* Important pour le mobile */
+    flex-direction: row !important;
+    justify-content: center !important;
+    align-items: stretch !important;
+    gap: 25px !important;
+    padding: 50px 5% !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    flex-wrap: wrap !important; /* Pour que ça passe l'un sous l'autre sur mobile */
 }
 
-.card {
-    flex: 1 !important; /* Donne une largeur égale aux 3 blocs */
-    min-width: 300px !important;
-    height: 450px !important; /* Définit une hauteur fixe pour éviter l'écrasement */
-    background-size: cover !important; /* L'image remplit le bloc sans se déformer */
-    background-position: center !important;
+/* Chaque carte individuelle */
+.card.reveal {
+    flex: 1 1 300px !important; /* Largeur flexible, minimum 300px */
+    height: 450px !important;    /* Hauteur fixe pour éviter l'effet "écrasé" */
     position: relative !important;
-    display: flex !important;
-    align-items: flex-end !important;
-    border-radius: 10px !important;
+    background-size: cover !important;
+    background-position: center !important;
+    border-radius: 12px !important;
     overflow: hidden !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-end !important;
+    transition: all 0.8s ease-out !important; /* Pour l'animation reveal */
+}
+
+/* On s'assure que le contenu dans la carte ne gâche pas tout */
+.card-content {
+    padding: 20px !important;
+    z-index: 2 !important;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent) !important;
 }
 /* Supprime les marges fantômes */
 .services-section {
@@ -299,4 +311,22 @@ hr {
 .cta-section-gold {
     margin-top: 0 !important;
     padding-top: 50px !important;
+}
+.services-section {
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+#contact.cta-section-gold {
+    margin-top: -20px !important; /* Remonte légèrement la section pour coller */
+    padding-top: 60px !important;
+}
+.btn-gold-large, .btn-premium {
+    display: inline-block !important;
+    background: #d4af37 !important; /* Or */
+    color: black !important;
+    padding: 15px 30px !important;
+    border-radius: 5px !important;
+    font-weight: bold !important;
+    text-decoration: none !important;
 }
