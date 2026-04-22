@@ -45,26 +45,25 @@ header {
 
 /* La bannière d'annonce fine */
 .top-announcement {
-    background: rgba(0, 0, 0, 0.5) !important;
-    color: #d4af37;
+    background: #d4af37 !important; /* Retour au doré plein */
+    color: #000 !important;        /* Texte noir pour le contraste */
     text-align: center;
-    padding: 8px 0;
-    font-size: 0.75rem;
+    padding: 10px 0;
+    font-size: 0.8rem;
+    font-weight: 900;
     letter-spacing: 2px;
     text-transform: uppercase;
-    border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+    width: 100%;
 }
-
 .navbar {
     display: flex !important;
     justify-content: space-between !important;
-    align-items: center !important; /* Aligne tout verticalement sur une ligne */
-    height: 100px !important;
+    align-items: center !important; /* Aligne le logo, le menu et les icônes sur la même ligne */
+    height: 100px !important;       /* On donne de la hauteur pour le gros logo */
     padding: 0 50px !important;
-    /* Dégradé subtil pour garantir la lisibilité du texte blanc */
-    background: linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, transparent 100%) !important;
+    background: transparent !important;
+    position: relative;
 }
-
 /* GAUCHE : Logo */
 .nav-left {
     flex: 1;
@@ -106,17 +105,15 @@ header {
 
 /* DROITE : Réseaux */
 .nav-right-actions {
-    flex: 1;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
+    display: flex !important;
+    align-items: center !important; /* Aligne les icônes avec le reste */
 }
 
 .nav-socials-top {
-    display: flex;
-    gap: 15px;
+    display: flex !important;
+    gap: 15px !important;
+    align-items: center !important;
 }
-
 .nav-socials-top a {
     color: #fff !important;
     font-size: 1.1rem;
@@ -660,12 +657,17 @@ hr {
         height: 300px;
     }
 }
-/* Style du logo image */
 .logo img {
-    display: block;
+    height: 80px !important; /* On monte à 80px pour qu'il soit imposant */
+    width: auto !important;
+    display: block !important;
     transition: transform 0.3s ease;
 }
 
+.nav-left {
+    display: flex !important;
+    align-items: center !important; /* Aligne le logo verticalement */
+}
 .logo img:hover {
     transform: scale(1.05); /* Petit effet de zoom au survol */
 }
