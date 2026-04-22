@@ -104,14 +104,15 @@ body {
     .hamburger span { width: 30px; height: 2px; background: #fff; }
     .main-title { font-size: 2.5rem; }
 }
-/* Aligne le menu, les icônes et le bouton sur une seule ligne */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px 5%;
+    position: relative; /* Change 'absolute' pour 'relative' ici */
+    z-index: 1000;
+    width: 100%;
 }
-
 /* Style propre pour le bouton billetterie */
 .btn-gold-nav {
     background: var(--gold-gradient);
@@ -145,13 +146,20 @@ body {
 
 @media (min-width: 1025px) {
     .footer-content {
-        flex-direction: row; /* Aligne en ligne sur ordi */
-        justify-content: space-between;
-        max-width: 1200px;
-        margin: 0 auto;
-    }
+    display: flex;
+    flex-direction: column; /* Empilé sur mobile */
+    align-items: center;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
+@media (min-width: 1025px) {
+    .footer-content {
+        flex-direction: row; /* Aligné sur une ligne sur ordi */
+        justify-content: space-between;
+    }
+}
 /* Correction des icônes bleues */
 .nav-socials a {
     color: #ffffff !important; 
@@ -184,6 +192,7 @@ body {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        z-index: 2000;
     }
 
     /* Cette classe est ajoutée par le JavaScript */
