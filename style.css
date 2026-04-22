@@ -65,15 +65,35 @@ body {
 .gold-divider-center { width: 50px; height: 2px; background: var(--gold-gradient); margin: 25px auto; }
 
 /* --- SERVICES --- */
-.services-section { padding: 80px 5%; text-align: center; }
-.cards { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-top: 40px; }
-.card {
-    flex: 1; min-width: 300px; height: 450px; position: relative;
-    background-size: cover; background-position: center; display: flex; align-items: flex-end; padding: 20px;
+/* Espacement entre Services et le bloc CTA */
+.services-section {
+    padding: 100px 5%;
 }
+
+.cards {
+    margin-bottom: 100px; /* Espace après les cartes */
+}
+
+/* Espacement pour le bloc "Prêt à transformer..." */
+.final-cta-section {
+    padding: 120px 5%;
+    background-color: #000;
+}
+
+/* Espacement entre le bouton doré et l'infolettre */
+.btn-wrapper-final {
+    margin-top: 50px;
+    margin-bottom: 80px; /* Crée l'espace avant l'infolettre */
+}
+
+/* Espacement de l'infolettre */
+.footer-mailerlite {
+    padding: 80px 5%;
+    border-top: 1px solid #1a1a1a; /* Petite ligne subtile de séparation */
+    
 .card-overlay { position: absolute; inset: 0; background: linear-gradient(transparent, rgba(0,0,0,0.8)); }
 .card-content { position: relative; z-index: 2; text-align: left; }
-
+}
 /* --- FOOTER --- */
 .site-footer { padding: 50px 5%; background: #000; border-top: 1px solid #222; }
 .footer-content { display: flex; flex-direction: column; align-items: center; gap: 25px; }
@@ -104,4 +124,41 @@ body {
     .nav-links { flex-direction: column; text-align: center; }
     .nav-links a { font-size: 1.5rem; }
     .main-title { font-size: 2.8rem; }
+}
+/* Icônes réseaux sociaux du haut */
+.nav-socials-top a {
+    color: #ffffff !important;
+    font-size: 1.2rem;
+    margin-right: 15px;
+    text-decoration: none;
+    transition: transform 0.3s ease, color 0.3s ease;
+    display: inline-block;
+}
+
+.nav-socials-top a:hover {
+    color: var(--gold) !important;
+    transform: translateY(-3px);
+}
+/* Animation douce sur les cartes de service */
+.card {
+    transition: transform 0.5s cubic-bezier(0.2, 1, 0.3, 1), box-shadow 0.5s ease;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+}
+
+/* Éclat sur les boutons dorés au survol */
+.btn-premium, .btn-gold-nav {
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-premium:hover, .btn-gold-nav:hover {
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+    filter: brightness(1.1);
+    transform: translateY(-2px);
 }
