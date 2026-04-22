@@ -14,21 +14,11 @@ body {
     overflow-x: hidden;
 }
 
-/* --- ANIMATIONS & HOVERS --- */
+/* --- ANIMATIONS --- */
 .reveal { opacity: 0; transform: translateY(30px); transition: 1s ease-out; }
 .reveal.visible { opacity: 1; transform: translateY(0); }
 
-.hover-underline { position: relative; }
-.hover-underline::after {
-    content: ''; position: absolute; width: 0; height: 2px;
-    bottom: -5px; left: 0; background: var(--gold-gradient); transition: 0.3s;
-}
-.hover-underline:hover::after { width: 100%; }
-
-.hover-lift:hover { transform: translateY(-5px); transition: 0.3s; }
-.hover-glow:hover { filter: brightness(1.2); box-shadow: 0 0 15px rgba(212, 175, 55, 0.4); transition: 0.3s; }
-
-/* --- HEADER & NAV --- */
+/* --- HEADER --- */
 .top-announcement {
     background: var(--gold-gradient);
     color: #000; text-align: center; padding: 10px 0;
@@ -36,192 +26,82 @@ body {
 }
 
 .navbar {
-    position: absolute; top: 45px; width: 100%; display: grid;
-    grid-template-columns: 1fr auto 1fr; align-items: center;
-    padding: 20px 5%; z-index: 1000;
-}
-
-.logo { font-weight: 900; letter-spacing: 3px; font-size: 1.1rem; text-transform: uppercase; }
-
-.nav-center-links { justify-self: center; }
-.nav-links { display: flex; list-style: none; gap: 30px; }
-.nav-links a { font-size: 0.85rem; font-weight: 600; color: #fff !important; }
-
-.nav-right-actions { justify-self: end; display: flex; align-items: center; gap: 20px; }
-.nav-socials-top a { color: #fff !important; margin-right: 10px; font-size: 1.1rem; transition: 0.3s; }
-.nav-socials-top a:hover { color: var(--gold) !important; }
-
-.btn-gold-nav {
-    background: var(--gold-gradient); color: #000 !important;
-    padding: 10px 20px; font-weight: 800; font-size: 0.8rem;
-}
-
-/* --- HERO --- */
-.hero {
-    height: 100vh; background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/IMG_6112_pp.JPG') center/cover;
-    display: flex; align-items: center; justify-content: center; text-align: center;
-}
-.main-title { font-size: 4.5rem; font-weight: 900; letter-spacing: 10px; }
-.hero-subtitle { color: var(--gold); letter-spacing: 6px; margin: 15px 0 40px; }
-
-/* --- SECTION ÉLITE (FIX ALIGNEMENT) --- */
-.social-proof-elite { padding: 120px 5%; text-align: center; background: #000; }
-.container-proof { max-width: 900px; margin: 0 auto; }
-.stars-elite { color: var(--gold); margin-bottom: 25px; letter-spacing: 8px; font-size: 1.2rem; }
-.proof-title-elite { font-size: 2.2rem; font-weight: 900; letter-spacing: 4px; margin-bottom: 20px; }
-.gold-divider-center { width: 60px; height: 3px; background: var(--gold-gradient); margin: 30px auto; }
-.proof-subtitle-elite { font-size: 1.1rem; line-height: 1.6; opacity: 0.9; }
-
-/* --- SERVICES --- */
-.services-section { padding: 100px 5%; text-align: center; }
-.cards { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; margin-bottom: 80px; }
-.card {
-    flex: 1; min-width: 320px; height: 500px; position: relative;
-    background-size: cover; background-position: center; display: flex; align-items: flex-end; padding: 30px;
-}
-.card-overlay { position: absolute; inset: 0; background: linear-gradient(transparent, rgba(0,0,0,0.9)); }
-.card-content { position: relative; z-index: 2; text-align: left; }
-
-/* --- FINAL CTA (FIX BOUTON) --- */
-.final-cta-section { padding: 120px 5%; text-align: center; }
-.cta-title { font-size: 2.5rem; font-weight: 900; margin-bottom: 20px; }
-.cta-text { font-size: 1.1rem; opacity: 0.8; margin-bottom: 60px; }
-.btn-wrapper-final { display: block; margin-top: 40px; } /* Force l'espace */
-
-.btn-premium {
-    background: var(--gold-gradient); color: #000 !important;
-    padding: 20px 45px; font-weight: 900; letter-spacing: 2px; display: inline-block;
-}
-/* Force l'ajustement final du bouton */
-.btn-final-adjust { margin-top: 20px !important; }
-
-/* --- RESPONSIVE --- */
-@media (max-width: 1024px) {
-    .hide-on-mobile { display: none !important; }
-    .nav-center-links, .nav-socials-top { display: none; }
-    .navbar { grid-template-columns: 1fr auto; }
-    .hamburger { display: flex; flex-direction: column; gap: 5px; cursor: pointer; }
-    .hamburger span { width: 30px; height: 2px; background: #fff; }
-    .main-title { font-size: 2.5rem; }
-}
-.navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px 5%;
-    position: absolute; /* Laisse-le en absolute pour qu'il flotte sur l'image */
-    top: 45px; /* Aligné sous la barre dorée */
+    position: absolute;
+    top: 45px;
     width: 100%;
     z-index: 1000;
 }
-/* Style propre pour le bouton billetterie */
+
+.logo { font-weight: 900; letter-spacing: 3px; font-size: 1.1rem; text-transform: uppercase; }
+
+.nav-links { display: flex; list-style: none; gap: 30px; align-items: center; }
+.nav-links a { font-size: 0.85rem; font-weight: 600; color: #fff !important; text-decoration: none; }
+
 .btn-gold-nav {
-    background: var(--gold-gradient);
-    color: #000 !important;
-    padding: 10px 20px;
-    font-weight: 800;
-    text-transform: uppercase;
-    white-space: nowrap; /* Empêche le texte de s'écrire sur deux lignes */
+    background: var(--gold-gradient); color: #000 !important;
+    padding: 10px 20px; font-weight: 800; border-radius: 2px;
 }
 
-/* Cache le logo sur mobile */
-@media (max-width: 1024px) {
-    .hide-on-mobile {
-        display: none !important;
-    }
-/* --- FOOTER GLOBAL --- */
-.site-footer {
-    padding: 40px 5%;
-    background: #000;
-    text-align: center;
+/* --- HERO --- */
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/IMG_6112_pp.JPG') center/cover;
+    display: flex; align-items: center; justify-content: center; text-align: center;
+}
+.main-title { font-size: 4.5rem; font-weight: 900; letter-spacing: 10px; }
+.hero-subtitle { color: var(--gold); letter-spacing: 6px; margin: 15px 0 40px; }
+.btn-premium {
+    background: var(--gold-gradient); color: #000 !important;
+    padding: 20px 45px; font-weight: 900; text-decoration: none; display: inline-block;
 }
 
-.nav-socials a {
-    color: white !important; /* Force le blanc */
-    font-size: 1.5rem;
-    margin: 0 15px;
-    text-decoration: none;
-}
+/* --- SOCIAL PROOF --- */
+.social-proof-elite { padding: 100px 5%; text-align: center; }
+.stars-elite { color: var(--gold); margin-bottom: 20px; font-size: 1.2rem; letter-spacing: 5px; }
+.gold-divider-center { width: 50px; height: 2px; background: var(--gold-gradient); margin: 25px auto; }
 
-@media (min-width: 1025px) {
-    .footer-content {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        max-width: 1200px;
-        margin: 0 auto;
-    }
-}/* Alignement horizontal sur ordinateur */
-.footer-content {
-    display: flex;
-    flex-direction: column; /* Par défaut pour mobile */
-    align-items: center;
-    gap: 20px;
+/* --- SERVICES --- */
+.services-section { padding: 80px 5%; text-align: center; }
+.cards { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-top: 40px; }
+.card {
+    flex: 1; min-width: 300px; height: 450px; position: relative;
+    background-size: cover; background-position: center; display: flex; align-items: flex-end; padding: 20px;
 }
+.card-overlay { position: absolute; inset: 0; background: linear-gradient(transparent, rgba(0,0,0,0.8)); }
+.card-content { position: relative; z-index: 2; text-align: left; }
+
+/* --- FOOTER --- */
+.site-footer { padding: 50px 5%; background: #000; border-top: 1px solid #222; }
+.footer-content { display: flex; flex-direction: column; align-items: center; gap: 25px; }
 
 @media (min-width: 1025px) {
-    .footer-content {
-    display: flex;
-    flex-direction: column; /* Empilé sur mobile */
-    align-items: center;
-    gap: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
+    .footer-content { flex-direction: row; justify-content: space-between; max-width: 1200px; margin: 0 auto; }
 }
 
-@media (min-width: 1025px) {
-    .footer-content {
-        flex-direction: row; /* Aligné sur une ligne sur ordi */
-        justify-content: space-between;
-    }
-}
-/* Correction des icônes bleues */
-.nav-socials a {
-    color: #ffffff !important; 
-    font-size: 1.5rem;
-    margin: 0 12px;
-    transition: transform 0.3s ease, color 0.3s ease;
-    display: inline-block;
-}
+.nav-socials a { color: #fff !important; font-size: 1.5rem; margin: 0 10px; text-decoration: none; }
+.nav-socials a:hover { color: var(--gold) !important; }
 
-.nav-socials a:hover {
-    color: var(--gold) !important;
-    transform: translateY(-3px);
-}
+/* --- RESPONSIVE MOBILE --- */
+.hamburger { display: none; cursor: pointer; flex-direction: column; gap: 5px; }
+.hamburger span { width: 25px; height: 2px; background: #fff; }
 
-.footer-copy {
-    font-size: 0.85rem;
-    opacity: 0.6;
-    letter-spacing: 1px;
-}
 @media (max-width: 1024px) {
-    /* --- SUR ORDINATEUR --- */
-.nav-center-links {
-    display: flex; /* Toujours visible sur ordi */
-}
-
-/* --- SUR MOBILE (On cache et on prépare le menu plein écran) --- */
-@media (max-width: 1024px) {
-    /* 1. Version Ordinateur (Normal) */
-.nav-center-links {
-    display: flex;
-}
-
-/* 2. Version Mobile (Seulement si l'écran est petit) */
-@media (max-width: 1024px) {
+    .hide-on-mobile { display: none !important; }
+    .hamburger { display: flex; z-index: 3000; }
+    
     .nav-center-links {
-        display: none; /* Cache le menu par défaut sur mobile */
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100vh;
-        background: black;
-        z-index: 2000;
+        display: none;
+        position: fixed; top: 0; left: 0; width: 100%; height: 100vh;
+        background: #000; flex-direction: column; justify-content: center;
+        align-items: center; z-index: 2000;
     }
     
-    /* Le JS va ajouter cette classe au clic */
-    .nav-center-links.active {
-        display: flex !important;
-    }
+    .nav-center-links.active { display: flex; }
+    .nav-links { flex-direction: column; text-align: center; }
+    .nav-links a { font-size: 1.5rem; }
+    .main-title { font-size: 2.8rem; }
 }
