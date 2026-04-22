@@ -162,3 +162,24 @@ body {
     filter: brightness(1.1);
     transform: translateY(-2px);
 }
+/* Espace après la section Services */
+#services {
+    padding-bottom: 100px !important;
+}
+
+/* La section avec le bouton doré "Vérifier les disponibilités" */
+.cta-section-gold {
+    padding: 100px 0 !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: #000;
+}
+
+/* Espace spécifique au-dessus de l'infolettre */
+#infolettre {
+    margin-top: 80px !important;
+    padding-top: 80px;
+    border-top: 1px solid #222;
+}
