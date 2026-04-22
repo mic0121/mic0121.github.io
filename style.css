@@ -487,3 +487,83 @@ a { text-decoration: none; color: inherit !important; }
     .social-label { font-size: 0.6rem; letter-spacing: 3px; color: #d4af37; margin-bottom: 20px; }
     .social-icons-wrapper { display: flex; gap: 30px; justify-content: center; }
 }
+.navbar.overlay {
+    position: absolute; /* Survole l'image de fond */
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 5%;
+    background: transparent; /* Pas de bande noire */
+    z-index: 1000;
+}
+
+.logo {
+    font-weight: 900;
+    letter-spacing: 5px;
+    color: #fff;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+}
+
+/* Alignement des réseaux au centre haut */
+.nav-center-socials {
+    display: flex;
+    gap: 20px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.nav-center-socials a {
+    color: #fff;
+    font-size: 1.1rem;
+    opacity: 0.8;
+    transition: 0.3s;
+}
+
+.nav-center-socials a:hover {
+    opacity: 1;
+    color: #d4af37;
+}
+
+/* Liens à droite */
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    align-items: center;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+@media (max-width: 900px) {
+    .nav-center-socials { display: none; } /* Cache les réseaux du haut sur mobile */
+    
+    .nav-right {
+        display: none;
+        position: fixed;
+        top: 0; left: 0; width: 100%; height: 100vh;
+        background: #000; /* Le menu mobile devient noir plein pour la lisibilité */
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .nav-right.active { display: flex; }
+    
+    /* On rajoute les réseaux seulement en bas du menu mobile ici */
+    .nav-right::after {
+        content: "SUIVEZ MICHAEL";
+        color: #d4af37;
+        font-size: 0.7rem;
+        margin-top: 50px;
+        letter-spacing: 2px;
+    }
+}
