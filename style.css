@@ -33,88 +33,111 @@ body {
     filter: blur(0px); /* Le texte devient net */
     transform: translateY(0px);
 }
-/* --- HEADER TRANSPARENT & PREMIUM --- */
+/* --- HEADER TRANSPARENT & STABLE --- */
 header {
     width: 100%;
-    position: absolute; /* Fondamental pour être PAR-DESSUS l'image */
+    position: absolute; /* Pour flotter sur l'image de fond */
     top: 0;
     left: 0;
     z-index: 9999;
-    background: transparent !important; /* On enlève le bloc noir */
+    background: transparent !important;
 }
 
-/* La petite bannière du haut plus fine et élégante */
+/* La bannière d'annonce fine */
 .top-announcement {
-    background: rgba(0, 0, 0, 0.4) !important; /* Noir très transparent */
+    background: rgba(0, 0, 0, 0.5) !important;
     color: #d4af37;
     text-align: center;
-    padding: 6px;
+    padding: 8px 0;
     font-size: 0.75rem;
     letter-spacing: 2px;
     text-transform: uppercase;
-    backdrop-filter: blur(5px); /* Flou léger derrière le texte */
-    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.1);
 }
 
 .navbar {
     display: flex !important;
     justify-content: space-between !important;
-    align-items: center !important;
-    height: 90px !important; /* Un peu moins haut pour plus de finesse */
-    padding: 0 60px !important;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, transparent 100%) !important;
+    align-items: center !important; /* Aligne tout verticalement sur une ligne */
+    height: 100px !important;
+    padding: 0 50px !important;
+    /* Dégradé subtil pour garantir la lisibilité du texte blanc */
+    background: linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, transparent 100%) !important;
 }
 
-/* --- LOGO --- */
+/* GAUCHE : Logo */
+.nav-left {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
 .logo img {
-    height: 65px !important;
+    height: 65px !important; /* Ta taille préférée */
     width: auto !important;
-    filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.5)); /* Pour qu'il ressorte sur le fond */
+    display: block;
 }
 
-/* --- MENU --- */
+/* CENTRE : Menu */
+.nav-center-links {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .nav-links {
     display: flex !important;
-    gap: 40px !important;
-    align-items: center !important;
+    gap: 35px !important;
+    margin: 0 !important;
+    padding: 0 !important;
     list-style: none !important;
+    align-items: center !important;
 }
 
 .nav-links li a {
-    color: #ffffff !important;
-    text-shadow: 0px 1px 3px rgba(0,0,0,0.8); /* Assure la lisibilité sur l'image */
+    color: #fff !important;
+    text-decoration: none !important;
+    font-weight: 700 !important;
     font-size: 0.85rem !important;
-    letter-spacing: 1.5px;
+    letter-spacing: 1px;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.8); /* Important pour voir le texte sur la photo */
 }
 
-/* --- BOUTON BILLETTERIE --- */
-.btn-gold-nav {
-    background: linear-gradient(135deg, #d4af37 0%, #b8860b 100%) !important;
-    color: #000 !important;
-    padding: 10px 22px !important;
-    border-radius: 2px !important; /* Carré = plus moderne/luxe */
-    font-weight: 900 !important;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+/* DROITE : Réseaux */
+.nav-right-actions {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }
 
-/* --- RÉSEAUX SOCIAUX --- */
+.nav-socials-top {
+    display: flex;
+    gap: 15px;
+}
+
 .nav-socials-top a {
-    color: rgba(255,255,255,0.8) !important;
-    font-size: 1.1rem !important;
-    margin-left: 15px;
-    transition: color 0.3s;
+    color: #fff !important;
+    font-size: 1.1rem;
+    opacity: 0.8;
+    transition: opacity 0.3s, color 0.3s;
 }
 
 .nav-socials-top a:hover {
+    opacity: 1;
     color: #d4af37 !important;
 }
 
-/* FIX MOBILE */
-@media (max-width: 900px) {
-    .navbar {
-        padding: 0 20px !important;
-        background: rgba(0,0,0,0.8) !important; /* On remet un fond sur mobile pour la lisibilité */
-    }
+/* BOUTON BILLETTERIE */
+.btn-gold-nav {
+    background: #d4af37 !important;
+    color: #000 !important;
+    padding: 12px 20px !important;
+    border-radius: 2px !important;
+    font-weight: 900 !important;
+    text-transform: uppercase;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
 }
 /* --- HERO --- */
 .hero {
