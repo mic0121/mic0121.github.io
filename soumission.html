@@ -1,24 +1,27 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <script>
-        (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
-        .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
-        n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
-        (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
-        ml('account', '2136547');
-    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact & Soumission | Michael Demers</title>
     <link rel="stylesheet" href="style.css?v=2026.4">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Playfair+Display:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Styles requis par Brevo -->
+    <style>
+      :where(.sib-form-message-panel) { display: none; }
+      :where(.sib-form-message-panel .sib-notification__icon) { width: 20px; height: 20px; }
+      #sib-container input::placeholder, #sib-container textarea::placeholder { font-family: Helvetica, sans-serif; text-align: left; color: #c0ccda; }
+      #sib-container a { text-decoration: underline; color: #D4AF37; }
+    </style>
+    <link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
+
     <style>
         body { background-color: #050505; }
         
         .contact-header {
-            padding: 180px 20px 60px; /* Plus d'espace pour le header fixe */
+            padding: 180px 20px 60px;
             text-align: center;
             background: linear-gradient(to bottom, #111, #050505);
         }
@@ -56,35 +59,48 @@
             transition: 0.3s;
         }
 
-        .email-link:hover {
-            border-bottom: 1px solid #D4AF37;
-        }
-
-        /* Ajustement du formulaire MailerLite pour qu'il soit plus élégant */
-        .ml-embedded { margin-top: 40px; }
+        .email-link:hover { border-bottom: 1px solid #D4AF37; }
+        .brevo-form-wrapper { margin-top: 40px; }
 
         @media (max-width: 768px) {
             .contact-title { font-size: 2rem; }
             .contact-header { padding-top: 140px; }
         }
-        /* --- FIX LOGO MOBILE --- */
-@media (max-width: 768px) {
-    header .logo, 
-    header .nav-left img, 
-    .logo a img {
-        display: none !important;
-        visibility: hidden !important;
-        opacity: 0 !important;
-        width: 0 !important;
-    }
+        
+        /* FIX LOGO MOBILE */
+        @media (max-width: 768px) {
+            header .logo, header .nav-left img, .logo a img {
+                display: none !important;
+                visibility: hidden !important;
+                opacity: 0 !important;
+                width: 0 !important;
+            }
+            .nav-left { display: flex !important; width: auto !important; }
+        }
 
-    /* On s'assure que le menu hamburger reste visible et bien placé */
-    .nav-left {
-        display: flex !important;
-        width: auto !important;
-    }
-}
-</style>
+        /* Design personnalisé du bouton Brevo (Noir & Or) */
+        #sib-form .sib-btn {
+            background-color: #D4AF37 !important;
+            color: #050505 !important;
+            font-family: 'Montserrat', sans-serif !important;
+            font-weight: 700 !important;
+            font-size: 14px !important;
+            border-radius: 4px !important;
+            border: none !important;
+            padding: 14px 32px !important;
+            cursor: pointer !important;
+            text-transform: uppercase !important;
+            letter-spacing: 2px !important;
+            transition: 0.3s ease !important;
+            width: auto !important;
+            display: inline-block !important;
+        }
+        #sib-form .sib-btn:hover {
+            background-color: #ffffff !important;
+            color: #050505 !important;
+        }
+        .sib-form-block { text-align: center !important; }
+    </style>
 </head>
 <body>
 
@@ -129,7 +145,95 @@
 </section>
 
 <div class="contact-container">
-    <div class="ml-embedded" data-form="46oSkF"></div>
+    <div class="brevo-form-wrapper">
+        
+        <!-- INTEGRATION FORMULAIRE BREVO -->
+        <div class="sib-form" style="text-align: center; background-color: #050505;">
+          <div id="sib-form-container" class="sib-form-container">
+            
+            <!-- Message Erreur de soumission -->
+            <div id="error-message" class="sib-form-message-panel" style="font-family:Helvetica, sans-serif; font-size:16px; text-align:left; color:#661d1d; background-color:#ffeded; border-color:#ff4949; border-radius:3px; max-width:540px; margin: 0 auto 20px;">
+              <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
+                <span class="sib-form-message-panel__inner-text">La soumission n'a pas été envoyée. Veuillez réessayer.</span>
+              </div>
+            </div>
+
+            <!-- Message Succès de soumission -->
+            <div id="success-message" class="sib-form-message-panel" style="font-family:Helvetica, sans-serif; font-size:16px; text-align:left; color:#085229; background-color:#e7faf0; border-color:#13ce66; border-radius:3px; max-width:540px; margin: 0 auto 20px;">
+              <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
+                <span class="sib-form-message-panel__inner-text">La soumission a été envoyée avec succès !</span>
+              </div>
+            </div>
+
+            <!-- Formulaire Principal -->
+            <div id="sib-container" class="sib-container--large sib-container--vertical" style="max-width:540px; text-align:center; background-color:#050505; border:1px solid #1c1c1e; border-radius:8px; direction:ltr; margin:0 auto; padding: 25px;">
+              <form id="sib-form" method="POST" action="https://32576e57.sibforms.com/serve/MUIFAK-i2T7RXpi4--2Z82lFGL2966X7Kfq2Cxo_PcK9Ov6wscU8XkWPIXHcrLeXR8qgTkJBpM-KnrU6BDQpbcmDxsI44HahjkhRz1FTHhA626fAeTPuSo6b3GklFUn3TT-9reAccKhr6PSnaY2tQExP6Qg60t7FgwoxZZIJDhHcmeGZ5uue1h_8Th8_7Afd4GiWdDHaecog7El7eA==" data-type="subscription">
+
+                <!-- Champ Nom complet -->
+                <div style="padding: 12px 0;">
+                  <div class="sib-input sib-form-block">
+                    <div class="form__entry entry_block">
+                      <label class="entry__label" style="font-weight:700; text-align:left; font-family:Helvetica, sans-serif; font-size:14px; color:#ffffff; display:block; margin-bottom:8px;" for="FIRSTNAME">Nom complet *</label>
+                      <div class="entry__field">
+                        <input class="input" type="text" id="FIRSTNAME" name="FIRSTNAME" autocomplete="off" placeholder="Votre nom" required style="padding:12px; width:100%; box-sizing:border-box; background-color:#121214; border:1px solid #2c2c2e; color:#fff; border-radius:4px;" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Champ Localisation -->
+                <div style="padding: 12px 0;">
+                  <div class="sib-input sib-form-block">
+                    <div class="form__entry entry_block">
+                      <label class="entry__label" style="font-weight:700; text-align:left; font-family:Helvetica, sans-serif; font-size:14px; color:#ffffff; display:block; margin-bottom:8px;" for="LINKEDIN">Localisation *</label>
+                      <div class="entry__field">
+                        <input class="input" type="text" id="LINKEDIN" name="LINKEDIN" autocomplete="off" placeholder="Où se déroulera l'événement" required style="padding:12px; width:100%; box-sizing:border-box; background-color:#121214; border:1px solid #2c2c2e; color:#fff; border-radius:4px;" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Champ Adresse courriel -->
+                <div style="padding: 12px 0;">
+                  <div class="sib-input sib-form-block">
+                    <div class="form__entry entry_block">
+                      <label class="entry__label" style="font-weight:700; text-align:left; font-family:Helvetica, sans-serif; font-size:14px; color:#ffffff; display:block; margin-bottom:8px;" for="EMAIL">Adresse courriel *</label>
+                      <div class="entry__field">
+                        <input class="input" type="email" id="EMAIL" name="EMAIL" autocomplete="off" placeholder="votre@email.com" required style="padding:12px; width:100%; box-sizing:border-box; background-color:#121214; border:1px solid #2c2c2e; color:#fff; border-radius:4px;" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Champ Téléphone (Canada pré-sélectionné) -->
+                <div style="padding: 12px 0;">
+                  <div class="sib-sms-field sib-form-block">
+                    <div class="form__entry entry_block">
+                      <label class="entry__label" style="font-weight:700; text-align:left; font-family:Helvetica, sans-serif; font-size:14px; color:#ffffff; display:block; margin-bottom:8px;" for="SMS">Numéro de téléphone *</label>
+                      <div class="sib-sms-input-wrapper" style="display:flex; gap:10px; direction:ltr">
+                        <select class="input" name="SMS__COUNTRY_CODE" required style="padding:12px; width:100px; background-color:#121214; border:1px solid #2c2c2e; color:#fff; border-radius:4px;">
+                          <option value="+1" selected>+1 CA</option>
+                        </select>
+                        <input class="input" type="tel" id="SMS" name="SMS" autocomplete="off" placeholder="418 555 0123" required style="padding:12px; flex-grow:1; background-color:#121214; border:1px solid #2c2c2e; color:#fff; border-radius:4px;" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Zone Bouton d'envoi -->
+                <div style="padding: 20px 0 10px;">
+                  <div class="sib-form-block">
+                    <button class="sib-btn" form="sib-form" type="submit">Soumettre la demande</button>
+                  </div>
+                </div>
+
+              </form>
+            </div>
+
+          </div>
+        </div>
+
+    </div>
 </div>
 
 <footer class="site-footer">
@@ -153,6 +257,15 @@
         navMenu.classList.toggle('active');
     });
 </script>
+
+<!-- Scripts d'exécution Brevo obligatoires pour la validation -->
+<script>
+  window.REQUIRED_CODE_ERROR_MESSAGE = 'Veuillez choisir un code pays';
+  window.LOCALE_DOM_PARSER_NOT_SUPPORTED_TEXT = 'DOMParser non supporté par votre navigateur';
+  window.EMAIL_INVALID_MESSAGE = window.SMS_INVALID_MESSAGE = 'Les informations fournies ne sont pas valides.';
+  window.REQUIRED_FIELD_MISSING_MESSAGE = 'Veuillez remplir ce champ obligatoire.';
+</script>
+<script src="https://sibforms.com/forms/end-form/build/main.js" defer></script>
 
 </body>
 </html>
