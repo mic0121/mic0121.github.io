@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merci pour votre confiance | Michael Demers </title>
+    <style>
+        /* Base & Couleurs de la direction artistique */
+        body {
+            background-color: #0b0b0b; /* Noir profond */
+            color: #ffffff; /* Texte blanc */
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        .thank-you-container {
+            max-width: 600px;
+            padding: 40px 30px;
+            border: 1px solid rgba(212, 175, 55, 0.2); /* Bordure subtile or */
+            background-color: #121212; /* Léger contraste de fond */
+            border-radius: 4px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Accentuation Or */
+        .gold-accent {
+            color: #d4af37; /* Couleur Or Métallique */
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin-bottom: 20px;
+            display: block;
+            font-weight: 600;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 300;
+            letter-spacing: 1px;
+            margin: 0 0 20px 0;
+        }
+
+        p {
+            color: #a0a0a0; /* Texte secondaire adouci */
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin: 0 0 35px 0;
+            font-weight: 300;
+        }
+
+        /* Bouton Retour élégant */
+        .btn-back {
+            display: inline-block;
+            padding: 12px 30px;
+            border: 1px solid #d4af37; /* Bordure or */
+            color: #d4af37;
+            text-decoration: none;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 500;
+            transition: all 0.4s ease;
+            background: transparent;
+        }
+
+        .btn-back:hover {
+            background-color: #d4af37; /* Remplissage Or au survol */
+            color: #0b0b0b; /* Texte devient noir */
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="thank-you-container">
+        <span class="gold-accent">Connexion établie</span>
+        <h1>Merci pour votre message</h1>
+        <p>Vos informations ont bien été transmises. Je prends connaissance des détails de votre événement et je vous recontacte d'ici les prochaines 24 à 48 heures.</p>
+        
+        <!-- Remplace le # par le lien de ton site si nécessaire -->
+        <a href="/" class="btn-back">Retour à l'accueil</a>
+    </div>
+
+</body>
+</html>
