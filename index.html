@@ -268,7 +268,6 @@
 
         </div>
         
-        <!-- Nouveau bouton d'action vers le formulaire de soumission -->
         <div style="margin-top: 50px;">
             <a href="soumission.html" class="btn-premium">OBTENIR UNE SOUMISSION</a>
         </div>
@@ -385,95 +384,4 @@
 
         <div style="padding: 8px 0;">
           <div class="sib-form-block" style="text-align: center">
-            <button class="sib-form-block__button sib-form-block__button-with-loader" style="font-family:Helvetica, sans-serif; font-size:16px; font-weight:700; text-align:center; color:#FFFFFF; background-color:#d4af37; border-width:0px; border-radius:20px;" form="sib-form" type="submit">
-              <svg class="icon clickable__icon progress-indicator__icon sib-hide-loader-icon" viewBox="0 0 512 512">
-                <path d="M460.116 373.846l-20.823-12.022c-5.541-3.199-7.54-10.159-4.663-15.874 30.137-59.886 28.343-131.652-5.386-189.946-33.641-58.394-94.896-95.833-161.827-99.676C261.028 55.961 256 50.751 256 44.352V20.309c0-6.904 5.808-12.337 12.703-11.982 83.556 4.306 160.163 50.864 202.11 123.677 42.063 72.696 44.079 162.316 6.031 236.832-3.14 6.148-10.75 8.461-16.728 5.01z" />
-              </svg>
-              JOINDRE
-            </button>
-          </div>
-        </div>
-
-        <input type="text" name="email_address_check" value="" class="input--hidden">
-        <input type="hidden" name="locale" value="en">
-
-      </form>
-    </div>
-  </div>
-</div>    
-</section>
-
-<footer class="site-footer">
-    <div class="footer-content">
-        <p>© 2026 MICHAEL DEMERS | QUÉBEC</p>
-        <div class="nav-socials">
-            <a href="https://instagram.com/michaeldemers_" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://tiktok.com/@Michael.demers52" target="_blank"><i class="fab fa-tiktok"></i></a>
-            <a href="https://facebook.com/michaelmagicien" target="_blank"><i class="fab fa-facebook"></i></a>
-            <a href="https://youtube.com/@MichaelDemers52" target="_blank"><i class="fab fa-youtube"></i></a>
-        </div>
-    </div>
-</footer>
-
-<script>
-    const hamburger = document.getElementById('hamburger');
-    const navMenu = document.getElementById('nav-menu');
-
-    hamburger.addEventListener('click', () => {
-        hamburger.classList.toggle('active');
-        navMenu.classList.toggle('active');
-    });
-
-    document.querySelectorAll('.nav-links li a').forEach(link => {
-        link.addEventListener('click', () => {
-            hamburger.classList.remove('active');
-            navMenu.classList.remove('active');
-        });
-    });
-
-    // Reveal Animation
-    window.addEventListener('scroll', () => {
-        const reveals = document.querySelectorAll('.reveal');
-        reveals.forEach(r => {
-            let windowHeight = window.innerHeight;
-            let revealTop = r.getBoundingClientRect().top;
-            if (revealTop < windowHeight - 100) {
-                r.classList.add('active');
-            }
-        });
-    });
-</script>
-<script src="https://groot.mailerlite.com/js/w/webforms.min.js?v176ea20e10fad8a7057c2737a8c1d"></script>
-</body>
-    
-<script>
-  window.REQUIRED_CODE_ERROR_MESSAGE = 'Please choose a country code';
-  window.LOCALE = 'en';
-
-  window.EMAIL_INVALID_MESSAGE = window.SMS_INVALID_MESSAGE = "L&#39;information est invalide. Vérifiez l&#39;adresse courriel et essayez une autre fois. ";
-
-  window.REQUIRED_ERROR_MESSAGE = "Cette espace ne peut pas rester vide.  ";
-
-  window.GENERIC_INVALID_MESSAGE = "L&#39;information est invalide. Vérifiez l&#39;adresse courriel et essayez une autre fois. ";
-
-  window.INVALID_NUMBER = "L&#39;information est invalide. Vérifiez l&#39;adresse courriel et essayez une autre fois. ";
-
-  window.INVALID_DATE = "Please enter a valid date";
-
-  window.REQUIRED_MULTISELECT_MESSAGE = 'Please select at least 1 option';
-
-  window.translation = {
-    common: {
-      selectedList: '{quantity} list selected',
-      selectedLists: '{quantity} lists selected',
-      selectedOption: '{quantity} selected',
-      selectedOptions: '{quantity} selected',
-    }
-  };
-
-  var AUTOHIDE = Boolean(0);
-</script>
-
-<script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
-<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>    
-</html>
+            <button class="sib-form-block__button sib-form-block__button-with-loader" style="font-family:Helvetica, sans-serif
