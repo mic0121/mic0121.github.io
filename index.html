@@ -140,6 +140,14 @@
           padding: 30px 20px;
       }
   }
+/* Force le nom à rester sur une seule ligne sur mobile */
+@media (max-width: 768px) {
+  .main-title {
+    font-size: 1.8rem !important; /* Ajuste légèrement la taille pour que ça entre */
+    white-space: nowrap !important; /* Interdit le retour à la ligne automatique */
+    letter-spacing: 2px !important; /* Optionnel : resserre un brin l'espacement des lettres */
+  }
+}
 </style>
 <link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
     <meta name="description" content="Michael Demers, mentaliste à Québec spécialisé en événements corporatifs. Spectacles pour party des fêtes d'entreprise, galas, congrès et soirées VIP à Québec, Lévis et Trois-Rivières.">
