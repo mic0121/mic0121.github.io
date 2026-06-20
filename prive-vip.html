@@ -1,1 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privé & VIP | Michael Demers</title>
+    <link rel="stylesheet" href="style.css?v=2026.4">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Playfair+Display:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        body { background-color: #000000; color: #ffffff; margin: 0; font-family: 'Montserrat', sans-serif; }
+        .page-banner {
+            width: 100%;
+            height: 40vh;
+            background-image: linear-gradient(to bottom, rgba(0,0,0,0.2), #000000), url('images/oneil.HEIC');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .service-container { max-width: 900px; margin: 40px auto 60px; padding: 0 20px; text-align: center; }
+        .service-title { font-size: 2.5rem; letter-spacing: 4px; color: #D4AF37; text-transform: uppercase; margin-bottom: 30px; font-weight: 900; }
+        .service-desc { font-size: 1.05rem; line-height: 1.8; color: #bbbbbb; margin-bottom: 50px; text-align: justify; }
+        .packages-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-bottom: 60px; }
+        .package-card { padding: 40px 30px; background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(214, 175, 55, 0.1); text-align: left; }
+        .package-card h4 { color: #D4AF37; letter-spacing: 2px; text-transform: uppercase; margin-top: 0; margin-bottom: 20px; font-size: 1.15rem; }
+        .package-card ul { list-style: none; padding: 0; margin: 0; color: #cccccc; line-height: 1.7; }
+        .package-card ul li { margin-bottom: 12px; position: relative; padding-left: 20px; font-size: 0.95rem; }
+        .package-card ul li::before { content: "—"; color: #D4AF37; position: absolute; left: 0; }
+        .actions-wrapper { margin-top: 50px; display: flex; flex-direction: column; align-items: center; gap: 20px; }
+        .btn-back-top { background: transparent; border: 1px solid rgba(255,255,255,0.2); color: #ffffff; padding: 12px 30px; text-decoration: none; letter-spacing: 2px; font-size: 0.8rem; text-transform: uppercase; transition: all 0.3s ease; border-radius: 2px; }
+        .btn-back-top:hover { border-color: #D4AF37; color: #D4AF37; background: rgba(214, 175, 55, 0.02); }
+    </style>
+</head>
+<body>
 
+    <div class="page-banner"></div>
+
+    <div class="service-container">
+        <h1 class="service-title">Privé & VIP</h1> 
+        
+        <p class="service-desc">
+            Offrez à vos invités une expérience mystérieuse et ultra-exclusive lors de vos soirées privées, anniversaires prestigieux ou mariages. En petit comité ou en formule salon, le mentalisme crée une proximité magique unique où vos invités deviennent les véritables acteurs d'expériences mémorables.
+        </p>
+
+        <div class="packages-grid">
+            <div class="package-card">
+                <h4>Expérience Salon & VIP</h4>
+                <ul>
+                    <li>Idéal pour les petits groupes ou réunions exclusives</li>
+                    <li>Interactions psychologiques poussées et personnalisées</li>
+                    <li>Atmosphère intime et mémorable au plus près des spectateurs</li>
+                </ul>
+            </div>
+            
+            <div class="package-card">
+                <h4>Célébrations Privées</h4>
+                <ul>
+                    <li>Parfait pour les anniversaires importants et mariages</li>
+                    <li>Animation sur-mesure pour surprendre le ou les invités d'honneur</li>
+                    <li>Création de souvenirs forts dont tout le monde reparlera</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="actions-wrapper">
+            <a href="soumission.html" class="btn-premium">OBTENIR UNE SOUMISSION</a>
+            <a href="index.html" class="btn-back-top">Retour à l'accueil</a>
+        </div>
+    </div>
+
+</body>
+</html>
