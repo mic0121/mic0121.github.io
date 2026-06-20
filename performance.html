@@ -3,107 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Performances | Michael Demers Mentaliste</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <title>Performances & Services | Michael Demers</title>
+    <link rel="stylesheet" href="style.css?v=2026.4">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Playfair+Display:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css?v=2026.5"> 
-</head>
-<body class="page-performance">
     
-    <header>
-        <nav class="navbar">
-            <div class="nav-left">
-                <div class="logo">MICHAEL DEMERS</div>
-            </div>
-            <div class="nav-center-links">
-                <ul class="nav-links">
-                    <li><a href="index.html" class="hover-underline">ACCUEIL</a></li>
-                    <li><a href="about.html" class="hover-underline">L'ARTISTE</a></li>
-                </ul>
-            </div>
-        </nav>
-    </header>
-
-    <section class="perf-hero reveal">
-        <h1 class="section-title">PERFORMANCES</h1>
-        <div class="gold-divider-center"></div>
-        <p class="subtitle">Des expériences sur mesure pour vos événements corporatifs et privés.</p>
-    </section>
-
-    <main class="perf-container">
-
-        <section class="perf-item reveal">
-            <div class="perf-text">
-                <h2>Spectacle de Scène</h2>
-                <p>
-                    Une immersion totale dans l'impossible. Ce spectacle allie humour, 
-                    psychologie et lecture de pensée pour captiver une audience complète. 
-                    Idéal pour les galas, congrès et événements de grande envergure.
-                </p>
-                <ul class="perf-details">
-                    <li><i class="fas fa-bolt"></i> Durée : 45 à 75 minutes</li>
-                    <li><i class="fas fa-users"></i> Public : 50 à 500+ personnes</li>
-                </ul>
-            </div>
-            <div class="perf-image">
-                <img src="images/gala.JPG" alt="Michael Demers sur scène">
-            </div>
-        </section>
-
-        <section class="perf-item reverse reveal">
-            <div class="perf-text">
-                <h2>Cocktail & Close-up</h2>
-                <p>
-                    Le mentalisme à quelques centimètres de vos yeux. Je circule parmi vos 
-                    invités pour briser la glace et créer des moments d'émerveillement 
-                    spontanés. Parfait pour favoriser les échanges durant vos 5 à 7.
-                </p>
-                <ul class="perf-details">
-                    <li><i class="fas fa-bolt"></i> Format : Déambulatoire</li>
-                    <li><i class="fas fa-users"></i> Public : Petits groupes</li>
-                </ul>
-            </div>
-            <div class="perf-image">
-                <img src="images/closeup.jpg" alt="Mentalisme de proximité">
-            </div>
-        </section>
+    <style>
+        body { background-color: #000000; color: #ffffff; margin: 0; font-family: 'Montserrat', sans-serif; }
+        .perf-container { max-width: 900px; margin: 60px auto; padding: 0 20px; text-align: center; }
+        .perf-title { font-size: 2.5rem; letter-spacing: 4px; color: #D4AF37; text-transform: uppercase; margin-bottom: 15px; font-weight: 900; }
+        .perf-subtitle { font-size: 1rem; letter-spacing: 2px; color: #888888; text-transform: uppercase; margin-bottom: 50px; }
         
-        <section class="perf-item reveal">
-            <div class="perf-text">
-                <h2>SECRETS - Le Spectacle</h2>
-                <p>
-                    On a tous des secrets. Certains qu’on garde… et d’autres qu’on pense impossibles à découvrir.
-                    Dans SECRETS, je vous invite à vivre une expérience où tout se passe dans votre esprit.
-                </p>
-                <ul class="perf-details">
-                    <li><i class="fas fa-bolt"></i> Durée : 75 minutes</li>
-                    <li><i class="fas fa-users"></i> Public : Minimum de 50 personnes</li>
-                </ul>
-            </div>
-            <div class="perf-image">
-                <img src="images/SECRETS 2026.005.JPEG" alt="Affiche de SECRETS">
-            </div>
-        </section>
+        .perf-list { display: flex; flex-direction: column; gap: 30px; margin-bottom: 60px; }
+        .perf-row-link { text-decoration: none; color: inherit; display: block; }
+        
+        .perf-item { 
+            display: flex; 
+            align-items: center; 
+            justify-content: space-between; 
+            padding: 35px 40px; 
+            background: rgba(255, 255, 255, 0.01); 
+            border: 1px solid rgba(214, 175, 55, 0.1); 
+            text-align: left;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .perf-item:hover {
+            border-color: #D4AF37;
+            background: rgba(214, 175, 55, 0.03);
+            transform: translateX(5px);
+        }
+        
+        .perf-details { max-width: 80%; }
+        .perf-item h3 { color: #D4AF37; letter-spacing: 2px; text-transform: uppercase; margin-top: 0; margin-bottom: 12px; font-size: 1.2rem; }
+        .perf-item p { font-size: 0.95rem; line-height: 1.6; color: #bbbbbb; margin: 0; }
+        
+        .perf-arrow { color: #D4AF37; font-size: 1.2rem; transition: transform 0.3s ease; }
+        .perf-item:hover .perf-arrow { transform: translateX(5px); }
 
-    </main>
+        .actions-wrapper { margin-top: 50px; display: flex; flex-direction: column; align-items: center; gap: 20px; }
+        .btn-back-top { background: transparent; border: 1px solid rgba(255,255,255,0.2); color: #ffffff; padding: 12px 30px; text-decoration: none; letter-spacing: 2px; font-size: 0.8rem; text-transform: uppercase; transition: all 0.3s ease; border-radius: 2px; }
+        .btn-back-top:hover { border-color: #D4AF37; color: #D4AF37; background: rgba(214, 175, 55, 0.02); }
+        
+        @media (max-width: 768px) {
+            .perf-item { flex-direction: column; align-items: flex-start; gap: 20px; padding: 30px 25px; }
+            .perf-details { max-width: 100%; }
+            .perf-arrow { align-self: flex-end; }
+        }
+    </style>
+</head>
+<body>
 
-    <footer class="site-footer">
-        <div class="footer-cta reveal">
-            <p>Vous avez un projet ou une idée spécifique en tête ?</p>
-            <a href="soumission.html" class="btn-premium hover-lift">DEMANDER UN DEVIS</a>
+    <div class="perf-container">
+        <h1 class="perf-title">Performances</h1>
+        <p class="perf-subtitle">Découvrez les formules et cliquez pour explorer les détails</p> 
+
+        <div class="perf-list">
+            
+            <a href="corporatif.html" class="perf-row-link">
+                <div class="perf-item">
+                    <div class="perf-details">
+                        <h3>Événements Corporatifs</h3>
+                        <p>Party des fêtes, congrès, et consolidation d'équipe. Découvrez les formules sur scène ou en déambulatoire adaptées pour vos collaborateurs à Québec.</p>
+                    </div>
+                    <div class="perf-arrow"><i class="fas fa-arrow-right"></i></div>
+                </div>
+            </a>
+
+            <a href="prive-vip.html" class="perf-row-link">
+                <div class="perf-item">
+                    <div class="perf-details">
+                        <h3>Privé & VIP</h3>
+                        <p>Mariages, anniversaires importants et soirées privées exclusives. Offrez une expérience intime, mystérieuse et haut de gamme en petit comité.</p>
+                    </div>
+                    <div class="perf-arrow"><i class="fas fa-arrow-right"></i></div>
+                </div>
+            </a>
+
+            <a href="scenes-galas.html" class="perf-row-link">
+                <div class="perf-item">
+                    <div class="perf-details">
+                        <h3>Galas & Scène</h3>
+                        <p>Lancements, remises de prix et grands événements d'envergure. Un show de mentalisme à grand impact visuel conçu pour captiver des centaines de personnes.</p>
+                    </div>
+                    <div class="perf-arrow"><i class="fas fa-arrow-right"></i></div>
+                </div>
+            </a>
+
         </div>
-        <div class="footer-content" style="margin-top: 50px;">
-            <p>© 2026 MICHAEL DEMERS | QUÉBEC</p>
-        </div>
-    </footer>
 
-    <script>
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) entry.target.classList.add('visible');
-            });
-        }, { threshold: 0.1 });
-        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-    </script>
+        <div class="actions-wrapper">
+            <a href="soumission.html" class="btn-premium">OBTENIR UNE SOUMISSION</a>
+            <a href="index.html" class="btn-back-top">Retour à l'accueil</a>
+        </div>
+    </div>
+
 </body>
 </html>
