@@ -209,5 +209,27 @@ header {
     .contact-subtitle {
         font-size: 1.1rem !important;
     }
-    
+/* Style des icônes sociales dans le menu mobile */
+.nav-socials-mobile {
+  display: none; /* Masqué sur ordinateur */
+}
+
+@media (max-width: 768px) {
+  .nav-socials-mobile {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 25px;
+  }
+
+  .nav-socials-mobile a {
+    color: #D4AF37; /* Couleur or */
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+  }
+
+  .nav-socials-mobile a:hover {
+    color: #ffffff;
+  }
+}
     
