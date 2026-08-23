@@ -442,6 +442,58 @@ header {
 }
 .btn-back-top:hover { border-color: var(--gold); color: var(--gold); background: rgba(214,175,55,0.05); }
 
+/* --- PAGE CONTACT / SOUMISSION --- */
+.contact-header {
+    padding: 170px 20px 70px;
+    text-align: center;
+    background: linear-gradient(to bottom, #111 0%, var(--dark) 100%);
+}
+.contact-title {
+    font-size: 2.8rem;
+    font-weight: 900;
+    letter-spacing: 5px;
+    color: var(--gold);
+    margin-bottom: 18px;
+    text-transform: uppercase;
+}
+.contact-subtitle {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    font-style: italic;
+    color: #ccc;
+    max-width: 560px;
+    margin: 0 auto 28px;
+    line-height: 1.6;
+}
+.email-link {
+    color: var(--gold);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.05rem;
+    letter-spacing: 1px;
+    border-bottom: 1px solid transparent;
+    transition: 0.3s;
+}
+.email-link:hover { border-bottom-color: var(--gold); }
+
+.contact-form-section { padding: 10px 20px 100px; }
+.contact-form-card {
+    max-width: 620px;
+    margin: 0 auto;
+    padding: 14px;
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(214,175,55,0.12);
+    border-radius: 4px;
+}
+.brevo-iframe-wrapper { width: 100%; display: flex; justify-content: center; }
+.brevo-iframe {
+    width: 100%;
+    max-width: 580px;
+    height: 950px;
+    border: none;
+    background-color: transparent;
+}
+
 /* --- RESPONSIVE MOBILE --- */
 @media (max-width: 1024px) {
     .hide-on-mobile { display: none !important; }
@@ -480,6 +532,7 @@ header {
     .hero-cta-row { flex-direction: column; width: 100%; padding: 0 30px; }
     .btn-premium, .btn-outline { width: 100%; min-width: 0; }
     .footer-content { text-align: center; justify-content: center; }
+    .brevo-iframe { height: 1050px; }
 }
 
 /* Force le nom à rester sur une seule ligne sur mobile */
