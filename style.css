@@ -451,3 +451,37 @@ h1, h2, h3, h4 { font-family: var(--serif); font-weight: 400; line-height: 1.08;
 .merci img.oeil { width: 96px; height: 96px; margin: 0 auto 30px; }
 .merci h1 { font-size: clamp(2.4rem, 6vw, 4.2rem); margin-bottom: 20px; }
 .merci p { color: var(--gris); max-width: 46ch; margin: 0 auto 36px; font-size: 1.1rem; }
+
+/* ---------- Mobile : contenu centré ---------- */
+@media (max-width: 760px) {
+  .hero-contenu, .page-hero .wrap, .section-tete, .signature, .experience-tete,
+  .experience-liste li, .panneau, .avis-vedette, .avis-liste li, .avis-pied,
+  .secrets > div, .teaser > div, .intro-grille, .faq > h2, .fin-page .wrap,
+  .artiste-texte, .contact-infos, .infolettre .wrap, .footer-haut, .footer-bas,
+  .services-liste a, .preuve .wrap, .merci { text-align: center; }
+
+  .hero h1, .signature p, .intro, .texte, .page-hero h1, .page-hero .lede,
+  .experience-liste p, .panneau p, .services-liste p, .artiste-texte p,
+  .cta-final h2, .fin-page h2, .contact-infos .lede { margin-left: auto; margin-right: auto; }
+
+  .hero-boutons, .section-tete, .avis-pied, .fin-page .wrap, .fin-page .boutons,
+  .preuve .wrap, .secrets .boutons, .avis-auteur, .reseaux, .footer-bas,
+  .intro-grille div[style*="flex"], .artiste-texte div[style*="flex"] { justify-content: center; }
+  .hero-boutons, .fin-page .boutons, .secrets .boutons,
+  .intro-grille div[style*="flex"], .artiste-texte div[style*="flex"] { flex-direction: column; align-items: center; }
+  .hero-boutons .btn, .fin-page .btn, .secrets .btn,
+  .intro-grille .btn, .artiste-texte .btn, .experience-tete .btn { width: 100%; max-width: 340px; }
+
+  .section-tete, .fin-page .wrap { flex-direction: column; align-items: center; }
+  .panneau { align-items: center; }
+  .secrets-affiche { margin: 0 auto; }
+  .citation-or { border-left: 0; padding-left: 0; border-top: 2px solid var(--or); padding-top: 24px; }
+  .fil { text-align: center; }
+  .footer-marque { flex-direction: column; align-items: center; }
+  .footer-marque p { margin: 0 auto; }
+  .footer-col ul { justify-items: center; }
+  .footer-haut .reseaux { justify-content: center; }
+  .infolettre .wrap > div:first-child p { margin: 0 auto; }
+  .contact-infos ul { justify-items: center; }
+  .formule { text-align: left; }
+}
