@@ -16,6 +16,11 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
+    <loc>https://micdemers.com/evenements.html</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
     <loc>https://micdemers.com/media.html</loc>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>

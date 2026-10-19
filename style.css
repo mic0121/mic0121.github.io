@@ -289,7 +289,11 @@ h1, h2, h3, h4 { font-family: var(--serif); font-weight: 400; line-height: 1.08;
 .infolettre .entry__error { display: block; color: #f3c2c2; font-size: .9rem; }
 .infolettre .entry__error:empty { display: none; }
 .infolettre .input--hidden { display: none !important; }
-.infolettre .sib-hide-loader-icon { display: none; }
+.infolettre .sib-form-message-panel--active { display: block; }
+.infolettre button svg { width: 18px; height: 18px; fill: currentColor; animation: tourne 1s linear infinite; }
+.infolettre button svg.sib-hide-loader-icon { display: none; }
+.infolettre .sib-form-block__button-disabled { opacity: .6; cursor: wait; }
+@keyframes tourne { to { transform: rotate(360deg); } }
 @media (max-width: 760px) { .infolettre .wrap { grid-template-columns: 1fr; } .infolettre .champ-ligne { flex-direction: column; } }
 
 /* Pied de page */
@@ -424,6 +428,7 @@ h1, h2, h3, h4 { font-family: var(--serif); font-weight: 400; line-height: 1.08;
 .yt button:hover .lecture { background: var(--or); border-color: var(--or); }
 .yt button:hover .lecture svg { fill: var(--noir); }
 .yt iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.a-venir { font-family: var(--serif); font-style: italic; font-size: clamp(1.3rem, 2.2vw, 1.7rem); color: var(--gris); padding: 20px 0; grid-column: 1 / -1; }
 .yt-titre { margin-top: 12px; font-size: .98rem; color: rgba(243,242,239,.85); }
 
 .galerie { columns: 3 280px; column-gap: 14px; }
