@@ -1,72 +1,9 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <link rel="icon" type="image/png" href="images/favicon.PNG">
-    <link rel="apple-touch-icon" href="images/favicon.PNG">
-<style>
-  @font-face {
-    font-display: block;
-    font-family: Roboto;
-    src: url(https://assets.brevo.com/font/Roboto/Latin/normal/normal/7529907e9eaf8ebb5220c5f9850e3811.woff2) format("woff2"), url(https://assets.brevo.com/font/Roboto/Latin/normal/normal/25c678feafdc175a70922a116c9be3e7.woff) format("woff")
-  }
-  @font-face {
-    font-display: fallback;
-    font-family: Roboto;
-    font-weight: 600;
-    src: url(https://assets.brevo.com/font/Roboto/Latin/medium/normal/6e9caeeafb1f3491be3e32744bc30440.woff2) format("woff2"), url(https://assets.brevo.com/font/Roboto/Latin/medium/normal/71501f0d8d5aa95960f6475d5487d4c2.woff) format("woff")
-  }
-  @font-face {
-    font-display: fallback;
-    font-family: Roboto;
-    font-weight: 700;
-    src: url(https://assets.brevo.com/font/Roboto/Latin/bold/normal/3ef7cf158f310cf752d5ad08cd0e7e60.woff2) format("woff2"), url(https://assets.brevo.com/font/Roboto/Latin/bold/normal/ece3a1d82f18b60bcce0211725c476aa.woff) format("woff")
-  }
-  :where(.sib-form-message-panel) {
-    display: none;
-  }
-  :where(.sib-form-message-panel .sib-notification__icon) {
-    width: 20px;
-    height: 20px;
-  }
-  #sib-container input:-ms-input-placeholder {
-    font-family: Helvetica, sans-serif;
-    text-align: left;
-    color: #c0ccda;
-  }
-  #sib-container input::placeholder {
-    font-family: Helvetica, sans-serif;
-    text-align: left;
-    color: #c0ccda;
-  }
-  #sib-container textarea::placeholder {
-    font-family: Helvetica, sans-serif;
-    text-align: left;
-    color: #c0ccda;
-  }
-  #sib-container a {
-    text-decoration: underline;
-    color: #2BB2FC;
-  }
-  /* Style pour l'apparition instantanée du Hero en 2 secondes */
-  .hero-immediate-fade {
-    opacity: 0;
-    animation: fadeInHero 2s forwards ease-in-out;
-  }
-  @keyframes fadeInHero {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  /* Style pour rendre les cartes de services cliquables proprement */
-  .cards-link-wrapper {
-    text-decoration: none !important;
-    display: block;
-    color: inherit;
-  }
-  .cards a:hover {
-    text-decoration: none;
-  }
-</style>
-<link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Michael Demers | Mentaliste #1 à Québec</title>
     <meta name="description" content="Michael Demers, mentaliste à Québec spécialisé en événements corporatifs. Spectacles pour party des fêtes d'entreprise, galas, congrès et soirées VIP à Québec, Lévis et Trois-Rivières.">
     <meta name="keywords" content="mentaliste Québec, magicien corporatif Québec, animation événementielle luxe, spectacle mentalisme, Michael Demers">
     <link rel="canonical" href="https://micdemers.com">
@@ -76,7 +13,7 @@
   "@type": "EntertainmentBusiness",
   "name": "Michael Demers — Mentaliste",
   "url": "https://micdemers.com",
-  "image": "images/logo.PNG",
+  "image": "https://micdemers.com/images/logo-blanc.png",
   "description": "Mentaliste professionnel à Québec spécialisé en spectacles corporatifs pour party des fêtes, galas, congrès et événements d'entreprise.",
   "address": {
     "@type": "PostalAddress",
@@ -102,290 +39,273 @@
   "priceRange": "$$$"
 }
 </script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Michael Demers | Mentaliste #1 à Québec</title>
-    <link rel="stylesheet" href="style.css?v=2026.6">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Playfair+Display:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <meta name="theme-color" content="#000000">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=2026.10">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Michael Demers | Mentaliste à Québec">
+    <meta property="og:url" content="https://micdemers.com/">
+    <meta property="og:image" content="https://micdemers.com/images/hero.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="preload" as="image" href="video/hero-poster.jpg">
 </head>
 <body>
-<header>
-    <div class="top-announcement">L'EXPÉRIENCE QUI TRANSFORMERA VOTRE ÉVÉNEMENT</div>
-    <nav class="navbar">
-        <div class="nav-left">
-            <!-- Logo retiré de la version ordinateur : nav épurée façon "charliehewish.com" -->
-            <div class="hamburger" id="hamburger">
-                <span></span><span></span><span></span>
+<header class="site-header" id="site-header">
+    <div class="annonce">L'expérience qui transformera votre événement</div>
+    <nav class="nav" aria-label="Navigation principale">
+        <a href="index.html" class="nav-logo" aria-label="Michael Demers, retour à l'accueil">
+            <img src="images/logo-blanc.png" alt="" width="46" height="46">
+            <span>Michael Demers</span>
+        </a>
+        <div class="nav-menu" id="nav-menu">
+            <ul class="nav-liens"><li><a href="about.html">L'artiste</a></li><li><a href="performance.html">Services</a></li><li><a href="media.html">Média</a></li><li><a href="soumission.html">Contact</a></li></ul>
+            <div class="nav-menu-extra">
+                <a href="soumission.html" class="btn btn-or">Obtenir une soumission</a>
+                <a href="secret24oct.html" class="nav-billet">Billetterie : SECRETS</a>
+                <div class="reseaux"><a href="https://instagram.com/michaeldemers_" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c3.2 0 3.6 0 4.8.1 3.3.1 4.8 1.7 4.9 4.9.1 1.3.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 3.2-1.7 4.8-4.9 4.9-1.3.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-3.3-.1-4.8-1.7-4.9-4.9C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.8C2.4 3.9 3.9 2.4 7.2 2.3 8.4 2.2 8.8 2.2 12 2.2zM12 0C8.7 0 8.3 0 7.1.1 2.7.3.3 2.7.1 7.1 0 8.3 0 8.7 0 12s0 3.7.1 4.9c.2 4.4 2.6 6.8 7 7 1.2.1 1.6.1 4.9.1s3.7 0 4.9-.1c4.4-.2 6.8-2.6 7-7 .1-1.2.1-1.6.1-4.9s0-3.7-.1-4.9c-.2-4.4-2.6-6.8-7-7C15.7 0 15.3 0 12 0zm0 5.8a6.2 6.2 0 1 0 0 12.4 6.2 6.2 0 0 0 0-12.4zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.4-11.8a1.4 1.4 0 1 0 0 2.9 1.4 1.4 0 0 0 0-2.9z"/></svg></a><a href="https://tiktok.com/@Michael.demers52" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.6 6.7a4.8 4.8 0 0 1-3.8-4.2V2h-3.4v13.7a2.9 2.9 0 0 1-5.2 1.7 2.9 2.9 0 0 1 3.2-4.5V9.4a6.3 6.3 0 0 0-5.4 10.7 6.3 6.3 0 0 0 10.8-4.4v-7a8.2 8.2 0 0 0 4.8 1.5V6.8l-1-.1z"/></svg></a><a href="https://facebook.com/michaelmagicien" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12a12 12 0 1 0-13.9 11.9v-8.4h-3V12h3V9.4c0-3 1.8-4.7 4.5-4.7 1.3 0 2.7.2 2.7.2v3h-1.5c-1.5 0-2 .9-2 1.9V12h3.3l-.5 3.5h-2.8v8.4A12 12 0 0 0 24 12z"/></svg></a><a href="https://youtube.com/@MichaelDemers52" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.6 15.6V8.4l6.2 3.6-6.2 3.6z"/></svg></a></div>
             </div>
         </div>
-        <div class="nav-center-links" id="nav-menu">
-            <ul class="nav-links">
-                <li><a href="about.html">L'ARTISTE</a></li>
-                <li><a href="performance.html">SERVICES</a></li>
-                <li><a href="soumission.html">CONTACT</a></li>
-                <li><a href="secret24oct.html" class="btn-gold-nav">BILLETTERIE</a></li>
-            </ul>
-        </div>
-        <div class="nav-right-actions hide-on-mobile">
-            <div class="nav-socials-top">
-                <a href="https://instagram.com/michaeldemers_" target="_blank"><i class="fab fa-instagram"></i></a>
-                <a href="https://tiktok.com/@Michael.demers52" target="_blank"><i class="fab fa-tiktok"></i></a>
-                <a href="https://facebook.com/michaelmagicien" target="_blank"><i class="fab fa-facebook"></i></a>
-                <a href="https://youtube.com/@MichaelDemers52" target="_blank"><i class="fab fa-youtube"></i></a>
-            </div>
+        <div class="nav-actions">
+            <a href="secret24oct.html" class="nav-billet">Billetterie</a>
+            <a href="soumission.html" class="btn btn-or btn-sm">Obtenir une soumission</a>
+            <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav-menu"><span></span><span></span><span></span></button>
         </div>
     </nav>
 </header>
-<section id="artiste" class="hero">
-    <div class="hero-content hero-immediate-fade">
-        <span class="kicker">Mentaliste corporatif</span>
-        <h1 class="main-title">MICHAEL DEMERS</h1>
-        <p class="hero-subtitle">L'EXPÉRIENCE HAUT DE GAMME</p>
-        <div class="hero-cta-row">
-            <a href="soumission.html" class="btn-premium">RÉSERVER L'EXPÉRIENCE</a>
-            <a href="performance.html" class="btn-outline">VOIR LES SERVICES</a>
-        </div>
-        <p style="margin-top:22px; font-size:0.78rem; letter-spacing:2px; color:rgba(255,255,255,0.45); text-transform:uppercase;">Québec · Lévis · Trois-Rivières · Montréal et plus !</p>
+<main>
+<section class="hero" id="haut">
+    <div class="hero-media" aria-hidden="true">
+        <video class="hero-video" muted playsinline preload="auto" poster="video/hero-poster.jpg"
+               data-src="video/hero.mp4" data-src-mobile="video/hero-mobile.mp4"></video>
+        <div class="hero-photo" style="background-image:url('images/hero.jpg')"></div>
+        <div class="hero-voile"></div>
     </div>
-    <div class="scroll-cue"><i class="fas fa-chevron-down"></i></div>
-</section>
-<section class="social-proof-section">
-    <div class="container reveal">
-        <div class="stars-elite">
-            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+    <div class="hero-contenu">
+        <span class="marque">Mentaliste corporatif</span>
+        <h1 class="display">Michael Demers</h1>
+        <p class="lede">L'expérience haut de gamme</p>
+        <div class="hero-boutons">
+            <a href="soumission.html" class="btn btn-or">Réserver l'expérience</a>
+            <a href="performance.html" class="btn btn-ligne">Voir les services</a>
         </div>
-        <p class="signature-text">
-            Plus qu’une performance, une <span class="gold-text">signature unique</span> gravée dans la mémoire de milliers de spectateurs.
-        </p>
+        <p class="hero-villes">Québec, Lévis, Trois-Rivières, Montréal et plus !</p>
+    </div>
+    <button class="hero-revoir" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="10.5"/><path d="M10 8.5v7l5.5-3.5z" fill="currentColor"/></svg>Revoir la vidéo</button>
+</section>
+
+<section class="preuve" aria-label="Note Google">
+    <div class="wrap">
+        <a href="#avis" class="note-google"><span class="etoiles" aria-label="5 étoiles sur 5">★★★★★</span><span><strong>5,0 sur Google</strong> <span class="gris">· 15 avis</span></span></a>
+        <p class="preuve-citation">« Il a été très apprécié de l’ensemble du personnel. » — Véronique P., contrat corporatif</p>
     </div>
 </section>
 
-<section class="experience-section">
-    <div class="container reveal">
-        <div class="section-title-wrap">
-            <h2 class="section-title">L'EXPÉRIENCE</h2>
-            <div class="rule"></div>
-        </div>
-        <div class="experience-grid">
+<section class="section signature">
+    <div class="wrap">
+        <p>Plus qu’une performance, une signature unique gravée dans la mémoire de milliers de spectateurs.</p>
+    </div>
+</section>
 
-            <div class="exp-item">
-                <i class="fas fa-comments gold-icon"></i>
-                <h3>L'ART DE BRISER LA GLACE</h3>
+<section class="section section-encre" aria-labelledby="exp-titre">
+    <div class="wrap experience">
+        <div class="experience-tete">
+            <h2 class="h-section" id="exp-titre">L'expérience</h2>
+            <a href="soumission.html" class="btn btn-or">Obtenir une soumission</a>
+        </div>
+        <ul class="experience-liste">
+            <li>
+                <h3>L'art de briser la glace</h3>
                 <p>Éliminez les silences gênants dès le début de votre événement corporatif à Québec. Michael crée des connexions immédiates entre vos invités grâce à des interventions percutantes qui deviennent le sujet de conversation principal.</p>
-            </div>
-            <div class="exp-item">
-                <i class="fas fa-glass-cheers gold-icon"></i>
-                <h3>ADAPTATION PRESTIGE</h3>
+            </li>
+            <li>
+                <h3>Adaptation prestige</h3>
                 <p>Aucune contrainte logistique. Le mentalisme s'intègre avec fluidité au rythme de votre cocktail, party des fêtes ou dîner de gala à Québec, sans jamais interrompre le service ou l'ambiance sonore.</p>
-            </div>
-            <div class="exp-item">
-                <i class="fas fa-brain gold-icon"></i>
-                <h3>SIGNATURE MÉMORABLE</h3>
+            </li>
+            <li>
+                <h3>Signature mémorable</h3>
                 <p>Plus qu'un divertissement, c'est un catalyseur social. Vos invités repartiront avec un souvenir indélébile — le genre d'expérience dont on parle encore au bureau le lundi matin.</p>
-            </div>
-        </div>
-
-        <div style="margin-top: 60px;">
-            <a href="soumission.html" class="btn-premium">OBTENIR UNE SOUMISSION</a>
-        </div>
-
+            </li>
+        </ul>
     </div>
 </section>
 
-<section id="services" class="services-section">
-    <div class="section-title-wrap reveal">
-        <h2 class="section-title">SERVICES EXCLUSIFS</h2>
-        <div class="rule"></div>
-    </div>
-    <div class="cards">
-        <a href="corporatif.html" class="cards-link-wrapper reveal">
-            <div class="card" style="background-image: url('images/IMG_albert.jpg');">
-                <div class="card-overlay"></div>
-                <div class="card-content">
-                    <span class="card-index">01</span>
-                    <h3>Corporatif</h3>
-                    <p>Party des fêtes · Congrès · Cocktails d'entreprise.</p>
-                    <span class="card-link">Découvrir les formules →</span>
-                </div>
-            </div>
-        </a>
-        <a href="prive-vip.html" class="cards-link-wrapper reveal">
-            <div class="card" style="background-image: url('images/oneil.HEIC');">
-                <div class="card-overlay"></div>
-                <div class="card-content">
-                    <span class="card-index">02</span>
-                    <h3>Privé & VIP</h3>
-                    <p>Anniversaires prestigieux · Mariages · Soirées exclusives.</p>
-                    <span class="card-link">Voir l'expérience →</span>
-                </div>
-            </div>
-        </a>
-        <a href="scenes-galas.html" class="cards-link-wrapper reveal">
-            <div class="card" style="background-image: url('images/gala.JPG');">
-                <div class="card-overlay"></div>
-                <div class="card-content">
-                    <span class="card-index">03</span>
-                    <h3>Galas & Scène</h3>
-                    <p>Lancements · Remises de prix · Grands événements.</p>
-                    <span class="card-link">Voir le show de scène →</span>
-                </div>
-            </div>
-        </a>
+<section class="section" id="services" aria-labelledby="serv-titre">
+    <div class="wrap">
+        <div class="section-tete">
+            <h2 class="h-section" id="serv-titre">Services exclusifs</h2>
+            <a href="performance.html" class="lien-or">Toutes les formules</a>
+        </div>
+        <div class="panneaux">
+            <a href="corporatif.html" class="panneau">
+                <img src="images/corporatif.jpg" alt="Michael Demers révèle une prédiction sur scène avec un spectateur" loading="lazy">
+                <h3>Corporatif</h3>
+                <p>Party des fêtes, congrès, cocktails d'entreprise.</p>
+                <span class="voir">Découvrir les formules <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span>
+            </a>
+            <a href="prive-vip.html" class="panneau">
+                <img src="images/prive.jpg" alt="Michael Demers montre un cube Rubik et une prédiction à un spectateur, en formule de proximité" loading="lazy">
+                <h3>Privé &amp; VIP</h3>
+                <p>Anniversaires prestigieux, mariages, soirées exclusives.</p>
+                <span class="voir">Voir l'expérience <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span>
+            </a>
+            <a href="scenes-galas.html" class="panneau">
+                <img src="images/gala.jpg" alt="Michael Demers sur scène lors d'un gala" loading="lazy">
+                <h3>Galas &amp; Scène</h3>
+                <p>Lancements, remises de prix, grands événements.</p>
+                <span class="voir">Voir le show de scène <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span>
+            </a>
+        </div>
     </div>
 </section>
-<section id="contact" class="cta-section-gold reveal">
-    <h2>Prêt à transformer votre événement ?</h2>
-    <p>Party des fêtes · Gala · Congrès · Soirée VIP — les dates 2026 s'envolent rapidement.</p>
-    <div class="btn-wrapper-final">
-        <a href="soumission.html" class="btn-premium">VÉRIFIER LES DISPONIBILITÉS</a>
+
+<section class="section section-encre" id="avis" aria-labelledby="avis-titre">
+    <div class="wrap">
+        <div class="section-tete">
+            <h2 class="h-section" id="avis-titre">Ce qu'en disent les spectateurs</h2>
+        </div>
+        <div class="avis-grille">
+            <figure class="avis-vedette">
+                <blockquote><p>J’ai vu Michael Demers dans une portion de spectacle à la salle Albert-Rousseau et je l’ai ensuite mandaté pour un contrat corporatif à mon travail. Il est super bon et il a été très apprécié de l’ensemble du personnel. Je le recommande !</p></blockquote>
+                <figcaption class="avis-auteur"><span class="etoiles" aria-label="5 étoiles sur 5">★★★★★</span><strong>Véronique P.</strong><span>Avis Google</span></figcaption>
+            </figure>
+            <ul class="avis-liste"><li><p>Excellent mentaliste à Québec pour événements corporatifs et privés!</p><div class="avis-auteur"><span class="etoiles" aria-label="5 étoiles sur 5">★★★★★</span><strong>Nancy V.</strong></div></li><li><p>Spectacle très intéressant, on n’a pas vu le temps passer, on a vraiment passé une très belle soirée.</p><div class="avis-auteur"><span class="etoiles" aria-label="5 étoiles sur 5">★★★★★</span><strong>Carole C.</strong></div></li><li><p>Wow vraiment très bon, très fort. Ça vaut vraiment la peine de voir ce spectacle. Bravo! Bravo!</p><div class="avis-auteur"><span class="etoiles" aria-label="5 étoiles sur 5">★★★★★</span><strong>L. B.</strong></div></li></ul>
+        </div>
+        <div class="avis-pied">
+            <span class="badge-google"><svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 13 4 4 13 4 24s9 20 20 20 20-9 20-20c0-1.3-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="m6.3 14.7 6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2c-2 1.5-4.5 2.4-7.2 2.4-5.2 0-9.6-3.3-11.3-8l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3a12 12 0 0 1-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5z"/></svg><span><strong style="color:var(--craie)">5,0</strong> sur Google · 15 avis</span></span>
+            <a href="https://maps.google.com/?cid=2059263790109878283" class="lien-or" target="_blank" rel="noopener">Voir tous les avis sur Google</a>
+        </div>
     </div>
 </section>
-<section>
-<div class="sib-form" style="text-align: center; background-color: #000000;">
-  <div id="sib-form-container" class="sib-form-container">
-    <div id="error-message" class="sib-form-message-panel" style="font-family:Helvetica, sans-serif; font-size:16px; text-align:left; color:#661d1d; background-color:#ffeded; border-color:#ff4949; border-radius:3px; max-width:540px;">
-      <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
-        <svg viewBox="0 0 512 512" class="sib-icon sib-notification__icon">
-          <path d="M256 40c118.621 0 216 96.075 216 216 0 119.291-96.61 216-216 216-119.244 0-216-96.562-216-216 0-119.203 96.602-216 216-216m0-32C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm-11.49 120h22.979c6.823 0 12.274 5.682 11.99 12.5l-7 168c-.268 6.428-5.556 11.5-11.99 11.5h-8.979c-6.433 0-11.722-5.073-11.99-11.5l-7-168c-.283-6.818 5.167-12.5 11.99-12.5zM256 340c-15.464 0-28 12.536-28 28s12.536 28 28 28 28-12.536 28-28-12.536-28-28-28z" />
-        </svg>
-        <span class="sib-form-message-panel__inner-text">
-                Oups ! Ton adresses courriel n&#39;a pas été ajouté, essaye encore !!
-          </span>
-      </div>
-    </div>
-    <div></div>
-    <div id="success-message" class="sib-form-message-panel" style="font-family:Helvetica, sans-serif; font-size:16px; text-align:left; color:#085229; background-color:#e7faf0; border-color:#13ce66; border-radius:3px; max-width:540px;">
-      <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
-        <svg viewBox="0 0 512 512" class="sib-icon sib-notification__icon">
-          <path d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 464c-118.664 0-216-96.055-216-216 0-118.663 96.055-216 216-216 118.664 0 216 96.055 216 216 0 118.663-96.055 216-216 216zm141.63-274.961L217.15 376.071c-4.705 4.667-12.303 4.637-16.97-.068l-85.878-86.572c-4.667-4.705-4.637-12.303.068-16.97l8.52-8.451c4.705-4.667 12.303-4.637 16.97.068l68.976 69.533 163.441-162.13c4.705-4.667 12.303-4.637 16.97.068l8.451 8.52c4.668 4.705 4.637 12.303-.068 16.97z" />
-        </svg>
-        <span class="sib-form-message-panel__inner-text">
-                Tu as bien joint l'infolettre !
-          </span>
-      </div>
-    </div>
-    <div></div>
-    <div id="sib-container" class="sib-container--large sib-container--vertical" style="max-width:540px; text-align:center; background-color:rgba(0,0,0,1); border-width:1px; border-style:solid; border-color:#000000; border-radius:3px; direction:ltr">
-      <form id="sib-form" method="POST" action="https://32576e57.sibforms.com/serve/MUIFAECYVCJ2LcJBpLlEAFoaHfP8jk5oYb_zzt1dds2iWNUTccKRmxiBGg-Npz5aEV7OJ1nGtKqzxUhFHZPSaqaMjpLCBS2rtwPxRdTrXUy4H2Oy3_tSVPAxqRoyLue9-IIXSO4GhKlpQHfoR124GYJEl-emQzuaWbpmv9QiPKl42MHBirEknoZhFIyTE7kIL4xcvC7yv3J6eJslWA==" data-type="subscription">
-        <div style="padding: 8px 0;">
-          <div class="sib-form-block" style="font-family:Helvetica, sans-serif; font-size:32px; font-weight:700; text-align:left; color:#ffffff; background-color:transparent; text-align:left">
-            <p>Infolettre</p>
-          </div>
-        </div>
-        <div style="padding: 8px 0;">
-          <div class="sib-form-block" style="font-family:Helvetica, sans-serif; font-size:16px; text-align:left; color:#ffffff; background-color:transparent; text-align:left">
-            <div class="sib-text-form-block">
-              <p>Ajoutes ton adresse courriel pour des offres exclusives !</p>
+
+<section class="section" aria-labelledby="secrets-titre">
+    <div class="wrap secrets">
+        <a href="secret24oct.html" class="secrets-affiche"><img src="images/affiche-secrets.jpg" alt="Affiche du spectacle SECRETS de Michael Demers, 24 octobre 2026" loading="lazy" width="1054" height="1492"></a>
+        <div>
+            <span class="marque">Billetterie</span>
+            <h2 class="h-section" id="secrets-titre">SECRETS</h2>
+            <p class="date">Le 24 octobre 2026</p>
+            <p class="texte">Le spectacle solo de Michael Demers, présenté au grand public.</p>
+            <div class="boutons">
+                <a href="secret24oct.html" class="btn btn-or">Acheter des billets</a>
             </div>
-          </div>
         </div>
-        <div style="padding: 8px 0;">
-          <div class="sib-input sib-form-block">
-            <div class="form__entry entry_block">
-              <div class="form__label-row ">
-                <div class="entry__field">
-                  <input class="input " type="text" id="EMAIL" name="EMAIL" autocomplete="off" value="" placeholder="EMAIL" data-required="true" required />
-                </div>
-              </div>
-              <label class="entry__error entry__error--primary" style="font-family:Helvetica, sans-serif; font-size:16px; text-align:left; color:#661d1d; background-color:#ffeded; border-color:#ff4949; border-radius:3px;">
-              </label>
-            </div>
-          </div>
-        </div>
-        <div style="padding: 8px 0;">
-          <div class="sib-captcha sib-form-block">
-            <div class="form__entry entry_block">
-              <div class="form__label-row ">
-                <script>
-                  function handleCaptchaResponse() {
-                    var event = new Event('captchaChange');
-                    document.getElementById('sib-captcha').dispatchEvent(event);
-                    window.grecaptcha = window.turnstile;
-                  }
-                </script>
-                <div class="cf-turnstile g-recaptcha" data-sitekey="0x4AAAAAADdquMefyeNndkEb" id="sib-captcha" data-callback="handleCaptchaResponse" data-language="en"></div>
-              </div>
-              <label class="entry__error entry__error--primary" style="font-family:Helvetica, sans-serif; font-size:16px; text-align:left; color:#661d1d; background-color:#ffeded; border-color:#ff4949; border-radius:3px;">
-              </label>
-            </div>
-          </div>
-        </div>
-        <div style="padding: 8px 0;">
-          <div class="sib-form-block" style="text-align: center">
-            <button class="sib-form-block__button sib-form-block__button-with-loader" style="font-family:Helvetica, sans-serif; font-size:16px; font-weight:700; text-align:center; color:#FFFFFF; background-color:#d4af37; border-width:0px; border-radius:20px;" form="sib-form" type="submit">
-              <svg class="icon clickable__icon progress-indicator__icon sib-hide-loader-icon" viewBox="0 0 512 512">
-                <path d="M460.116 373.846l-20.823-12.022c-5.541-3.199-7.54-10.159-4.663-15.874 30.137-59.886 28.343-131.652-5.386-189.946-33.641-58.394-94.896-95.833-161.827-99.676C261.028 55.961 256 50.751 256 44.352V20.309c0-6.904 5.808-12.337 12.703-11.982 83.556 4.306 160.163 50.864 202.11 123.677 42.063 72.696 44.079 162.316 6.031 236.832-3.14 6.148-10.75 8.461-16.728 5.01z" />
-              </svg>
-              JOINDRE
-            </button>
-          </div>
-        </div>
-        <input type="text" name="email_address_check" value="" class="input--hidden">
-        <input type="hidden" name="locale" value="en">
-      </form>
     </div>
-  </div>
-</div>
 </section>
+
+<section class="section section-encre" aria-labelledby="media-titre">
+    <div class="wrap teaser">
+        <div class="teaser-video">
+            <video muted loop playsinline preload="none" poster="video/hero-poster.jpg" aria-label="Extrait de spectacle"
+                   onmouseenter="this.play()" onmouseleave="this.pause()">
+                <source src="video/hero-mobile.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div>
+            <h2 class="h-section" id="media-titre">Voyez-le en action</h2>
+            <p class="texte" style="margin:20px 0 32px">Extraits de spectacles, vidéos et photos d'événements.</p>
+            <a href="media.html" class="btn btn-ligne">Voir la page Média</a>
+        </div>
+    </div>
+</section>
+
+<section class="cta-final" aria-labelledby="cta-titre">
+    <div class="wrap">
+        <h2 class="h-section" id="cta-titre">Prêt à transformer votre événement ?</h2>
+        <p>Party des fêtes, gala, congrès, soirée VIP — les dates 2026 s'envolent rapidement.</p>
+        <a href="soumission.html" class="btn btn-or">Vérifier les disponibilités</a>
+    </div>
+</section>
+
+<section class="infolettre" aria-labelledby="info-titre">
+    <div class="wrap">
+        <div>
+            <h2 id="info-titre">Infolettre</h2>
+            <p>Ajoutes ton adresse courriel pour des offres exclusives !</p>
+        </div>
+        <div class="sib-form" id="sib-form-container">
+            <div id="error-message" class="sib-form-message-panel"><span class="sib-form-message-panel__inner-text">Oups ! Ton adresse courriel n'a pas été ajoutée, essaye encore !</span></div>
+            <div id="success-message" class="sib-form-message-panel"><span class="sib-form-message-panel__inner-text">Tu as bien joint l'infolettre !</span></div>
+            <div id="sib-container">
+                <form id="sib-form" method="POST" action="https://32576e57.sibforms.com/serve/MUIFAECYVCJ2LcJBpLlEAFoaHfP8jk5oYb_zzt1dds2iWNUTccKRmxiBGg-Npz5aEV7OJ1nGtKqzxUhFHZPSaqaMjpLCBS2rtwPxRdTrXUy4H2Oy3_tSVPAxqRoyLue9-IIXSO4GhKlpQHfoR124GYJEl-emQzuaWbpmv9QiPKl42MHBirEknoZhFIyTE7kIL4xcvC7yv3J6eJslWA==" data-type="subscription">
+                    <div class="sib-input sib-form-block">
+                        <div class="form__entry entry_block">
+                            <label for="EMAIL" class="visually-hidden">Adresse courriel</label>
+                            <div class="champ-ligne">
+                                <input class="input" type="email" id="EMAIL" name="EMAIL" autocomplete="email" placeholder="Ton adresse courriel" data-required="true" required>
+                                <button class="btn btn-or sib-form-block__button sib-form-block__button-with-loader" form="sib-form" type="submit">Joindre</button>
+                            </div>
+                            <label class="entry__error entry__error--primary"></label>
+                        </div>
+                    </div>
+                    <div class="sib-captcha sib-form-block">
+                        <div class="form__entry entry_block">
+                            <div class="cf-turnstile g-recaptcha" data-sitekey="0x4AAAAAADdquMefyeNndkEb" id="sib-captcha" data-callback="handleCaptchaResponse" data-language="fr" data-theme="dark"></div>
+                            <label class="entry__error entry__error--primary"></label>
+                        </div>
+                    </div>
+                    <input type="text" name="email_address_check" value="" class="input--hidden" tabindex="-1" autocomplete="off">
+                    <input type="hidden" name="locale" value="fr">
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+</main>
 <footer class="site-footer">
-    <div class="footer-content">
-        <p>© 2026 MICHAEL DEMERS | QUÉBEC</p>
-        <div class="nav-socials">
-            <a href="https://instagram.com/michaeldemers_" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://tiktok.com/@Michael.demers52" target="_blank"><i class="fab fa-tiktok"></i></a>
-            <a href="https://facebook.com/michaelmagicien" target="_blank"><i class="fab fa-facebook"></i></a>
-            <a href="https://youtube.com/@MichaelDemers52" target="_blank"><i class="fab fa-youtube"></i></a>
+    <div class="wrap">
+        <div class="footer-haut">
+            <div class="footer-marque">
+                <img src="images/logo-blanc.png" alt="" width="64" height="64">
+                <p><strong>Michael Demers</strong>Mentaliste corporatif — Québec · Lévis · Trois-Rivières · Montréal</p>
+            </div>
+            <div class="footer-col">
+                <h3>Le site</h3>
+                <ul>
+                    <li><a href="about.html">L'artiste</a></li>
+                    <li><a href="performance.html">Services</a></li>
+                    <li><a href="media.html">Média</a></li>
+                    <li><a href="secret24oct.html">Billetterie</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Réserver</h3>
+                <ul>
+                    <li><a href="soumission.html">Obtenir une soumission</a></li>
+                    <li><a href="mailto:contact@micdemers.com">contact@micdemers.com</a></li>
+                </ul>
+                <div style="margin-top:22px"><div class="reseaux"><a href="https://instagram.com/michaeldemers_" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c3.2 0 3.6 0 4.8.1 3.3.1 4.8 1.7 4.9 4.9.1 1.3.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 3.2-1.7 4.8-4.9 4.9-1.3.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-3.3-.1-4.8-1.7-4.9-4.9C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.8C2.4 3.9 3.9 2.4 7.2 2.3 8.4 2.2 8.8 2.2 12 2.2zM12 0C8.7 0 8.3 0 7.1.1 2.7.3.3 2.7.1 7.1 0 8.3 0 8.7 0 12s0 3.7.1 4.9c.2 4.4 2.6 6.8 7 7 1.2.1 1.6.1 4.9.1s3.7 0 4.9-.1c4.4-.2 6.8-2.6 7-7 .1-1.2.1-1.6.1-4.9s0-3.7-.1-4.9c-.2-4.4-2.6-6.8-7-7C15.7 0 15.3 0 12 0zm0 5.8a6.2 6.2 0 1 0 0 12.4 6.2 6.2 0 0 0 0-12.4zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.4-11.8a1.4 1.4 0 1 0 0 2.9 1.4 1.4 0 0 0 0-2.9z"/></svg></a><a href="https://tiktok.com/@Michael.demers52" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.6 6.7a4.8 4.8 0 0 1-3.8-4.2V2h-3.4v13.7a2.9 2.9 0 0 1-5.2 1.7 2.9 2.9 0 0 1 3.2-4.5V9.4a6.3 6.3 0 0 0-5.4 10.7 6.3 6.3 0 0 0 10.8-4.4v-7a8.2 8.2 0 0 0 4.8 1.5V6.8l-1-.1z"/></svg></a><a href="https://facebook.com/michaelmagicien" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12a12 12 0 1 0-13.9 11.9v-8.4h-3V12h3V9.4c0-3 1.8-4.7 4.5-4.7 1.3 0 2.7.2 2.7.2v3h-1.5c-1.5 0-2 .9-2 1.9V12h3.3l-.5 3.5h-2.8v8.4A12 12 0 0 0 24 12z"/></svg></a><a href="https://youtube.com/@MichaelDemers52" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.6 15.6V8.4l6.2 3.6-6.2 3.6z"/></svg></a></div></div>
+            </div>
         </div>
-        <p class="footer-tagline">Mentaliste corporatif — Québec · Lévis · Trois-Rivières · Montréal</p>
+        <div class="footer-bas">
+            <p>© 2026 Michael Demers | Québec</p>
+        </div>
     </div>
 </footer>
+<div class="cta-mobile" id="cta-mobile"><a href="soumission.html" class="btn btn-or">Obtenir une soumission</a></div>
+<script src="script.js?v=2026.10" defer></script>
 <script>
-    const hamburger = document.getElementById('hamburger');
-    const navMenu = document.getElementById('nav-menu');
-    hamburger.addEventListener('click', () => {
-        hamburger.classList.toggle('active');
-        navMenu.classList.toggle('active');
-    });
-    document.querySelectorAll('.nav-links li a').forEach(link => {
-        link.addEventListener('click', () => {
-            hamburger.classList.remove('active');
-            navMenu.classList.remove('active');
-        });
-    });
-    // Reveal Animation
-    window.addEventListener('scroll', () => {
-        const reveals = document.querySelectorAll('.reveal');
-        reveals.forEach(r => {
-            let windowHeight = window.innerHeight;
-            let revealTop = r.getBoundingClientRect().top;
-            if (revealTop < windowHeight - 100) {
-                r.classList.add('active');
-            }
-        });
-    });
-</script>
-</body>
-
-<script>
-  window.REQUIRED_CODE_ERROR_MESSAGE = 'Please choose a country code';
-  window.LOCALE = 'en';
-  window.EMAIL_INVALID_MESSAGE = window.SMS_INVALID_MESSAGE = "L&#39;information est invalide. Vérifiez l&#39;adresse courriel et essayez une autre fois. ";
-  window.REQUIRED_ERROR_MESSAGE = "Cette espace ne peut pas rester vide.  ";
-  window.GENERIC_INVALID_MESSAGE = "L&#39;information est invalide. Vérifiez l&#39;adresse courriel et essayez une autre fois. ";
-  window.INVALID_NUMBER = "L&#39;information est invalide. Vérifiez l&#39;adresse courriel et essayez une autre fois. ";
-  window.INVALID_DATE = "Please enter a valid date";
-  window.REQUIRED_MULTISELECT_MESSAGE = 'Please select at least 1 option';
-  window.translation = {
-    common: {
-      selectedList: '{quantity} list selected',
-      selectedLists: '{quantity} lists selected',
-      selectedOption: '{quantity} selected',
-      selectedOptions: '{quantity} selected',
-    }
-  };
+  function handleCaptchaResponse() {
+    var event = new Event('captchaChange');
+    document.getElementById('sib-captcha').dispatchEvent(event);
+    window.grecaptcha = window.turnstile;
+  }
+  window.REQUIRED_CODE_ERROR_MESSAGE = 'Veuillez choisir un indicatif de pays';
+  window.LOCALE = 'fr';
+  window.EMAIL_INVALID_MESSAGE = window.SMS_INVALID_MESSAGE = "L'information est invalide. Vérifiez l'adresse courriel et essayez une autre fois.";
+  window.REQUIRED_ERROR_MESSAGE = "Cette espace ne peut pas rester vide.";
+  window.GENERIC_INVALID_MESSAGE = "L'information est invalide. Vérifiez l'adresse courriel et essayez une autre fois.";
+  window.INVALID_NUMBER = "L'information est invalide. Vérifiez l'adresse courriel et essayez une autre fois.";
+  window.INVALID_DATE = "Veuillez entrer une date valide";
+  window.REQUIRED_MULTISELECT_MESSAGE = 'Veuillez choisir au moins 1 option';
+  window.translation = { common: { selectedList: '{quantity} liste sélectionnée', selectedLists: '{quantity} listes sélectionnées', selectedOption: '{quantity} sélectionné', selectedOptions: '{quantity} sélectionnés' } };
   var AUTOHIDE = Boolean(0);
 </script>
 <script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
 <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+</body>
 </html>
