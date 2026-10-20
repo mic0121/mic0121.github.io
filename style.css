@@ -485,3 +485,9 @@ h1, h2, h3, h4 { font-family: var(--serif); font-weight: 400; line-height: 1.08;
   .contact-infos ul { justify-items: center; }
   .formule { text-align: left; }
 }
+
+/* ---------- Mobile : nom sur une ligne, logo seul dans l'en-tête ---------- */
+@media (max-width: 760px) {
+  .hero h1.display { font-size: clamp(2rem, 10.5vw, 2.8rem); line-height: 1.05; white-space: nowrap; max-width: none; }
+  .nav-logo span { display: none; }
+}
