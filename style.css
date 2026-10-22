@@ -151,6 +151,7 @@ h1, h2, h3, h4 { font-family: var(--serif); font-weight: 400; line-height: 1.08;
 }
 .hero-contenu { position: relative; z-index: 2; width: 100%; max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter) clamp(48px, 9vh, 96px); }
 .hero-contenu .marque { margin-bottom: 14px; }
+.hero h1 .marque { font-family: var(--sans); line-height: 1.4; letter-spacing: .02em; white-space: normal; }
 .hero h1 { max-width: 11ch; }
 .hero .lede { margin: 22px 0 34px; color: var(--or-pale); }
 .hero-boutons { display: flex; flex-wrap: wrap; gap: 14px; }
