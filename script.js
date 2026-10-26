@@ -122,3 +122,46 @@
     });
   }
 })();
+
+/* POP-UP PARTY DES FÊTES
+   S'affiche après 3 secondes, une seule fois par visite.
+   Pas affiché sur les pages party des fêtes, soumission et merci.
+   Se désactive tout seul à partir du 1er janvier 2027. */
+(function () {
+  var FIN = new Date(2027, 0, 1);
+  var page = location.pathname.split('/').pop();
+  var exclues = ['party-des-fetes.html', 'soumission.html', 'merci.html'];
+  if (new Date() >= FIN || exclues.indexOf(page) !== -1) return;
+  try { if (sessionStorage.getItem('md-popup-fetes') === '1') return; } catch (e) {}
+
+  setTimeout(function () {
+    var dernierFocus = document.activeElement;
+    var fond = document.createElement('div');
+    fond.className = 'popup-fetes';
+    fond.innerHTML =
+      '<div class="popup-fetes-boite" role="dialog" aria-modal="true" aria-labelledby="popup-fetes-titre">' +
+        '<button class="popup-fetes-x" type="button" aria-label="Fermer">&times;</button>' +
+        '<p class="popup-fetes-sur">Temps des fêtes</p>' +
+        '<h2 id="popup-fetes-titre">Votre party des fêtes approche&nbsp;?</h2>' +
+        '<p>Offrez à votre équipe une soirée de mentalisme dont elle parlera longtemps.</p>' +
+        '<a class="btn btn-or" href="party-des-fetes.html">Découvrir l’animation</a>' +
+        '<button class="popup-fetes-non" type="button">Non merci</button>' +
+      '</div>';
+    document.body.appendChild(fond);
+    try { sessionStorage.setItem('md-popup-fetes', '1'); } catch (e) {}
+    requestAnimationFrame(function () { fond.classList.add('ouvert'); });
+    fond.querySelector('.btn').focus();
+
+    function fermer() {
+      fond.classList.remove('ouvert');
+      document.removeEventListener('keydown', clavier);
+      setTimeout(function () { fond.remove(); }, 250);
+      if (dernierFocus && dernierFocus.focus) dernierFocus.focus();
+    }
+    function clavier(e) { if (e.key === 'Escape') fermer(); }
+    fond.querySelector('.popup-fetes-x').addEventListener('click', fermer);
+    fond.querySelector('.popup-fetes-non').addEventListener('click', fermer);
+    fond.addEventListener('click', function (e) { if (e.target === fond) fermer(); });
+    document.addEventListener('keydown', clavier);
+  }, 3000);
+})();

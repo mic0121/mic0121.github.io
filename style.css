@@ -492,3 +492,42 @@ h1, h2, h3, h4 { font-family: var(--serif); font-weight: 400; line-height: 1.08;
   .hero h1.display { font-size: clamp(2rem, 10.5vw, 2.8rem); line-height: 1.05; white-space: nowrap; max-width: none; }
   .nav-logo span { display: none; }
 }
+
+/* POP-UP PARTY DES FÊTES */
+.popup-fetes {
+  position: fixed; inset: 0; z-index: 1000;
+  display: grid; place-items: center; padding: 20px;
+  background: rgba(0, 0, 0, .72);
+  opacity: 0; transition: opacity .25s var(--ease);
+}
+.popup-fetes.ouvert { opacity: 1; }
+.popup-fetes-boite {
+  position: relative; width: 100%; max-width: 420px;
+  background: var(--charbon); border: 1px solid var(--or);
+  border-radius: 6px; padding: 44px 28px 24px; text-align: center;
+  transform: translateY(14px); transition: transform .25s var(--ease);
+}
+.popup-fetes.ouvert .popup-fetes-boite { transform: none; }
+.popup-fetes-sur {
+  color: var(--or); font-size: .75rem; letter-spacing: .28em;
+  text-transform: uppercase; font-weight: 600; margin-bottom: 12px;
+}
+.popup-fetes h2 {
+  font-family: var(--serif); font-size: 1.7rem; line-height: 1.2;
+  color: var(--craie); margin-bottom: 12px;
+}
+.popup-fetes-boite > p:not(.popup-fetes-sur) { color: var(--gris); line-height: 1.55; margin-bottom: 24px; }
+.popup-fetes .btn { width: 100%; }
+.popup-fetes-x {
+  position: absolute; top: 8px; right: 8px; width: 44px; height: 44px;
+  background: none; border: 0; color: var(--gris); font-size: 1.8rem; line-height: 1; cursor: pointer;
+}
+.popup-fetes-x:hover { color: var(--or); }
+.popup-fetes-non {
+  margin-top: 12px; min-height: 44px; background: none; border: 0;
+  color: var(--gris-sombre); font: inherit; font-size: .9rem; cursor: pointer; text-decoration: underline;
+}
+.popup-fetes-non:hover { color: var(--craie); }
+@media (prefers-reduced-motion: reduce) {
+  .popup-fetes, .popup-fetes-boite { transition: none; }
+}
