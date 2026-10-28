@@ -76,9 +76,8 @@
     transition:transform .15s ease,border-color .15s ease,background .15s ease;
     -webkit-tap-highlight-color:transparent;
   }
-  .btn svg{width:22px;height:22px;flex:none}
-  .btn .label{flex:1;text-align:left}
-  .btn .label small{display:block;font-size:13px;font-weight:400;color:var(--muted);margin-top:2px}
+  .btn svg{width:24px;height:24px;flex:none}
+  .btn .label{flex:1;text-align:left;font-size:19px;line-height:1.25}
   .btn .arrow{width:18px;height:18px;opacity:.5}
   .btn:hover{border-color:var(--gold)}
   .btn:active{transform:scale(.98)}
@@ -88,9 +87,38 @@
     background:linear-gradient(180deg,var(--gold-hi),var(--gold));
     border-color:var(--gold);color:var(--ink);
   }
-  .btn.primary .label small{color:rgba(18,18,18,.7)}
   .btn.primary .arrow{opacity:.7}
   .btn .gold{color:var(--gold)}
+
+  /* Mouvement du bouton doré : léger battement + reflet qui passe */
+  .btn.primary{
+    position:relative;overflow:hidden;
+    animation:pulse 2.6s ease-in-out infinite;
+  }
+  .btn.primary::after{
+    content:"";position:absolute;top:0;bottom:0;left:-60%;width:40%;
+    background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);
+    transform:skewX(-20deg);
+    animation:reflet 3.5s ease-in-out infinite;
+    pointer-events:none;
+  }
+  .btn.primary .arrow{animation:fleche 1.3s ease-in-out infinite}
+  @keyframes pulse{
+    0%,100%{transform:scale(1);box-shadow:0 0 0 0 rgba(201,162,75,.45)}
+    50%{transform:scale(1.025);box-shadow:0 0 0 10px rgba(201,162,75,0)}
+  }
+  @keyframes reflet{
+    0%,55%{left:-60%}
+    100%{left:130%}
+  }
+  @keyframes fleche{
+    0%,100%{transform:translateX(0)}
+    50%{transform:translateX(4px)}
+  }
+  .btn.primary:active{animation:none;transform:scale(.98)}
+  @media (prefers-reduced-motion: reduce){
+    .btn.primary,.btn.primary::after,.btn.primary .arrow{animation:none}
+  }
 
   .social{display:flex;gap:14px;margin-top:36px}
   .social a{
@@ -142,19 +170,19 @@
   <nav class="links" aria-label="Liens principaux">
     <a class="btn primary" href="https://micdemers.com/soumission.html">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M8 2v4M16 2v4M3 10h18M8 15h3"/></svg>
-      <span class="label">Demander une soumission<small>Vous avez un événement bientôt&nbsp;?</small></span>
+      <span class="label">Vous avez un événement bientôt&nbsp;?</span>
       <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
     </a>
 
     <a class="btn" href="https://micdemers.com">
       <svg class="gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>
-      <span class="label">Visiter mon site web<small>micdemers.com</small></span>
+      <span class="label">Visiter mon site web</span>
       <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
     </a>
 
     <a class="btn" href="https://g.page/r/CQvoUrSB-ZMcEAE/review" target="_blank" rel="noopener">
       <svg class="gold" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z"/></svg>
-      <span class="label">Laisser un avis<small>Vous avez vu une de mes performances&nbsp;? Merci&nbsp;!</small></span>
+      <span class="label">Laisser un avis</span>
       <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
     </a>
   </nav>
