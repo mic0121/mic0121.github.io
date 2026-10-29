@@ -531,3 +531,8 @@ h1, h2, h3, h4 { font-family: var(--serif); font-weight: 400; line-height: 1.08;
 @media (prefers-reduced-motion: reduce) {
   .popup-fetes, .popup-fetes-boite { transition: none; }
 }
+
+/* Page SECRETS */
+.lien-secrets { margin-top: 28px; color: var(--gris); }
+.badge-signature { display: inline-block; font-family: var(--sans); font-size: .4em; letter-spacing: .2em; text-transform: uppercase; color: var(--or); vertical-align: middle; margin-left: 14px; padding: 5px 10px; border: 1px solid var(--or); border-radius: 999px; }
+@media (max-width: 760px) { .badge-signature { margin-left: 0; margin-top: 10px; display: table; } }
