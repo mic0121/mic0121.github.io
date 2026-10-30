@@ -10,7 +10,7 @@
     <meta property="og:title" content="Média | Michael Demers, mentaliste à Québec">
     <meta property="og:description" content="Extraits de spectacles, vidéos et photos de Michael Demers en événements corporatifs, galas et soirées privées.">
     <meta property="og:url" content="https://micdemers.com/media.html">
-    <meta property="og:image" content="https://micdemers.com/video/hero-poster.jpg">
+    <meta property="og:image" content="https://micdemers.com/images/secrets-poster.jpg">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="theme-color" content="#000000">
     <link rel="icon" href="favicon.ico" sizes="48x48">
@@ -19,7 +19,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=2026.10">
+    <link rel="stylesheet" href="style.css?v=2026.10.30">
 </head>
 <body>
 <header class="site-header" id="site-header">
@@ -53,26 +53,47 @@
     </div>
 </section>
 
-<section class="section" style="padding-top:clamp(40px,6vw,70px)" aria-label="Vidéo vedette">
+<section class="section" style="padding-top:clamp(40px,6vw,70px)" aria-labelledby="vedette-titre">
     <div class="wrap">
+        <div class="section-tete">
+            <h2 class="h-section" id="vedette-titre">SECRETS, le spectacle</h2>
+            <a href="secrets.html" class="lien-or">Découvrir le spectacle</a>
+        </div>
         <div class="video-vedette">
-            <video controls playsinline preload="metadata" poster="video/hero-poster.jpg">
-                <source src="video/hero.mp4" type="video/mp4">
+            <video controls playsinline preload="none" poster="images/secrets-poster.jpg" aria-label="Vidéo promotionnelle du spectacle SECRETS">
+                <source src="video/secrets-promo-mobile.mp4" type="video/mp4" media="(max-width: 760px)">
+                <source src="video/secrets-promo.mp4" type="video/mp4">
             </video>
         </div>
+        <p class="yt-titre">Extraits de SECRETS, le spectacle signature de 1&nbsp;h&nbsp;15 pour galas, congrès et soirées corporatives de 100 personnes et plus.</p>
     </div>
 </section>
 
 <section class="section section-encre" aria-labelledby="videos-titre">
     <div class="wrap">
         <div class="section-tete">
-            <h2 class="h-section" id="videos-titre">Vidéos</h2>
+            <h2 class="h-section" id="videos-titre">Extraits</h2>
             <a href="https://youtube.com/@MichaelDemers52" class="lien-or" target="_blank" rel="noopener">Toute la chaîne YouTube</a>
         </div>
-        <!-- VIDÉOS YOUTUBE : copier un bloc <div class="yt-item"> par vidéo et remplacer ID_VIDEO
-             (la partie après « v= » dans le lien YouTube) et le titre. -->
-        <div class="yt-grille" id="yt-grille">
-            <p class="a-venir">À venir</p>
+        <!-- VIDÉOS YOUTUBE : copier un bloc <div class="yt-item"> par vidéo et remplacer l’ID dans data-id et dans les 2 liens d’image
+             (la partie après « shorts/ » dans le lien YouTube) et le titre. -->
+        <div class="yt-grille shorts" id="yt-grille">
+            <div class="yt-item">
+                <div class="yt short"><button type="button" data-id="-DuKIwDZJoQ" aria-label="Lire la vidéo : Devant 1 300 personnes à la salle Albert-Rousseau"><img src="https://i.ytimg.com/vi/-DuKIwDZJoQ/oardefault.jpg" onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/-DuKIwDZJoQ/hqdefault.jpg'" alt="" loading="lazy"><span class="lecture" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></button></div>
+                <p class="yt-titre">Devant 1 300 personnes à la salle Albert-Rousseau</p>
+            </div>
+            <div class="yt-item">
+                <div class="yt short"><button type="button" data-id="Nx_ZjQhqFoc" aria-label="Lire la vidéo : Il déverrouille le téléphone d'une inconnue"><img src="https://i.ytimg.com/vi/Nx_ZjQhqFoc/oardefault.jpg" onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/Nx_ZjQhqFoc/hqdefault.jpg'" alt="" loading="lazy"><span class="lecture" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></button></div>
+                <p class="yt-titre">Il déverrouille le téléphone d'une inconnue</p>
+            </div>
+            <div class="yt-item">
+                <div class="yt short"><button type="button" data-id="Ma1B0AR82oQ" aria-label="Lire la vidéo : Il devine un mot choisi en secret"><img src="https://i.ytimg.com/vi/Ma1B0AR82oQ/oardefault.jpg" onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/Ma1B0AR82oQ/hqdefault.jpg'" alt="" loading="lazy"><span class="lecture" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></button></div>
+                <p class="yt-titre">Il devine un mot choisi en secret</p>
+            </div>
+            <div class="yt-item">
+                <div class="yt short"><button type="button" data-id="kqoUg4_QRg4" aria-label="Lire la vidéo : Il devine un souvenir"><img src="https://i.ytimg.com/vi/kqoUg4_QRg4/oardefault.jpg" onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/kqoUg4_QRg4/hqdefault.jpg'" alt="" loading="lazy"><span class="lecture" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></button></div>
+                <p class="yt-titre">Il devine un souvenir</p>
+            </div>
         </div>
     </div>
 </section>

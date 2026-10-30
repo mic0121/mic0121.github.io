@@ -432,6 +432,11 @@ h1, h2, h3, h4 { font-family: var(--serif); font-weight: 400; line-height: 1.08;
 .a-venir { font-family: var(--serif); font-style: italic; font-size: clamp(1.3rem, 2.2vw, 1.7rem); color: var(--gris); padding: 20px 0; grid-column: 1 / -1; }
 .yt-titre { margin-top: 12px; font-size: .98rem; color: rgba(243,242,239,.85); }
 
+/* YouTube Shorts (format vertical) */
+.yt-grille.shorts { grid-template-columns: repeat(4, 1fr); }
+@media (max-width: 760px) { .yt-grille.shorts { grid-template-columns: repeat(2, 1fr); } }
+.yt.short { aspect-ratio: 9 / 16; }
+
 .galerie { columns: 3 280px; column-gap: 14px; }
 .galerie button { all: unset; cursor: zoom-in; display: block; margin-bottom: 14px; border-radius: 4px; overflow: hidden; break-inside: avoid; }
 .galerie img { width: 100%; height: auto; transition: transform .8s var(--ease); }
