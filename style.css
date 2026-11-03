@@ -547,3 +547,48 @@ h1, h2, h3, h4 { font-family: var(--serif); font-weight: 400; line-height: 1.08;
 .lien-secrets { margin-top: 28px; color: var(--gris); }
 .badge-signature { display: inline-block; font-family: var(--sans); font-size: .4em; letter-spacing: .2em; text-transform: uppercase; color: var(--or); vertical-align: middle; margin-left: 14px; padding: 5px 10px; border: 1px solid var(--or); border-radius: 999px; }
 @media (max-width: 760px) { .badge-signature { margin-left: 0; margin-top: 10px; display: table; } }
+
+/* ===== Accueil allégé (3 nov. 2026) ===== */
+.section-compacte { padding: clamp(64px, 8vw, 110px) 0; }
+.hero-note { margin-top: 30px; font-size: .95rem; }
+.hero-note + .hero-villes { margin-top: 10px; }
+
+.exp-colonnes { list-style: none; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(28px, 4vw, 56px); }
+.exp-colonnes li { border-top: 1px solid var(--fumee); padding-top: 26px; }
+.exp-colonnes h3 { font-size: clamp(1.4rem, 2vw, 1.75rem); margin-bottom: 12px; }
+.exp-colonnes p { color: var(--gris); font-size: .98rem; }
+
+.secrets-vedette { margin-top: 14px; display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); background: var(--charbon); border-radius: 4px; overflow: hidden; text-decoration: none; color: inherit; border: 1px solid var(--fumee); transition: border-color .4s; }
+.secrets-vedette:hover, .secrets-vedette:focus-visible { border-color: var(--or-ombre); }
+.secrets-vedette-img { position: relative; aspect-ratio: 16 / 9; overflow: hidden; }
+.secrets-vedette-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s var(--ease); }
+.secrets-vedette:hover img { transform: scale(1.03); }
+.secrets-vedette-texte { padding: clamp(28px, 4vw, 52px); display: flex; flex-direction: column; justify-content: center; }
+.secrets-vedette-texte .marque { margin-bottom: 10px; }
+.secrets-vedette h3 { font-size: clamp(2rem, 3.6vw, 3rem); letter-spacing: .06em; margin-bottom: 14px; }
+.secrets-vedette p { color: var(--gris); max-width: 40ch; }
+.secrets-vedette .voir { margin-top: 22px; color: var(--or); font-weight: 600; font-size: .95rem; display: inline-flex; gap: 8px; align-items: center; }
+.secrets-vedette .voir svg { width: 18px; height: 18px; transition: transform .35s var(--ease); }
+.secrets-vedette:hover .voir svg { transform: translateX(4px); }
+
+.teaser-compact .teaser-video { aspect-ratio: 16 / 9; }
+.cta-compact { padding: clamp(80px, 10vw, 130px) 0; }
+
+.infolettre-pied { background: none; padding: 40px 0 0; margin-top: 48px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 20px 60px; align-items: center; }
+.infolettre-pied h3 { font-size: 1.5rem; margin-bottom: 6px; }
+.infolettre-pied p { font-size: .95rem; }
+.infolettre-pied + .footer-bas { margin-top: 40px; }
+
+@media (max-width: 860px) {
+  .exp-colonnes { grid-template-columns: 1fr; gap: 0; }
+  .exp-colonnes li { padding: 24px 0; }
+  .secrets-vedette { grid-template-columns: 1fr; }
+}
+@media (max-width: 760px) {
+  .exp-colonnes li, .secrets-vedette-texte, .infolettre-pied { text-align: center; }
+  .secrets-vedette-texte { align-items: center; }
+  .secrets-vedette p, .exp-colonnes p { margin-left: auto; margin-right: auto; }
+  .hero-note { justify-content: center; }
+  .infolettre-pied { grid-template-columns: 1fr; }
+  .infolettre-pied .champ-ligne { flex-direction: column; }
+}
