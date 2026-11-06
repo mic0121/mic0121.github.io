@@ -592,3 +592,29 @@ h1, h2, h3, h4 { font-family: var(--serif); font-weight: 400; line-height: 1.08;
   .infolettre-pied { grid-template-columns: 1fr; }
   .infolettre-pied .champ-ligne { flex-direction: column; }
 }
+
+/* ===== Média vedette : vidéo pleine largeur, texte par-dessus (6 nov. 2026) ===== */
+.media-vedette {
+  position: relative; display: flex; align-items: flex-end;
+  aspect-ratio: 16 / 9; max-height: 82vh; min-height: 420px;
+  border-radius: 4px; overflow: hidden; background: var(--charbon); isolation: isolate;
+}
+.media-vedette-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 35%; z-index: -2; }
+.media-vedette::after {
+  content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background:
+    linear-gradient(to top, rgba(0,0,0,.9) 0%, rgba(0,0,0,.5) 32%, rgba(0,0,0,0) 62%),
+    linear-gradient(to right, rgba(0,0,0,.55) 0%, rgba(0,0,0,0) 55%);
+}
+.media-vedette-texte { position: relative; padding: clamp(28px, 5vw, 64px); max-width: 640px; }
+.media-vedette-texte .texte { color: rgba(243,242,239,.8); margin: 14px 0 28px; }
+.media-vedette .btn-ligne {
+  background: rgba(0,0,0,.35); border-color: rgba(243,242,239,.6);
+  backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+}
+.media-vedette .btn-ligne:hover { background: rgba(0,0,0,.6); }
+@media (max-width: 760px) {
+  .media-vedette { aspect-ratio: 4 / 5; max-height: none; min-height: 0; justify-content: center; }
+  .media-vedette-texte { text-align: center; }
+  .media-vedette-texte .texte { margin-left: auto; margin-right: auto; }
+}
