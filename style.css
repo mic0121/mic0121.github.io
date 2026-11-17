@@ -362,6 +362,10 @@ h1, h2, h3, h4 { font-family: var(--serif); font-weight: 400; line-height: 1.08;
 .formule li { position: relative; padding-left: 26px; color: rgba(243,242,239,.82); }
 .formule li::before { content: ""; position: absolute; left: 0; top: .72em; width: 12px; height: 1px; background: var(--or); }
 @media (max-width: 760px) { .formules { grid-template-columns: 1fr; } }
+.photo-bande { margin-top: 14px; border-radius: 4px; overflow: hidden; position: relative; }
+.photo-bande img { display: block; width: 100%; height: auto; aspect-ratio: 21 / 9; object-fit: cover; object-position: 50% 35%; }
+.photo-bande figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: 40px clamp(20px, 3vw, 32px) 18px; font-size: .95rem; color: rgba(243,242,239,.9); background: linear-gradient(transparent, rgba(0,0,0,.7)); }
+@media (max-width: 760px) { .photo-bande img { aspect-ratio: 4 / 3; } }
 
 /* FAQ */
 .faq { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); gap: clamp(30px, 6vw, 90px); }
